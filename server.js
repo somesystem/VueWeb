@@ -132,3 +132,17 @@ const port = process.env.PORT || 8080
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`)
 })
+
+
+if (process.env.NODE_ENV!="production") {
+  var child_process = require('child_process');
+  var cmd;
+  if (process.platform === 'win32') {
+    cmd = 'start "%ProgramFiles%\Internet Explorer\iexplore.exe"';
+  } else if (process.platform === 'linux') {
+    cmd = 'xdg-open';
+  } else if (process.platform === 'darwin') {
+    cmd = 'open';
+  }
+  child_process.exec(`${cmd} "http:\/\/localhost:${port}"`);
+}
