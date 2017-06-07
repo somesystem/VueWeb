@@ -7,14 +7,15 @@ Vue.use(Router)
 const createListView = id => () => import('../views/CreateListView').then(m => m.default(id))
 const ItemView = () => import('../views/ItemView.vue')
 const UserView = () => import('../views/UserView.vue')
-console.log(ItemView);
+
+const topView = () => import('../views/top.vue')
 
 export function createRouter () {
   return new Router({
     mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/top/:page(\\d+)?', component: createListView('top') },
+      { path: '/top', component: topView },
       { path: '/new/:page(\\d+)?', component: createListView('new') },
       { path: '/show/:page(\\d+)?', component: createListView('show') },
       { path: '/ask/:page(\\d+)?', component: createListView('ask') },
