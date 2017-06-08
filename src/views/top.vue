@@ -1,6 +1,14 @@
 <template>
     <div>
-        
+        <div class="top-banner">
+            <div class="main-width">
+               <div class="top-fill">
+                    
+                </div> 
+            </div>
+        </div>
+
+
         <ul class="top-menu">
             <li>股权基金</li>
             <li>信托计划</li>
@@ -42,5 +50,14 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-
+    .top-banner
+        height 400px
+        padding-top 50px
+        background url("/public/banner.png") no-repeat center center
+        box-sizing border-box
+    .top-fill
+        float right
+        width 240px
+        height 280px
+        background-color rgba(0,0,0,0.5)
 </style>

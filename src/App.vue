@@ -1,17 +1,29 @@
 <template>
   <div id="app">
     <nav class="common-search">
-      <input type="text" placeholder="搜产品/理财师/话题" />
+      <div class="common-search-box">
+        <input type="text" placeholder="搜产品/理财师/话题" />
+        <nav>
+          <span>热点：</span>
+          <a href="javascript:;">一带一路</a>
+          <a href="javascript:;">林州重机</a>
+          <a href="javascript:;">比特币</a>
+          <a href="javascript:;">很赚钱</a>
+        </nav>
+      </div>
+      <div class="common-sign">
+        <i></i>
+        <a href="javascript:;">登录</a>
+        <span>|</span>
+        <a href="javascript:;">注册</a>
+      </div>
     </nav>
-    <header class="header">
-      <nav class="inner">
-        <router-link to="/" exact>
-          <img class="logo" src="~public/logo-48.png" alt="logo">
-        </router-link>
-        <router-link to="/">首页</router-link>
-        <router-link to="/">经融超市</router-link>
-        <router-link to="/">找理财师</router-link>
-        <router-link to="/">理财社区</router-link>
+    <header class="common-header">
+      <nav class="common-inner">
+        <router-link tag="a" to="/top" exact>首页</router-link>
+        <router-link tag="a" to="/t1">经融超市</router-link>
+        <router-link tag="a" to="/t2">找理财师</router-link>
+        <router-link tag="a" to="/t3">理财社区</router-link>
       </nav>
     </header>
     <transition name="fade" mode="out-in">
@@ -19,88 +31,124 @@
     </transition>
 
     <footer class="common-foot">
-      <a href="javascript:;">关于我们</a>
-      <a href="javascript:;">媒体报道</a>
+      <nav>
+        <a href="javascript:;">关于我们</a>
+        <a href="javascript:;">媒体报道</a>
+      </nav>
     </footer>
   </div>
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  @import "./base";
+  *
+    margin 0
+    padding 0
   body
     font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size 15px
-    background-color lighten(#eceef1, 30%)
-    margin 0
-    padding-top 55px
-    color #34495e
-    overflow-y scroll
-
+    background-color #f8f8f8
+    color #666
   a
-    color #34495e
-    text-decoration none
-
-  .header
-    background-color #ff6600
-    position fixed
-    z-index 999
-    height 55px
-    top 0
-    left 0
-    right 0
-    .inner
-      max-width 800px
-      box-sizing border-box
-      margin 0px auto
-      padding 15px 5px
-    a
-      color rgba(255, 255, 255, .8)
-      line-height 24px
-      transition color .15s ease
-      display inline-block
-      vertical-align middle
-      font-weight 300
-      letter-spacing .075em
-      margin-right 1.8em
-      &:hover
-        color #fff
-      &.router-link-active
-        color #fff
-        font-weight 400
-      &:nth-child(6)
-        margin-right 0
-    .github
-      color #fff
-      font-size .9em
-      margin 0
-      float right
-
-  .logo
-    width 24px
-    margin-right 10px
-    display inline-block
-    vertical-align middle
-
-  .view
-    max-width 800px
-    margin 0 auto
-    position relative
+    text-decoration none 
+    color #666
+  input 
+    outline none
+  i,em,b,strong
+    font-style normal
+    font-weight normal
+  li 
+    list-style none 
+  img 
+    border none
+  .clearfix:after 
+    content ""
+    display block 
+  .clearfix 
+    *zoom 1 
 
   .fade-enter-active, .fade-leave-active
     transition all .2s ease
 
   .fade-enter, .fade-leave-active
     opacity 0
+  
+  .main-width
+    width main-width
+  .common-search
+    position relative
+    height 126px
+    width main-width
+  .common-search-box
+    padding 26px 0
 
-  @media (max-width 860px)
-    .header .inner
-      padding 15px 30px
+    > input
+      display: block
+      margin: 0 auto
+      width 480px
+      height 24px;
+      line-height 24px
+      padding 20px
+      border 2px solid color-red
+      font-size 18px
+      color #666
+      background url(/public/search.png) no-repeat 484px center
+    > nav
+      margin 12px auto 0
+      width 520px
+      font-size 14px
+      line-height 14px
 
-  @media (max-width 600px)
-    .header
-      .inner
-        padding 15px
-      a
-        margin-right 1em
-      .github
-        display none
+      > a
+        margin 0 5px
+  
+  .common-sign
+    position absolute
+    right 0
+    top 48px 
+    height 30px
+    line-height 30px
+    width 120px
+    font-size 14px
+    > *
+      float left
+    > i
+      width 30px
+      height 30px
+      margin-right 12px
+      background url(/public/user.png) no-repeat
+    > span
+      margin 0 5px
+  
+  .common-header 
+    background-color color-red
+  .common-inner
+    width main-width
+    margin: 0 auto
+    display flex
+    > a
+      display block
+      width 120px
+      height 40px
+      line-height 40px
+      color #fff
+      text-align center
+      font-size 18px
+
+      &.router-link-active
+        background-color color-red-select
+
+  .common-foot
+    padding 40px 0 200px
+    background-color #353535
+    > nav
+      width main-width
+      padding 0 15px
+      box-sizing border-box
+      > a
+        height 20px
+        line-height 20px
+        font-size 14px
+        color color-black
+        margin-right 15px
 </style>
