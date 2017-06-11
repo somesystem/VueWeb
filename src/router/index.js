@@ -8,21 +8,49 @@ const createListView = id => () => import('../views/CreateListView').then(m => m
 const ItemView = () => import('../views/ItemView.vue')
 const UserView = () => import('../views/UserView.vue')
 
+
 const topView = () => import('../views/top.vue')
+const marketView = () => import('../views/market.vue')
 
 export function createRouter () {
   return new Router({
     mode: 'history',
     scrollBehavior: () => ({ y: 0 }),
     routes: [
-      { path: '/top', component: topView },
+      { path: '/', redirect: '/top' },
+      { 
+        path: '/top',
+        component: topView,
+        /*children: [
+          {
+            path: "",
+            name: "stock"
+          },
+          {
+            path: "trust",
+            name: "trust"
+          },
+          {
+            path: "bond",
+            name: "bond"
+          },
+          {
+            path: "negotiable",
+            name: "negotiable"
+          },
+          {
+            path: "donations",
+            name: "donations"
+          }
+        ]*/
+      },
+      { path: '/market', component: marketView },
       { path: '/new/:page(\\d+)?', component: createListView('new') },
       { path: '/show/:page(\\d+)?', component: createListView('show') },
       { path: '/ask/:page(\\d+)?', component: createListView('ask') },
       { path: '/job/:page(\\d+)?', component: createListView('job') },
       { path: '/item/:id(\\d+)', component: ItemView },
-      { path: '/user/:id', component: UserView },
-      { path: '/', redirect: '/top' }
+      { path: '/user/:id', component: UserView }
     ]
   })
 }

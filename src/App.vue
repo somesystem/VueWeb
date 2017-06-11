@@ -23,7 +23,7 @@
     <header class="common-header">
       <nav class="common-inner">
         <router-link tag="a" to="/top" exact>首页</router-link>
-        <router-link tag="a" to="/t1">经融超市</router-link>
+        <router-link tag="a" to="/market">金融超市</router-link>
         <router-link tag="a" to="/t2">找理财师</router-link>
         <router-link tag="a" to="/t3">理财社区</router-link>
       </nav>
@@ -33,7 +33,7 @@
     </transition>
 
     <footer class="common-foot">
-      <nav>
+      <nav class="main-width">
         <a href="javascript:;">关于我们</a>
         <a href="javascript:;">媒体报道</a>
       </nav>
@@ -123,7 +123,6 @@
     padding 40px 0 200px
     background-color #353535
     > nav
-      width main-width
       padding 0 15px
       box-sizing border-box
       > a
