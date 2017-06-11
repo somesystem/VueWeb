@@ -29,7 +29,7 @@
       </nav>
     </header>
     <transition name="fade" mode="out-in">
-      <router-view class="view"></router-view>
+      <router-view></router-view>
     </transition>
 
     <footer class="common-foot">
@@ -53,6 +53,7 @@
   
   .main-width
     width main-width
+    margin 0 auto
   .bg-white
     background-color #fff
   .common-search

@@ -42,35 +42,34 @@
                 <li>债券基金</li>
                 <li>证券基金</li>
                 <li>捐资计划</li>
+                <!-- <router-link tag="li"></router-link> -->
             </ul>
-
-            <ol>
-                <li><a href="javascript:;">热门话题</a></li>
-                <li><a href="javascript:;">贵xx</a></li>
-                <li><a href="javascript:;">8%~9%</a></li>
-                <li><a href="javascript:;">按年付息</a></li>
-                <li><a href="javascript:;">房地产</a></li>
-                <li><a href="javascript:;">按年xx</a></li>
-                <li><a herf="javascript:;">查看更多话题>></a></li>
-            </ol>
+            
+            <section>
+                <h2>热门话题</h2>
+                <ol>
+                    <li><a href="javascript:;">贵xx</a></li>
+                    <li><a href="javascript:;">8%~9%</a></li>
+                    <li><a href="javascript:;">按年付息</a></li>
+                    <li><a href="javascript:;">房地产</a></li>
+                    <li><a href="javascript:;">按年xx</a></li>
+                </ol>
+                <a href="javascript:;">查看更多话题>></a>
+            </section>
+            
         </nav>
 
-        <div class="top-warpper">
-            <nav class="top-title">
-                <a href="javascript:;">1</a>
-                <a href="javascript:;">1</a>
-                <a href="javascript:;">1</a>
-                <a href="javascript:;">1</a>
-            </nav>
+        <div class="top-warpper main-width">
 
-            <div class="top-item"></div>
-            <div class="top-item"></div>
+            <common-item v-for="item in 5"></common-item>
             
-            <p class="top-more">查看更多</p>
+            <!-- <router-view class="view"></router-view> -->
+            <a href="javascript:;" class="top-more">查看更多</a>
         </div>
 
         <aside class="top-aside">
-            <div class="top-cell"></div>
+            <h3>优秀理财师</h3>
+            <common-cell v-for="item in 3"></common-cell>
         </aside>
 
         <article class="top-articel">
@@ -81,9 +80,16 @@
 </template>
 
 <script type="text/javascript">
+    import commonItem from "../modules/common-item.vue";
+    import commonCell from "../modules/common-cell.vue";
+
     export default {
         data(){
             return {}
+        },
+        components: {
+            commonItem,
+            commonCell
         }
     }
 </script>
@@ -173,6 +179,42 @@
                     background #fff url(/public/arrow-top.png) no-repeat
                 }
 
-        > ol
-            height 
+        > section
+            width main-width
+            margin 0 auto
+            height 42px
+            line-height 42px
+            display flex
+            
+            h2
+                color color-red
+                font-size 18px
+                width 125px
+
+            > ol
+                width 910px
+                display flex
+                > li
+                    font-size 14px 
+                    color #000
+                    margin-right 34px
+                    a
+                        color #000
+            > a
+                display block
+                width 125px
+                text-align right
+                color #000
+
+    .top-more
+        display block
+        width 300px
+        height 32px 
+        line-height 32px 
+        border-radius 16px
+        text-align center 
+        margin 12px auto
+        border 1px solid color-red
+        color color-red
+        font-size 18px
 </style>
