@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-    <nav class="common-search">
-      <div class="common-search-box">
-        <input type="text" placeholder="搜产品/理财师/话题" />
-        <nav>
-          <span>热点：</span>
-          <a href="javascript:;">一带一路</a>
-          <a href="javascript:;">林州重机</a>
-          <a href="javascript:;">比特币</a>
-          <a href="javascript:;">很赚钱</a>
-        </nav>
-      </div>
-      <div class="common-sign">
-        <i></i>
-        <a href="javascript:;">登录</a>
-        <span>|</span>
-        <a href="javascript:;">注册</a>
-      </div>
-    </nav>
+    <div class="bg-white">
+      <nav class="common-search">
+        <div class="common-search-box">
+          <input type="text" placeholder="搜产品/理财师/话题" />
+          <nav>
+            <span>热点：</span>
+            <a href="javascript:;">一带一路</a>
+            <a href="javascript:;">林州重机</a>
+            <a href="javascript:;">比特币</a>
+            <a href="javascript:;">很赚钱</a>
+          </nav>
+        </div>
+        <div class="common-sign">
+          <i></i>
+          <a href="javascript:;">登录</a>
+          <span>|</span>
+          <a href="javascript:;">注册</a>
+        </div>
+      </nav>
+    </div>
     <header class="common-header">
       <nav class="common-inner">
         <router-link tag="a" to="/top" exact>首页</router-link>
@@ -40,32 +42,8 @@
 </template>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "./base";
-  *
-    margin 0
-    padding 0
-  body
-    font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size 15px
-    background-color #f8f8f8
-    color #666
-  a
-    text-decoration none 
-    color #666
-  input 
-    outline none
-  i,em,b,strong
-    font-style normal
-    font-weight normal
-  li 
-    list-style none 
-  img 
-    border none
-  .clearfix:after 
-    content ""
-    display block 
-  .clearfix 
-    *zoom 1 
+  @import "./styl/base";
+  @import "./styl/reset";
 
   .fade-enter-active, .fade-leave-active
     transition all .2s ease
@@ -75,6 +53,8 @@
   
   .main-width
     width main-width
+  .bg-white
+    background-color #fff
   .common-search
     position relative
     height 126px
