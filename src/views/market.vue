@@ -70,6 +70,8 @@
                 <li><a href="javascript:;">佣金</a></li> 
                 <li><a href="javascript:;">人气</a></li> 
                 <li><a href="javascript:;">抵押</a></li> 
+
+                <li class="market-newproduct"><a href="javascript:;">发布新产品</a></li>
             </ul>
 
             <div>
@@ -152,6 +154,7 @@
                     height 20px 
                     background url(/public/delete.png) no-repeat center center 
         > ul 
+            position relative
             display flex
             padding 0 18px
 
@@ -167,6 +170,18 @@
 
                 &:nth-child(2)
                     background-position 45px center
+            li.market-newproduct
+                position absolute
+                top -14px
+                right 0
+                width 130px
+                height 30px
+                line-height 30px 
+                text-align center
+                font-size 14px 
+                background color-yellow
+                a
+                    color #fff
 
     .market-page 
         display flex
@@ -192,4 +207,5 @@
     .market-bottom
         background-color #fff
         padding-bottom 40px 
+
 </style>
