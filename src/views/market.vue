@@ -4,72 +4,38 @@
             <p>首页>金融超市</p>
             <ul>
                 <li><span>产品类型：</span></li>
-                <li><a class="color-red" href="javascript:;">信托</a></li>
-                <li><a class="color-red" href="javascript:;">资管</a></li>
-                <li><a href="javascript:;">债券基金</a></li>
-                <li><a href="javascript:;">证券基金</a></li>
-                <li><a href="javascript:;">股权基金</a></li>
+                <li @click="fnChoose(item,pro_type)" v-for="(item,index) in pro_type" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
             </ul>
             <ul>
                 <li><span>认购起点：</span></li>
-                <li><a class="color-red" href="javascript:;">不限</a></li>
-                <li><a href="javascript:;">0~50万</a></li>
-                <li><a href="javascript:;">50~100万</a></li>
-                <li><a href="javascript:;">100~300万</a></li>
-                <li><a href="javascript:;">300万以上</a></li>
+                <li @click="fnChoose(item,origin)" v-for="(item,index) in origin" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
             </ul>
             <ul>
                 <li><span>产品期限：</span></li>
-                <li><a class="color-red" href="javascript:;">不限</a></li>
-                <li><a href="javascript:;">0~6个月</a></li>
-                <li><a href="javascript:;">6~12个月</a></li>
-                <li><a href="javascript:;">12~24个月</a></li>
-                <li><a href="javascript:;">24~36个月</a></li>
-                <li><a href="javascript:;">36个月以上</a></li>
+                <li @click="fnChoose(item,pro_time)" v-for="(item,index) in pro_time" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
             </ul>
             <ul>
                 <li><span>预期收益：</span></li>
-                <li><a class="color-red" href="javascript:;">不限</a></li>
-                <li><a href="javascript:;">0~10%</a></li>
-                <li><a href="javascript:;">10~20%</a></li>
-                <li><a href="javascript:;">20~50%</a></li>
-                <li><a href="javascript:;">50%以上</a></li>
+                <li @click="fnChoose(item,expect)" v-for="(item,index) in expect" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
             </ul>
             <ul>
                 <li><span>产品状态：</span></li>
-                <li><a class="color-red" href="javascript:;">不限</a></li>
-                <li><a href="javascript:;">预热</a></li>
-                <li><a href="javascript:;">在售</a></li>
-                <li><a href="javascript:;">已结束</a></li>
+                <li @click="fnChoose(item,pro_status)" v-for="(item,index) in pro_status" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
             </ul>
             <ul>
                 <li><span>金斗云评级：</span></li>
-                <li><a class="color-red" href="javascript:;">不限</a></li>
-                <li><a href="javascript:;">五星</a></li>
-                <li><a href="javascript:;">四星</a></li>
-                <li><a href="javascript:;">三星</a></li>
-                <li><a href="javascript:;">二星</a></li>
-                <li><a href="javascript:;">一星</a></li>
+                <li @click="fnChoose(item,star)" v-for="(item,index) in star" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
             </ul>
         </div>
         <div class="main-width market-main">
             <nav>
-                <div>
-                    <span>信托</span>
-                    <a href="javascript:;"></a>
-                </div>
-                <div>
-                    <span>资管</span>
-                    <a href="javascript:;"></a>
+                <div v-show="item.name!='不限'" v-for="(item,index) of chooseItems" :key="index">
+                    <span>{{item.name}}</span>
+                    <a @click="fnCacelChoose(item)" href="javascript:;"></a>
                 </div>
             </nav>
             <ul>
-                <li><a href="javascript:;">综合</a></li> 
-                <li><a href="javascript:;">成交量</a></li> 
-                <li class="active"><a href="javascript:;">收益</a></li> 
-                <li><a href="javascript:;">佣金</a></li> 
-                <li><a href="javascript:;">人气</a></li> 
-                <li><a href="javascript:;">抵押</a></li> 
+                <li @click="fnSort(item)" :class="item.sort?'active':''" v-for="(item,key) in sort_type" :key="index"><a href="javascript:;">{{item.name}}</a></li>  
 
                 <li class="market-newproduct"><a href="javascript:;">发布新产品</a></li>
             </ul>
@@ -100,7 +66,100 @@
 
     export default {
         data(){
-            return {}
+            return {
+                pro_type: [
+                    {/*"id":1,*/"name": "不限","select": true,"parent":"pro_type"},
+                    {"name": "信托","select": false,"parent":"pro_type"},
+                    {"name": "资管","select": false,"parent":"pro_type"},
+                    {"name": "债券基金","select": false,"parent":"pro_type"},
+                    {"name": "证券基金","select": false,"parent":"pro_type"},
+                    {"name": "股权基金","select": false,"parent":"pro_type"}
+                ],
+                origin: [
+                   {"name": "不限","select": true,"parent":"origin"}, 
+                   {"name": "0~50万","select": false,"parent":"origin"}, 
+                   {"name": "50~100万","select": false,"parent":"origin"}, 
+                   {"name": "100~300万","select": false,"parent":"origin"}, 
+                   {"name": "300万以上","select": false,"parent":"origin"} 
+                ],
+                pro_time: [
+                    {"name": "不限","select": true,"parent":"pro_time"}, 
+                    {"name": "0~6个月","select": false,"parent":"pro_time"}, 
+                    {"name": "6~12个月","select": false,"parent":"pro_time"}, 
+                    {"name": "12~24个月","select": false,"parent":"pro_time"}, 
+                    {"name": "24~36个月","select": false,"parent":"pro_time"},
+                    {"name": "36个月以上","select": false,"parent":"pro_time"}
+                ],
+                expect: [
+                    {"name": "不限","select": true,"parent":"expect"}, 
+                    {"name": "0~10%","select": false,"parent":"expect"}, 
+                    {"name": "10~20%","select": false,"parent":"expect"}, 
+                    {"name": "20~50%","select": false,"parent":"expect"}, 
+                    {"name": "50%以上","select": false,"parent":"expect"}
+                ],
+                pro_status: [
+                    {"name": "不限","select": true,"parent":"pro_status"},
+                    {"name": "预热","select": false,"parent":"pro_status"},
+                    {"name": "在售","select": false,"parent":"pro_status"},
+                    {"name": "已结束","select": false,"parent":"pro_status"}
+                ],
+                star: [
+                    {"name": "不限","select": true,"parent":"star"},
+                    {"name": "五星","select": false,"parent":"star"},
+                    {"name": "四星","select": false,"parent":"star"},
+                    {"name": "三星","select": false,"parent":"star"},
+                    {"name": "二星","select": false,"parent":"star"},
+                    {"name": "一星","select": false,"parent":"star"},
+                ],
+
+                sort_type: [
+                    {"name": "综合", "sort": true},
+                    {"name": "成交量", "sort": false},
+                    {"name": "收益", "sort": false},
+                    {"name": "佣金", "sort": false},
+                    {"name": "人气", "sort": false},
+                    {"name": "抵押", "sort": false},
+                ]
+            }
+        },
+        computed: {
+            chooseItems(){
+                return this.fnSelect(this.pro_type)
+                .concat(this.fnSelect(this.origin))
+                .concat(this.fnSelect(this.pro_time))
+                .concat(this.fnSelect(this.expect))
+                .concat(this.fnSelect(this.pro_status))
+                .concat(this.fnSelect(this.star))
+            }
+        },
+        methods: {
+            fnSelect(parent){
+                var arr = [];
+                for (var i = 0; i < parent.length; i++) {
+                    if(parent[i].select){
+                        arr.push(parent[i])
+                    }
+                }
+                return arr;
+            },
+            fnCacelChoose(item){
+                item.select = false;
+                var parents = ["pro_type","origin","pro_time","expect","pro_status","star"];
+                this[parents[parents.indexOf(item.parent)]][0].select = true;
+                
+            },
+            fnChoose(item,parent){
+                for(var i=0; i<parent.length;i++){
+                    parent[i].select = false;
+                }
+                item.select = true;
+            },
+            fnSort(item){
+                for (var i = 0; i < this.sort_type.length; i++) {
+                    this.sort_type[i].sort = false;
+                }
+                item.sort = true;
+            }
         },
         components: {
             commonItem,
@@ -138,14 +197,15 @@
             padding 12px 0 16px
             > div
                 position relative
-                width 80px
+                // min-width 80px
                 height 30px
                 line-height 30px 
                 margin-right 12px
                 background-color color-red
                 font-size 14px 
                 color #fff
-                text-indent 7px
+                box-sizing border-box
+                padding 0 20px 0 7px
                 > a 
                     position absolute
                     top 5px 
@@ -167,6 +227,8 @@
 
                 &.active
                     background-image url(/public/sort-r.png)
+                    a 
+                        color color-red
 
                 &:nth-child(2)
                     background-position 45px center

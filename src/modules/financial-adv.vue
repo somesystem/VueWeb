@@ -96,6 +96,7 @@
                 line-height 16px 
                 display flex 
                 padding 6px 0
+                cursor pointer
                 > *
                     display block
                 > i 
