@@ -82,6 +82,7 @@
     .common-item
         padding 18px
         display flex
+        border 1px solid #e5e5e5
         justify-content space-between
         background-color #fff
         margin-bottom 12px

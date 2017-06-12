@@ -23,7 +23,7 @@
     <header class="common-header">
       <nav class="common-inner">
         <router-link tag="a" to="/top" exact>首页</router-link>
-        <router-link tag="a" to="/market">金融超市</router-link>
+        <router-link tag="a" to="/market">金融超市<i></i></router-link>
         <router-link tag="a" to="/t2">找理财师</router-link>
         <router-link tag="a" to="/t3">理财社区</router-link>
       </nav>
@@ -54,6 +54,9 @@
   .main-width
     width main-width
     margin 0 auto
+  .color-red
+    color color-red
+
   .bg-white
     background-color #fff
   .common-search
@@ -108,6 +111,7 @@
     margin: 0 auto
     display flex
     > a
+      position relative
       display block
       width 120px
       height 40px
@@ -115,6 +119,14 @@
       color #fff
       text-align center
       font-size 18px
+
+      > i 
+        position absolute
+        right 9px
+        top 18px
+        border-top 6px solid #fff
+        border-left 6px solid transparent
+        border-right 6px solid transparent
 
       &.router-link-active
         background-color color-red-select
