@@ -41,7 +41,7 @@
                     <a href="javascript:;">预览资料</a>
                 </div>
                 
-                <a href="javascript:;">立即购买</a>
+                <a href="javascript:;">立即预约</a>
             </div>
         </div>
         <div class="common-item-r">

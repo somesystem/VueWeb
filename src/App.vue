@@ -72,7 +72,7 @@
       width 480px
       height 24px;
       line-height 24px
-      padding 20px
+      padding 10px 20px
       border 2px solid color-red
       font-size 18px
       color #666
