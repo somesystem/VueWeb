@@ -67,15 +67,18 @@ export function createRouter () {
                         component: joinStep1View
                     },
                     {
-                        path: 'step2',
+                        path: 'step2/:type',
+                        name: 'joinStep2',
                         component: joinStep2View
                     },
                     {
-                        path: 'step3',
+                        path: 'step3/:type',
+                        name: 'joinStep3',
                         component: joinStep3View
                     },
                     {
-                        path: 'step4',
+                        path: 'step4/:type',
+                        name: 'joinStep4',
                         component: joinStep4View
                     }
                 ]

@@ -28,9 +28,25 @@
         margin 0 auto
         box-sizing border-box
     .color-red
-        color color-red
+        color color-red !important
     .bg-white
         background-color #fff
     .bg-grey
         background-color #f8f8f8
+
+</style>
+
+<style>
+    ::-webkit-input-placeholder{
+        color: #a5a5a5;
+    }
+    :-moz-placeholder {
+        color: #a5a5a5;
+    }
+    ::-moz-placeholder{
+        color: #a5a5a5;
+    }
+    :-ms-input-placeholde{
+        color: #a5a5a5;
+    }
 </style>

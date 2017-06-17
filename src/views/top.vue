@@ -67,7 +67,7 @@
 
         <div class="top-warpper main-width">
 
-            <common-item v-for="item in 5"></common-item>
+            <common-item :key="index" v-for="(item,index) in 5"></common-item>
             
             <!-- <router-view class="view"></router-view> -->
             <a href="javascript:;" class="top-more">查看更多</a>
@@ -92,7 +92,7 @@
                         </a>
                     </section>
                     <ul>
-                        <li v-for="i in 5"><a href="javascript:;">是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算</a></li>
+                        <li :key="index" v-for="(i,index) in 5"><a href="javascript:;">是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算</a></li>
                     </ul>
                 </div>
                 

@@ -41,7 +41,7 @@
             </ul>
 
             <div>
-                <common-item v-for="item in 5"></common-item>
+                <common-item :key="index" v-for="(item,index) in 5"></common-item>
                 <nav class="market-page">
                     <a href="javascript:;">首页</a>
                     <a href="javascript:;">上一页</a>

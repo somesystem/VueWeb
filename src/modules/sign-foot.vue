@@ -28,7 +28,7 @@
         padding 60px 0 20px
         font-size size3
         color color3 
-        line-height 12px 
+        line-height size3 
         > nav 
             display flex
             justify-content center 
