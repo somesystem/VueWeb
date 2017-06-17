@@ -30,17 +30,17 @@
         padding 18px 0
         > h3 
             height 14px 
-            font-size 12px 
             line-height 14px
             text-indent 18px 
-            color #000
+            font-size size4 
+            color color4 
     .common-cell-c
         padding 26px 18px 0
         border-right 1px solid #e5e5e5
 
         > p 
-            color #000
-            font-size 14px 
+            font-size size3 
+            color color3 
             line-height 26px 
     
     .common-cell:last-of-type .common-cell-c
@@ -60,11 +60,13 @@
                 height 18px 
                 line-height 18px 
                 span:nth-child(1)
-                    color #000
-                    font-size 18px
+                    font-size size1 
+                    color color1 
                     margin-right 12px
+
                 span:nth-child(2)
-                    font-size 12px
+                    font-size size5 
+                    color color5 
             > a 
                 display block
                 margin-top 12px

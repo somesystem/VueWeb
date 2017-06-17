@@ -108,11 +108,12 @@
                     font-size 12px 
                 > span
                     width 56px 
-                    color #000
-                    font-size 14px 
+                    color color3
+                    font-size size3 
 
                 > b 
-                    font-size 12px 
+                    font-size size5
+                    color color5 
                     width 78px
 
         > a 
@@ -122,8 +123,8 @@
             width 100%
             padding-right 12px
             box-sizing border-box
-            color #000
-            font-size 14px
+            color color3
+            font-size size3 
             line-height 14px 
             text-align right
 </style>

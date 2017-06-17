@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-grey">
         <div class="top-banner">
             <div class="main-width">
                 <div class="top-fill">
@@ -119,6 +119,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
+
     .top-banner
         height 400px
         padding-top 50px
@@ -222,7 +223,8 @@
                     color #000
                     margin-right 34px
                     a
-                        color #000
+                        color color2 
+                        font-size size2 
             > a
                 display block
                 width 125px
@@ -293,10 +295,10 @@
                 overflow hidden
                 white-space nowrap
                 text-overflow ellipsis
-                font-size 12px 
                 line-height 14px 
                 a 
-                    color #000
+                    font-size size3 
+                    color color3 
                 
                 &:last-of-type
                     margin-bottom 0

@@ -104,13 +104,14 @@
             
             span
                 display block
-                font-size 18px
-                color #000
+                font-size size1
+                color color1
+
             span:nth-child(2)
                 margin-left 15px
-                font-size 12px
                 text-align center
-                color #fff
+                font-size size4
+                color color4
                 width 36px
                 height 20px
                 background url(/public/sign.png) no-repeat center center 
@@ -129,7 +130,8 @@
                 color color-red
                 margin-bottom 14px
             p:nth-child(2)
-                font-size 12px
+                font-size size5
+                color color5 
                 line-height 14px
         > section
             width 228px
@@ -159,8 +161,11 @@
         padding-top 15px
         > div
             display flex
-            font-size 12px
             line-height 14px
+            > span, > a 
+                font-size size5
+                color color5
+
             > a
                 display block
                 margin-right 18px
@@ -202,7 +207,8 @@
 
     .common-item-r-t
         height 14px
-        font-size 12px 
+        font-size size5
+        color color5
         line-height 14px
         text-align right
         padding-right 10px
@@ -230,8 +236,8 @@
             p:nth-child(2)
                 height 14px
                 line-height 14px
-                font-size 14px
-                color #000
+                font-size size2 
+                color color2 
     .common-item-r-b
         display flex
         align-items center
@@ -242,13 +248,16 @@
                 text-align center 
                 height 16px 
                 line-height 16px 
-                font-size 14px
-                color #000
+                color color3
+                font-size size3
                 &:nth-child(1)
                     margin-bottom 10px
+                    color color2
+                    font-size size2
                 span:nth-child(2)
                     margin-left 14px
-                    font-size 12px
+                    color color5
+                    font-size size5
                     color color-black
         > div:nth-child(2)
             flex 2
