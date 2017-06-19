@@ -111,7 +111,7 @@
                 margin-left 15px
                 text-align center
                 font-size size4
-                color color4
+                color #fff
                 width 36px
                 height 20px
                 background url(/public/sign.png) no-repeat center center 

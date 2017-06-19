@@ -6,7 +6,7 @@
                 <div class="top-aside-warpper">
                     <a href="javascript:;"></a>
                     <div class="top-aside-box">
-                        <common-cell :key="index" v-for="(item,index) in 4"></common-cell>
+                        <common-cell :key="item" v-for="item in 4"></common-cell>
                     </div>
                     <a href="javascript:;"></a>
                 </div>

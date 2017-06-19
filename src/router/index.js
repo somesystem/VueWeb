@@ -11,6 +11,7 @@ const UserView = () => import('../views/UserView.vue')
 const navView = () => import('../views/nav.vue')
 const topView = () => import('../views/top.vue')
 const marketView = () => import('../views/market.vue')
+const financialView = () => import('../views/financial.vue')
 
 const loginView = () => import('../views/login.vue')
 const loginAccoutView = () => import('../views/login-account.vue')
@@ -40,6 +41,10 @@ export function createRouter () {
                         path: 'market',
                         component: marketView
                     },
+                    {
+                        path: 'financial',
+                        component: financialView
+                    }
                     // ...
                 ]
             },

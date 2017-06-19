@@ -1,55 +1,66 @@
 <template>
-    <div>
-        <div class="market-top main-width">
+    <div class="bg-grey">
+        <div class="common-nav-top main-width">
             <p>首页>金融超市</p>
-            <ul>
-                <li><span>产品类型：</span></li>
-                <li @click="fnChoose(item,pro_type)" v-for="(item,index) in pro_type" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
-            </ul>
-            <ul>
-                <li><span>认购起点：</span></li>
-                <li @click="fnChoose(item,origin)" v-for="(item,index) in origin" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
-            </ul>
-            <ul>
-                <li><span>产品期限：</span></li>
-                <li @click="fnChoose(item,pro_time)" v-for="(item,index) in pro_time" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
-            </ul>
-            <ul>
-                <li><span>预期收益：</span></li>
-                <li @click="fnChoose(item,expect)" v-for="(item,index) in expect" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
-            </ul>
-            <ul>
-                <li><span>产品状态：</span></li>
-                <li @click="fnChoose(item,pro_status)" v-for="(item,index) in pro_status" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
-            </ul>
-            <ul>
-                <li><span>金斗云评级：</span></li>
-                <li @click="fnChoose(item,star)" v-for="(item,index) in star" :key="index"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
-            </ul>
-        </div>
-        <div class="main-width market-main">
             <nav>
-                <div v-show="item.name!='不限'" v-for="(item,index) of chooseItems" :key="index">
+                <div><span>产品类型：</span></div>
+                <ul>
+                    <li @click="fnChoose(item,pro_type)" v-for="(item,index) in pro_type"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <div><span>认购起点：</span></div>
+                <ul>
+                    <li @click="fnChoose(item,origin)" v-for="(item,index) in origin"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <div><span>产品期限：</span></div>
+                <ul>
+                    <li @click="fnChoose(item,pro_time)" v-for="(item,index) in pro_time"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <div><span>预期收益：</span></div>
+                <ul>
+                    <li @click="fnChoose(item,expect)" v-for="(item,index) in expect"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <div><span>产品状态：</span></div>
+                <ul>
+                    <li @click="fnChoose(item,pro_status)" v-for="(item,index) in pro_status"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <div><span>金斗云评级：</span></div>
+                <ul>
+                    <li @click="fnChoose(item,star)" v-for="(item,index) in star"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main-width common-nav-sort">
+            <nav>
+                <div v-show="item.name!='不限'" v-for="(item,index) of chooseItems">
                     <span>{{item.name}}</span>
                     <a @click="fnCacelChoose(item)" href="javascript:;"></a>
                 </div>
             </nav>
             <ul>
-                <li @click="fnSort(item)" :class="item.sort?'active':''" v-for="(item,key) in sort_type" :key="index"><a href="javascript:;">{{item.name}}</a></li>  
+                <li @click="fnSort(item)" :class="item.sort?'active':''" v-for="(item,key) in sort_type"><a href="javascript:;"><span>{{item.name}}</span><i></i></a></li>  
 
                 <li class="market-newproduct"><a href="javascript:;">发布新产品</a></li>
             </ul>
-
-            <div>
-                <common-item :key="index" v-for="(item,index) in 5"></common-item>
-                <nav class="market-page">
-                    <a href="javascript:;">首页</a>
-                    <a href="javascript:;">上一页</a>
-                    <span>第1页/共5页</span>
-                    <a href="javascript:;">下一页</a>
-                    <a href="javascript:;">尾页</a>
-                </nav>
-            </div>
+        </div>
+        <div class="main-width market-main">
+            <common-item :key="item" v-for="item in 5"></common-item>
+            <nav class="market-page">
+                <a href="javascript:;">首页</a>
+                <a href="javascript:;">上一页</a>
+                <span>第1页/共5页</span>
+                <a href="javascript:;">下一页</a>
+                <a href="javascript:;">尾页</a>
+            </nav>
         </div>
 
         <div class="market-bottom">
@@ -125,11 +136,11 @@
         computed: {
             chooseItems(){
                 return this.fnSelect(this.pro_type)
-                .concat(this.fnSelect(this.origin))
-                .concat(this.fnSelect(this.pro_time))
-                .concat(this.fnSelect(this.expect))
-                .concat(this.fnSelect(this.pro_status))
-                .concat(this.fnSelect(this.star))
+                    .concat(this.fnSelect(this.origin))
+                    .concat(this.fnSelect(this.pro_time))
+                    .concat(this.fnSelect(this.expect))
+                    .concat(this.fnSelect(this.pro_status))
+                    .concat(this.fnSelect(this.star))
             }
         },
         methods: {
@@ -169,82 +180,7 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
-    .market-top
-        background-color #fff
-        box-sizing border-box
-        padding 18px
-        margin-top 18px 
-        > p 
-            height 30px
-            line-heght 30px
-            font-size 14px
-            color #000
-        > ul 
-            display flex
-            height 36px
-            line-heght 36px
-            
-            > li 
-                width 100px
-                font-size 14px 
-                text-align center
-            > li:nth-child(1)
-                text-align left
     
-    .market-main
-        > nav
-            display flex
-            padding 12px 0 16px
-            > div
-                position relative
-                // min-width 80px
-                height 30px
-                line-height 30px 
-                margin-right 12px
-                background-color color-red
-                font-size 14px 
-                color #fff
-                box-sizing border-box
-                padding 0 20px 0 7px
-                > a 
-                    position absolute
-                    top 5px 
-                    right 0 
-                    width 20px 
-                    height 20px 
-                    background url(/public/delete.png) no-repeat center center 
-        > ul 
-            position relative
-            display flex
-            padding 0 18px
-
-            li 
-                width 100px
-                height 14px 
-                line-height 14px 
-                font-size 14px 
-                background url(/public/sort-g.png) no-repeat 31px center
-
-                &.active
-                    background-image url(/public/sort-r.png)
-                    a 
-                        color color-red
-
-                &:nth-child(2)
-                    background-position 45px center
-            li.market-newproduct
-                position absolute
-                top -14px
-                right 0
-                width 130px
-                height 30px
-                line-height 30px 
-                text-align center
-                font-size 14px 
-                background color-yellow
-                a
-                    color #fff
-
     .market-page 
         display flex
         justify-content center 
@@ -260,6 +196,7 @@
             font-size 14px
             color #000
             margin-right 20px 
+            background-color #fff 
             &:last-child 
                 margin-right 0px
         > span 
