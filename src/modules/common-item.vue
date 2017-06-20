@@ -265,7 +265,7 @@
                 margin 0 auto
                 display block
                 width 72px
-                heith 26px
+                height 26px
                 line-height 26px
                 text-align center
                 font-size 12px

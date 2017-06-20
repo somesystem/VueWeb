@@ -30,7 +30,7 @@
         </div>
         <div class="main-width common-nav-sort">
             <nav>
-                <div v-show="item.name!='全部' || item.name!='不限'" v-for="(item,index) of chooseItems">
+                <div v-show="item.name!='全部' && item.name!='不限'" v-for="(item,index) of chooseItems">
                     <span>{{item.name}}</span>
                     <a @click="fnCacelChoose(item)" href="javascript:;"></a>
                 </div>
@@ -40,10 +40,61 @@
 
             </ul>
         </div>
+
+        <div class="main-width">
+            <div class="financial-item-box">
+                <financial-item :key="i" v-for="i in 9"></financial-item>
+            </div>
+
+            <nav class="common-top-page">
+                <a href="javascript:;">首页</a>
+                <a href="javascript:;">上一页</a>
+                <span>第1页/共5页</span>
+                <a href="javascript:;">下一页</a>
+                <a href="javascript:;">尾页</a>
+            </nav>
+        </div>
+
+        <div class="financial-bottom">
+            <div class="main-width">
+                <h2>Ta的理财经</h2>
+                <div class="financial-article-box">
+                    <div class="financial-article">
+                        <h3><a href="javascript:;">当前经济形势下，安全稳健的投资策略是什么？</a></h3>
+                        <div>
+                            <div>
+                                <img src="" />
+                                <a href="javascript:;">3984</a>
+                            </div>
+                            <div>
+                                <h4><span>蔡大大</span><i>上海宽象资本投资</i></h4>
+                                <p>如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的...<a class="color-red" href="javascript:;">查看全部</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="financial-article">
+                        <h3><a href="javascript:;">当前经济形势下，安全稳健的投资策略是什么？</a></h3>
+                        <div>
+                            <div>
+                                <img src="" />
+                                <a href="javascript:;">3984</a>
+                            </div>
+                            <div>
+                                <h4><span>蔡大大</span><i>上海宽象资本投资</i></h4>
+                                <p>如今我们处们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的...<a class="color-red" href="javascript:;">查看全部</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="financial-article-more" href="javascript:;">查看全部理财问答>></a>
+            </div>
+        </div>
     </div>
 </template>
 
 <script type="text/javascript">
+    import financialItem from "../modules/financial-item.vue";
+
     export default {
         data(){
             return {
@@ -120,13 +171,11 @@
             }
         },
         computed: {
-            computed: {
-                chooseItems(){
-                    return this.fnSelect(this.area)
-                        .concat(this.fnSelect(this.sex))
-                        .concat(this.fnSelect(this.major))
-                        .concat(this.fnSelect(this.mechanism))
-                }
+            chooseItems(){
+                return this.fnSelect(this.area)
+                    .concat(this.fnSelect(this.sex))
+                    .concat(this.fnSelect(this.major))
+                    .concat(this.fnSelect(this.mechanism))
             }
         },
         methods: {
@@ -169,9 +218,92 @@
                 json.active = !this.more.active;
                 this.more = json;
             }
+        },
+        components: {
+            financialItem
         }
     }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+    @import "../styl/base";
+
+    .financial-item-box
+        padding-top 18px 
+        overflow hidden
+
+        .financial-item 
+            float left 
+    .financial-bottom
+        background-color #fff
+        
+        h2 
+            height 40px
+            line-height 40px 
+            font-size 18px 
+            color color-red
+
+    .financial-article-box
+        display flex
+    .financial-article
+        flex 1
+        padding 26px 
+        border 1px solid #e5e5e5
+        &:first-child
+            margin-right 16px 
+        > h3 
+            height size1 
+            line-height size1
+            font-size size1 
+            &,a 
+                color size1 
+        > div 
+            padding-top 18px 
+            display flex 
+            > div 
+                &:nth-child(1)
+                    margin-right 18px 
+                    width 46px 
+                    text-align center
+                    img 
+                        display block 
+                        width 46px 
+                        height 46px 
+                    a 
+                        margin 12px auto 
+                        display block
+                        font-size 10px
+                        width 42px 
+                        height 18px 
+                        line-height 18px 
+                        color #fff 
+                        border-radius 5px 
+                        background url(/public/zan.png) no-repeat
+                        text-indent 10px 
+
+                &:nth-child(2)
+                    flex 1
+                    h4  
+                        margin-bottom 14px 
+                        height size2
+                        line-height size2
+                        font-size size2 
+                        color color2 
+
+                        i 
+                            margin-left 12px 
+                            font-size size5
+                            color color5
+                    > p 
+                        line-height 18px 
+                        font-size size3 
+                        color color3 
+                        text-align justify
+    .financial-article-more 
+        display block
+        height 40px 
+        line-height 40px 
+        text-align right
+        font-size size2 
+        color color2 
 </style>

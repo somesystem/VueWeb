@@ -139,7 +139,28 @@
                     display block
                     color #fff
                     text-align center
-
+    
+    .common-top-page 
+        display flex
+        justify-content center 
+        align-items center 
+        padding-bottom 12px
+        > a 
+            display block
+            width 60px
+            height 26px 
+            line-height 26px 
+            border 1px solid #e5e5e5
+            text-align center
+            font-size 14px
+            color #000
+            margin-right 20px 
+            background-color #fff 
+            &:last-child 
+                margin-right 0px
+        > span 
+            color #000
+            margin-right 20px 
 </style>
 
 <style>

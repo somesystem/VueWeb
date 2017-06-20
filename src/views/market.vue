@@ -54,7 +54,7 @@
         </div>
         <div class="main-width market-main">
             <common-item :key="item" v-for="item in 5"></common-item>
-            <nav class="market-page">
+            <nav class="common-top-page">
                 <a href="javascript:;">首页</a>
                 <a href="javascript:;">上一页</a>
                 <span>第1页/共5页</span>
@@ -180,28 +180,6 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
-    
-    .market-page 
-        display flex
-        justify-content center 
-        align-items center 
-        padding-bottom 12px
-        > a 
-            display block
-            width 60px
-            height 26px 
-            line-height 26px 
-            border 1px solid #e5e5e5
-            text-align center
-            font-size 14px
-            color #000
-            margin-right 20px 
-            background-color #fff 
-            &:last-child 
-                margin-right 0px
-        > span 
-            color #000
-            margin-right 20px 
 
     .market-bottom
         background-color #fff
