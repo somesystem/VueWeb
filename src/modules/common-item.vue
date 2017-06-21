@@ -82,7 +82,7 @@
     .common-item
         padding 18px
         display flex
-        border 1px solid #e5e5e5
+        border color-border
         justify-content space-between
         background-color #fff
         margin-bottom 12px
@@ -125,8 +125,8 @@
             flex 1
             text-align center
             p:nth-child(1)
-                font-size 18px
-                line-height 18px
+                font-size 20px
+                line-height 20px
                 color color-red
                 margin-bottom 14px
             p:nth-child(2)
@@ -203,7 +203,7 @@
             text-align center
 
     .common-item-r
-        border-left 1px solid #e5e5e5
+        border-left color-border
 
     .common-item-r-t
         height 14px
@@ -218,7 +218,7 @@
         align-items center
         > div:nth-child(1)
             flex 3
-            border-right 1px solid #e5e5e5
+            border-right color-border
             img 
                 display block
                 margin 0 auto
@@ -268,7 +268,7 @@
                 height 26px
                 line-height 26px
                 text-align center
-                font-size 12px
+                font-size 14px
                 color color-blue
                 border-radius 5px
                 border 1px solid color-blue

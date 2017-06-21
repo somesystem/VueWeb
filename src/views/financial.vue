@@ -57,7 +57,7 @@
 
         <div class="financial-bottom">
             <div class="main-width">
-                <h2>Ta的理财经</h2>
+                <h2 class="common-h2">Ta的理财经</h2>
                 <div class="financial-article-box">
                     <div class="financial-article">
                         <h3><a href="javascript:;">当前经济形势下，安全稳健的投资策略是什么？</a></h3>
@@ -228,27 +228,16 @@
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
 
-    .financial-item-box
-        padding-top 18px 
-        overflow hidden
-
-        .financial-item 
-            float left 
     .financial-bottom
         background-color #fff
-        
-        h2 
-            height 40px
-            line-height 40px 
-            font-size 18px 
-            color color-red
 
     .financial-article-box
         display flex
     .financial-article
         flex 1
         padding 26px 
-        border 1px solid #e5e5e5
+        box-shadow 0 0 8px rgba(0,0,0,0.11)
+
         &:first-child
             margin-right 16px 
         > h3 

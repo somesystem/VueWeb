@@ -34,14 +34,19 @@
     .bg-grey
         background-color #f8f8f8
     
+    .common-h2 
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+        color: color-red;
     .common-nav-top
         background-color #fff
         box-sizing border-box
         padding 18px
         margin-top 18px 
         > p 
-            height 30px
-            line-height 30px
+            height 36px
+            line-height 36px
             font-size 14px
             color #000
         > nav 
@@ -150,7 +155,7 @@
             width 60px
             height 26px 
             line-height 26px 
-            border 1px solid #e5e5e5
+            border color-border
             text-align center
             font-size 14px
             color #000
@@ -161,6 +166,13 @@
         > span 
             color #000
             margin-right 20px 
+
+    .financial-item-box
+        padding-top 18px 
+        overflow hidden
+
+        .financial-item 
+            float left 
 </style>
 
 <style>

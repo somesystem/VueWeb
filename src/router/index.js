@@ -12,15 +12,20 @@ const navView = () => import('../views/nav.vue')
 const topView = () => import('../views/top.vue')
 const marketView = () => import('../views/market.vue')
 const financialView = () => import('../views/financial.vue')
+const suggestView = () => import('../views/suggest.vue')
+const searchView = () => import('../views/search/index.vue')
+const searchProView = () => import('../views/search/s_pro.vue')
+const searchFinanView = () => import('../views/search/s_finan.vue')
+const searchTopicView = () => import('../views/search/s_topic.vue')
 
-const loginView = () => import('../views/login.vue')
-const loginAccoutView = () => import('../views/login-account.vue')
-const loginMobileView = () => import('../views/login-mobile.vue')
-const joinView = () => import('../views/join.vue')
-const joinStep1View = () => import('../views/join-step1.vue')
-const joinStep2View = () => import('../views/join-step2.vue')
-const joinStep3View = () => import('../views/join-step3.vue')
-const joinStep4View = () => import('../views/join-step4.vue')
+const loginView = () => import('../views/login/index.vue')
+const loginAccoutView = () => import('../views/login/login-account.vue')
+const loginMobileView = () => import('../views/login/login-mobile.vue')
+const joinView = () => import('../views/join/index.vue')
+const joinStep1View = () => import('../views/join/join-step1.vue')
+const joinStep2View = () => import('../views/join/join-step2.vue')
+const joinStep3View = () => import('../views/join/join-step3.vue')
+const joinStep4View = () => import('../views/join/join-step4.vue')
 
 export function createRouter () {
     return new Router({
@@ -44,6 +49,32 @@ export function createRouter () {
                     {
                         path: 'financial',
                         component: financialView
+                    },
+                    {
+                        path: 'suggest',
+                        component: suggestView
+                    },
+                    {
+                        path: 'search/:id',
+                        name: 'search',
+                        component: searchView,
+                        children: [
+                            {
+                                path: 'product',
+                                name: 's_pro',
+                                component: searchProView
+                            },
+                            {
+                                path: 'financial',
+                                name: 's_finan',
+                                component: searchFinanView
+                            },
+                            {
+                                path: 'topic',
+                                name: 's_topic',
+                                component: searchTopicView
+                            }
+                        ]
                     }
                     // ...
                 ]

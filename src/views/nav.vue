@@ -1,9 +1,12 @@
 <template>
     <div>
         <div class="bg-white">
-            <nav class="common-search">
+            <nav class="common-search main-width">
                 <div class="common-search-box">
-                    <input type="text" placeholder="搜产品/理财师/话题" />
+                    <div>
+                        <input v-model="searchKey" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
+                        <a @click="fnSeach()" href="javascript:;"></a>
+                    </div>
                     <nav>
                         <span>热点：</span>
                         <a href="javascript:;">一带一路</a>
@@ -41,27 +44,55 @@
     </div>
 </template>
 
+<script type="text/javascript">
+    export default {
+        data(){
+            return {
+                searchKey: ""
+            }
+        },
+        methods: {
+            fnSeach(){
+                if (this.searchKey) {
+                    this.$router.push({name:'s_pro',params:{id:this.searchKey}});
+                }
+            }
+        }
+    }
+
+</script>
+
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
   
     .common-search
         position relative
         height 126px
-        width main-width
     .common-search-box
         padding 26px 0
 
-        > input
-            display: block
+        > div
+            position relative
             margin: 0 auto
-            width 480px
-            height 24px;
-            line-height 24px
-            padding 10px 20px
-            border 2px solid color-red
-            font-size 18px
-            color #666
-            background url(/public/search.png) no-repeat 484px center
+            width 520px
+            > input
+                width 480px 
+                display: block
+                height 24px;
+                line-height 24px
+                padding 10px 20px
+                border 2px solid color-red
+                font-size 18px
+                color #666
+                background url(/public/search.png) no-repeat 484px center
+            > a 
+                position absolute
+                top 50%
+                margin-top -19px 
+                right 5px 
+                width 38px
+                height 38px
+
         > nav
             margin 12px auto 0
             width 520px
@@ -74,7 +105,7 @@
   
     .common-sign
         position absolute
-        right 0
+        right 20px
         top 48px 
         height 30px
         line-height 30px

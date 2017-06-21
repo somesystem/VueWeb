@@ -77,7 +77,7 @@
 
         <article class="top-articel">
             <div class="main-width">
-                <h2>媒体报道</h2>
+                <h2 class="common-h2">媒体报道</h2>
                 <div class="top-articel-main">
                     <section>
                         <a href="javascript:;">
@@ -246,11 +246,6 @@
     .top-articel
         background-color #fff
         padding-bottom 40px
-        h2
-            height 40px 
-            line-height 40px 
-            font-size 18px 
-            color color-red
     
     .top-articel-main
         display flex

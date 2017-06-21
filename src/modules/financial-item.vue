@@ -57,7 +57,7 @@
         margin-right 16px
         margin-bottom 16px
         box-sizing border-box
-        border 1px solid #e5e5e5 
+        border color-border 
 
         &:nth-child(3n)
             margin-right 0
@@ -71,7 +71,7 @@
             color color4 
     .financial-item-t
         padding 0 18px 20px
-        border-bottom 1px solid #e5e5e5
+        border-bottom color-border
         display flex 
 
     .financial-item-l

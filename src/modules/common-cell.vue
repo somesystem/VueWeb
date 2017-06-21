@@ -36,8 +36,8 @@
             color color4 
     .common-cell-c
         padding 26px 18px 0
-        border-right 1px solid #e5e5e5
-
+        border-right color-border
+        margin-top -8px     
         > p 
             font-size size3 
             color color3 

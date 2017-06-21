@@ -8,8 +8,8 @@
 </template>
 
 <script type="text/javascript">
-    import signHead from "../modules/sign-head.vue";
-    import signFoot from "../modules/sign-foot.vue";
+    import signHead from "../../modules/sign-head.vue";
+    import signFoot from "../../modules/sign-foot.vue";
 
     export default {
         data(){
@@ -24,7 +24,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
 
     .join-btn
         display block

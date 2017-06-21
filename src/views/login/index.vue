@@ -21,8 +21,8 @@
 </template>
 
 <script type="text/javascript">
-    import signHead from "../modules/sign-head.vue";
-    import signFoot from "../modules/sign-foot.vue";
+    import signHead from "../../modules/sign-head.vue";
+    import signFoot from "../../modules/sign-foot.vue";
 
     export default {
         data(){
@@ -37,7 +37,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
 
     .login-main
         height 500px
@@ -65,7 +65,7 @@
                 color color1
                 font-size size1 
                 &:nth-child(1) 
-                    border-right 1px solid #e5e5e5
+                    border-right color-border
                 &.router-link-active
                     color color-red 
         input
@@ -73,7 +73,7 @@
             width 300px
             height 40px 
             margin 0 auto 18px
-            border 1px solid #e5e5e5
+            border color-border
             padding 10px 40px
             line-height 20px 
             font-size size3

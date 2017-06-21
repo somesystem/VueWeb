@@ -75,7 +75,7 @@
 </template>
 
 <script type="text/javascript">
-    import joinTop from "../modules/join-top.vue";
+    import joinTop from "../../modules/join-top.vue";
 
     export default {
         data(){
@@ -127,7 +127,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
     
     .join-yzm-btn
         position absolute
@@ -154,7 +154,7 @@
             display block
             width 10px
             height 10px 
-            border 1px solid #e5e5e5
+            border color-border
             cursor pointer
             &.active
                 background url('/public/select-yellow.png') no-repeat center center 
@@ -187,7 +187,7 @@
             display block
             width 300px
             height 40px
-            border 1px solid #e5e5e5
+            border color-border
             padding 10px 40px
             line-height 20px 
             font-size size3
@@ -246,7 +246,7 @@
             height 40px 
             line-height 40px 
             text-align center
-            border 1px solid #e5e5e5
+            border color-border
             color #a5a5a5
             font-size 14px 
             box-sizing border-box

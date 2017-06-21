@@ -10,7 +10,7 @@
 </template>
 
 <script type="text/javascript">
-    import joinTop from "../modules/join-top.vue";
+    import joinTop from "../../modules/join-top.vue";
 
     export default {
         data(){
@@ -35,7 +35,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
     .join-step1
         > ul 
             padding 120px 0

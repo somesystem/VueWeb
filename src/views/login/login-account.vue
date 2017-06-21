@@ -24,7 +24,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
     .login-account
         > input
             &:nth-child(1)

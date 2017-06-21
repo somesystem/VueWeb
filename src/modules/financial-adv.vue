@@ -1,7 +1,7 @@
 <template>   
     <aside class="top-aside">
         <div class="main-width">
-            <h2>{{title}}</h2>
+            <h2 class="common-h2">{{title}}</h2>
             <div class="top-aside-main">
                 <div class="top-aside-warpper">
                     <a href="javascript:;"></a>
@@ -42,11 +42,6 @@
     @import "../styl/base";
     .top-aside
         background-color #fff
-        h2
-            height 40px 
-            line-height 40px 
-            font-size 18px 
-            color color-red
     .top-aside-main
         display flex
     .top-aside-warpper
@@ -73,14 +68,14 @@
     .top-aside-box
         width 940px
         display flex
-        border-top 1px solid #e5e5e5
-        border-bottom 1px solid #e5e5e5
+        border-top color-border
+        border-bottom color-border
     
     .top-aside-sort
         position relative 
         width 158px
         height 208px 
-        border 1px solid #e5e5e5
+        border color-border
         > h3
             height 24px 
             line-height 24px 
