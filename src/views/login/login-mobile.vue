@@ -3,7 +3,7 @@
         <input type="tel" maxlength="11" autocomplete="off" placeholder="请输入手机号码" />
         <div class="login-mobile-yzm">
             <input maxlength="6" type="text" autocomplete="off" placeholder="请输入短信验证码" />
-            <a class="active" href="javascript:;">获取</a>
+            <a @click="getcode()" :class="code.iNow==60?'active':''" href="javascript:;">{{code.msg}}</a>
         </div>
         
 
@@ -19,7 +19,34 @@
 <script type="text/javascript">
     export default {
         data(){
-            return {}
+            return {
+                code: {
+                    msg: "获取",
+                    timer: null,
+                    iNow: 60
+                }
+            }
+        },
+        methods: {
+            getcode(){
+                if (this.code.iNow==60) {
+                    clearInterval(this.code.timer);
+                    this.timebase.call(this);
+                    this.code.timer = setInterval(this.timebase.bind(this),1000);
+                }
+            },
+            timebase(){
+                if (this.code.iNow-- >= 1) {
+                    this.code.msg = this.code.iNow + 's';
+                }else{
+                    this.cleanCode();
+                }
+            },
+            cleanCode(){
+                clearInterval(this.code.timer);
+                this.code.msg = '获取';
+                this.code.iNow = 60;
+            }
         }
     }
 </script>

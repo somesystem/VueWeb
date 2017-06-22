@@ -167,6 +167,9 @@
             color #000
             margin-right 20px 
 
+    .input-error
+        border 1px solid color-red !important
+
     .financial-item-box
         padding-top 18px 
         overflow hidden

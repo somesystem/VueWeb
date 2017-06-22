@@ -4,26 +4,35 @@
         <div class="join-step2-main">
             <div>
                 <div class="join-input-box">
-                    <input class="input-bg-user" type="text" placeholder="请输入您的用户名" />
-                    <p v-show="false">请输入4-20位由字母、数字、中文、“-”、“_”组成的字符</p> 
-                    <p class="color-red">用户名不能为空</p> 
+                    <input :class="nameType>1?'input-error input-bg-user':'input-bg-user'" v-model="yz.name" @focus="yzfocus('name')" @blur="yzBlur('name')" maxlength="20" type="text" placeholder="请输入您的用户名" />
+                    <p v-show="nameType==1" >请输入4-20位由字母、数字、中文、“-”、“_”组成的字符</p> 
+                    <p v-show="nameType==2" class="color-red">用户名不能为空！</p>
+                    <p v-show="nameType==3" class="color-red">用户名格式错误！</p>
                 </div>
                 <div class="join-input-box">
-                    <input class="input-bg-password" maxlength="20" type="text" placeholder="请输入您的密码" />
-                    <p>请输入6-20位由字母数字组成的字符</p> 
+                    <input :class="passType>1?'input-error input-bg-password':'input-bg-password'" v-model="yz.pass" @focus="yzfocus('pass')" @blur="yzBlur('pass')"  maxlength="20" type="password" placeholder="请输入您的密码" />
+                    <p v-show="passType==1">请输入6-20位由字母数字组成的字符</p>
+                    <p v-show="passType==2" class="color-red">密码不能为空！</p>
+                    <p v-show="passType==3" class="color-red">请输入正确的密码！</p>
                 </div>
                 <div class="join-input-box">
-                    <input class="input-bg-password" maxlength="20" type="text" placeholder="请再次输入您的密码" />
-                    <p>请再次输入密码</p> 
+                    <input :class="pass2Type>1?'input-error input-bg-password':'input-bg-password'" v-model="yz.pass2" @focus="yzfocus('pass2')" @blur="yzBlur('pass2')" maxlength="20" type="password" placeholder="请再次输入您的密码" />
+                    <p v-show="pass2Type==1">请再次输入密码</p> 
+                    <p v-show="pass2Type==2" class="color-red">请再次输入密码！</p>
+                    <p v-show="pass2Type==3" class="color-red">两次输入的密码不一致！</p>
                 </div>
                 <div class="join-input-box">
-                    <input class="input-bg-mobile" maxlength="11" type="text" placeholder="请输入手机号码" />
-                    <p>请输入11位由数字组成的手机号码！</p> 
+                    <input :class="telType>1?'input-error input-bg-mobile':'input-bg-mobile'" v-model="yz.tel" @focus="yzfocus('tel')" @blur="yzBlur('tel')" maxlength="11" type="tel" placeholder="请输入手机号码" />
+                    <p v-show="telType==1">请输入11位由数字组成的手机号码！</p>
+                    <p v-show="telType==2" class="color-red">手机号不能为空！</p>
+                    <p v-show="telType==3" class="color-red">请输入正确的手机号！</p>
                 </div>
                 <div class="join-input-box">
-                    <input class="input-bg-yzm" maxlength="6" type="text" placeholder="请输入短信验证码" />
+                    <input :class="codeType>1?'input-error input-bg-yzm':'input-bg-yzm'" v-model="yz.code" @focus="yzfocus('code')" @blur="yzBlur('code')" maxlength="6" type="text" placeholder="请输入短信验证码" />
                     <a class="active join-yzm-btn" href="javascript:;">发送</a>
-                    <p>请输入6位由数字组成的短信验证码！</p> 
+                    <p v-show="codeType==1">请输入6位由数字组成的短信验证码！</p> 
+                    <p v-show="codeType==2" class="color-red">请输入短信验证码！</p>
+                    <p v-show="codeType==3" class="color-red">短信验证码不正确！</p>
                 </div>
             </div>
             
@@ -36,7 +45,7 @@
                     <div v-show="licaiType==1">
                         <div class="join-input-box">
                             <input class="input-bg-company" type="text" placeholder="请输入您的所属公司" /> 
-                            <p class="color-red"></p>
+                            <p v-show="false" class="color-red">所属公司不能为空！</p>
                         </div>
                         <div class="join-input-box">
                             <input class="join-input-readonly" type="text" v-model="fileName1" readonly="readonly" />
@@ -80,6 +89,24 @@
     export default {
         data(){
             return {
+                yz: {
+                    name: '',
+                    pass: '',
+                    pass2: '',
+                    tel: '',
+                    code: '',
+                    nameFocus: false,
+                    passFocus: false,
+                    pass2Focus: false,
+                    telFocus: false,
+                    codeFocus: false
+                },
+                nameType: 0,
+                passType: 0,
+                pass2Type: 0,
+                telType: 0,
+                codeType: 0,
+
                 licaiType: 1,
                 isRead: true,
                 type: this.$route.params.type,
@@ -98,6 +125,57 @@
             
         },
         methods: {
+            yzfocus(type){
+                this.yz[type+'Focus'] = true;
+                this[type+'Type'] = 1
+            },
+            yzBlur(type){
+                this.yz[type+'Focus'] = false;
+                this[type+'Type'] = 0
+            },
+            yzAll(){
+                var reName = /^[\w\-\u4E00-\u9FA5\uFE30-\uFFA0]{4,20}$/;
+                var rePass = /^[\w-]{6,20}$/;
+                var reTel = /^1[3-9]\d{9}$/;
+                var reCode = /^\d{6}$/;
+                var status = true;
+                if (!this.yz.name) {
+                    this.nameType = 2;
+                    status = false;
+                }else if (!reName.test(this.yz.name)) {
+                    this.nameType = 3;
+                    status = false;
+                }
+                if (!this.yz.pass) {
+                    this.passType = 2;
+                    status = false;
+                }else if (!rePass.test(this.yz.pass)) {
+                    this.passType = 3;
+                    status = false;
+                }
+                if (!this.yz.pass2) {
+                    this.pass2Type = 2;
+                    status = false;
+                }else if ( this.yz.pass2 != this.yz.pass ) {
+                    this.pass2Type = 3;
+                    status = false;
+                }
+                if (!this.yz.tel) {
+                    this.telType = 2;
+                    status = false;
+                }else if (!reTel.test(this.yz.tel)) {
+                    this.telType = 3;
+                    status = false;
+                }
+                if (!this.yz.code) {
+                    this.codeType = 2;
+                    status = false;
+                }else if(!reCode.test(this.yz.code)){
+
+                }
+
+                return status;
+            },
             fnNative(){
                 // 切换页面时绑定得取消,故用on
                 var _this = this;
@@ -116,6 +194,11 @@
                 }
             },
             fnNext(){
+                var check = this.yzAll();
+                if (!check) {
+                    return false 
+                }
+
                 // licaiType
                 this.$router.push({name: 'joinStep3', params:{type:this.type}});
             }
