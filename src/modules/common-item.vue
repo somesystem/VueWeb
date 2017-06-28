@@ -41,7 +41,7 @@
                     <a href="javascript:;">预览资料</a>
                 </div>
                 
-                <a href="javascript:;">立即预约</a>
+                <router-link :to="{name:'product',params:{id:'xxx'}}" tag="a">立即预约</router-link>
             </div>
         </div>
         <div class="common-item-r">

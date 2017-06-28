@@ -36,15 +36,38 @@
                     <div class="product-detail">
                         <h2 class="common-h2">产品详情</h2>
                         <h3>产品收益</h3>
-                        <table>
+                        <table cellspacing="0" cellpadding="0">
                             <thead>
-                                <tr><th>期限</th><th>认购金额（万）</th><th>预期年化收益率</th><th>反拥率</th></tr>
+                                <tr><th class="ac">期限</th><th>认购金额（万）</th><th class="ac">预期年化收益率</th><th>反拥率</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td rowspan="2">36个月</td><td>100万≦X≦300万</td><td>6.8%</td><td>1.3%</td></tr>
-                                <tr><td>X≧300万</td><td>7.0%</td><td>1.2%</td></tr>
+                                <tr><td class="ac" rowspan="2">36个月</td><td>100万≦X≦300万</td><td class="ac">6.8%</td><td>1.3%</td></tr>
+                                <tr><td>X≧300万</td><td class="ac">7.0%</td><td>1.2%</td></tr>
                             </tbody>
                         </table>
+                        <h3>产品概况</h3>
+                        <ul>
+                            <li><span>产品名称：</span><span>腾云资产天山9号私募管理基金</span></li>
+                            <li><span>产品状态：</span><span>预热中</span></li>
+                            <li><span>发行机构：</span><span>腾云资产</span></li>
+                            <li><span>本期起售日：</span><span>2017/05/09</span></li>
+                            <li><span>产品期限：</span><span>24个月</span></li>
+                            <li><span>付息方式：</span><span>半年付息</span></li>
+                            <li><span>产品类别：</span><span>债权基金</span></li>
+                            <li><span>基金类型：</span><span>工商企业</span></li>
+                            <li><span>规模：</span><span>3亿</span></li>
+                            <li><span>认购起点：</span><span>100万元</span></li>
+                            <li><span>抵/质押率：</span><span>无抵押</span></li>
+                            <li><span>投资区域：</span><span>广东 深圳</span></li>
+                        </ul>
+                        <ol>
+                            <li><span>融资主体：</span><span>MSJK控股股份有限公司</span></li>
+                            <li><span>资金用途：</span><span>补充上市公司的日常经营资金</span></li>
+                            <li><span>还款来源：</span><span>1.上市公司各项收入<br/>2.上市公司其他再融资管<br/>3.担保方营业收入</span></li>
+                            <li><span>风控措施：</span><span>1.上市公司出具股东大会决议<br/>2.第一大股东天津管理公司提供连带责任担保<br/>3.世纪控制人HJB夫妇提供无限连带责任担保</span></li>
+                            <li><span>项目亮点：</span><span>1.融资方实力雄厚<br/>2.股东背景显赫<br/>3.发展前景远大<br/>4.业绩承诺</span></li>
+                        </ol>
+
                     </div>
                 </div>
                 <div class="product-main-r">
@@ -80,6 +103,29 @@
                             <a href="javascript:;">预览资料</a>
                         </div>
                     </nav>
+                </div>
+            </div>
+
+            <div class="product-other">
+                <div class="main-width">
+                    <div class="product-other-t">
+                        <h2 class="common-h2">相似的产品</h2>
+                        <a href="javascript:;">换一批</a>
+                    </div>
+                    <!-- <ul class="product-other-c">
+                        <li :key="item" v-for="item in 3">
+                            <h4>腾讯资产 - 天山1号<i>预热</i></h4>
+                            <div>
+                                <div>
+                                    <aside>
+                                        <p></p>
+                                        <p></p>
+                                    </aside>
+                                </div>
+                                <div></div>
+                            </div>
+                        </li>
+                    </ul> -->
                 </div>
             </div>
         </div>
@@ -221,6 +267,7 @@
             line-height 16px
             font-size size5
             color color5
+            text-align center
         > nav
             padding 20px
             display flex
@@ -374,6 +421,75 @@
         > table
             width 822px
             border color-border
+            border-right none
+            border-bottom none
             margin 0 auto
 
+            th 
+                color color2
+                font-size size2
+                
+                font-weight normal
+            td 
+                color color3
+                font-size size3
+            td,th
+                width 25%
+                border-right color-border
+                border-bottom color-border
+                text-align center
+                padding 0
+                height 40px 
+                line-height 40px
+            .ac
+                background-color #e6effc
+        
+        > ul 
+            margin 40px 18px 0
+            overflow hidden
+            li
+                float left 
+                width 50%
+                margin-bottom 18px
+                height 16px
+                line-height 16px
+                span
+                    float left
+                    &:nth-child(1)
+                        width 30%
+                        color color3
+                        font-size size3
+                        text-indent 22px 
+                    &:nth-child(2)
+                        width 70%
+                        color color2
+                        font-size size2
+
+        > ol
+            margin 35px 18px
+            li
+                line-height 24px
+                margin-bottom 13px
+                overflow hidden
+                span
+                    float left
+                    &:nth-child(1)
+                        width 15%
+                        color color3
+                        font-size size3
+                        text-indent 22px 
+                    &:nth-child(2)
+                        width 85%
+                        color color2
+                        font-size size2
+
+    .product-other-t
+        position relative
+        > a
+            position absolute
+            line-height 40px
+            top 0
+            right 12px
+            font-size size3
+            color color3
 </style>
