@@ -8,20 +8,24 @@ const createListView = id => () => import('../views/CreateListView').then(m => m
 const ItemView = () => import('../views/ItemView.vue')
 const UserView = () => import('../views/UserView.vue')
 
-const navView = () => import('../views/nav.vue')
+const nav = () => import('../views/nav.vue')
 const topView = () => import('../views/top.vue')
-const marketView = () => import('../views/market.vue')
+
+const market = () => import('../views/market/index.vue')
+const marketView = () => import('../views/market/market.vue')
+const suggestView = () => import('../views/market/suggest.vue')
+const productDetailView = () => import('../views/market/product.vue')
+
 const financialView = () => import('../views/financial.vue')
-const suggestView = () => import('../views/suggest.vue')
-const searchView = () => import('../views/search/index.vue')
+const search = () => import('../views/search/index.vue')
 const searchProView = () => import('../views/search/s_pro.vue')
 const searchFinanView = () => import('../views/search/s_finan.vue')
 const searchTopicView = () => import('../views/search/s_topic.vue')
 
-const loginView = () => import('../views/login/index.vue')
+const login = () => import('../views/login/index.vue')
 const loginAccoutView = () => import('../views/login/login-account.vue')
 const loginMobileView = () => import('../views/login/login-mobile.vue')
-const joinView = () => import('../views/join/index.vue')
+const join = () => import('../views/join/index.vue')
 const joinStep1View = () => import('../views/join/join-step1.vue')
 const joinStep2View = () => import('../views/join/join-step2.vue')
 const joinStep3View = () => import('../views/join/join-step3.vue')
@@ -35,7 +39,7 @@ export function createRouter () {
             { path: '/', redirect: '/nav' },
             { 
                 path: '/nav', 
-                component: navView,
+                component: nav,
                 children: [
                     {
                         path: '',
@@ -44,7 +48,21 @@ export function createRouter () {
                     },
                     {
                         path: 'market',
-                        component: marketView
+                        component: market,
+                        children: [
+                            {
+                                path: '',
+                                component: marketView
+                            },
+                            {
+                                path: 'suggest',
+                                component: suggestView
+                            },
+                            {
+                                path: ':id',
+                                component: productDetailView
+                            }
+                        ]
                     },
                     {
                         path: 'financial',
@@ -57,7 +75,7 @@ export function createRouter () {
                     {
                         path: 'search/:id',
                         name: 'search',
-                        component: searchView,
+                        component: search,
                         children: [
                             {
                                 path: 'product',
@@ -82,7 +100,7 @@ export function createRouter () {
 
             { 
                 path: '/login', 
-                component: loginView,
+                component: login,
                 children: [
                     {
                         path: '',
@@ -96,7 +114,7 @@ export function createRouter () {
             },
             { 
                 path: '/join', 
-                component: joinView,
+                component: join,
                 children: [
                     {
                         path: '',

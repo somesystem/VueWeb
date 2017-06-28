@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-grey">
+    <div>
         <div class="suggest-top"></div>
 
         <div class="main-width">
@@ -31,8 +31,8 @@
 </template>
 
 <script type="text/javascript">
-    import commonItem from "../modules/common-item.vue";
-    import financialItem from "../modules/financial-item.vue";
+    import commonItem from "../../modules/common-item.vue";
+    import financialItem from "../../modules/financial-item.vue";
 
     export default {
         data(){
@@ -48,7 +48,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
     .suggest-top 
         width 1200px 
         height 200px 

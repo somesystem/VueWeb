@@ -27,8 +27,8 @@
                     <p>产品期限</p>
                 </div>
                 <section>
-                   <p><span style="width:70%"></span></p>
-                   <p>70%</p> 
+                    <p><span style="width:70%"></span></p>
+                    <p>70%</p> 
                 </section>
             </div>
             <div class="common-item-l-b">
@@ -108,7 +108,7 @@
                 color color1
 
             span:nth-child(2)
-                margin-left 15px
+                margin-left 10px
                 text-align center
                 font-size size4
                 color #fff
@@ -152,7 +152,7 @@
                 height 14px
                 line-height 14px
                 font-size 12px
-                color #000
+                color color1
     
     .common-item-l-b
         display flex
@@ -201,6 +201,8 @@
             color #fff
             background-color color-red
             text-align center
+            &:hover,&:active
+                background-color color-red-select
 
     .common-item-r
         border-left color-border

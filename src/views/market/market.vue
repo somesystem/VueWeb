@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-grey">
+    <div>
         <div class="common-nav-top main-width">
             <p>首页>金融超市</p>
             <nav>
@@ -72,8 +72,8 @@
 </template>
 
 <script>
-    import commonItem from "../modules/common-item.vue";
-    import financialAdv from "../modules/financial-adv.vue";
+    import commonItem from "../../modules/common-item.vue";
+    import financialAdv from "../../modules/financial-adv.vue";
 
     export default {
         data(){
@@ -179,7 +179,7 @@
     }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
 
     .market-bottom
         background-color #fff

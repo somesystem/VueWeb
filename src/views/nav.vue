@@ -64,7 +64,7 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
-  
+    
     .common-search
         position relative
         height 126px

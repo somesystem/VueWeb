@@ -34,6 +34,8 @@
     .bg-grey
         background-color #f8f8f8
     
+    body
+        min-width main-width
     .common-h2 
         height: 40px;
         line-height: 40px;
@@ -47,11 +49,12 @@
         > p 
             height 36px
             line-height 36px
-            font-size 14px
-            color #000
+            color color2
+            font-size size2
         > nav 
             display flex
-            font-size 14px 
+            font-size size3 
+            color color3 
             line-height 36px
             > div
                 width 100px
@@ -64,6 +67,8 @@
                     width 100px
                     height 36px
                     text-align center
+                    > a
+                        color color3
             > a 
                 align-self flex-end
                 display block
@@ -157,14 +162,14 @@
             line-height 26px 
             border color-border
             text-align center
-            font-size 14px
-            color #000
+            font-size size3
+            color color3
             margin-right 20px 
             background-color #fff 
             &:last-child 
                 margin-right 0px
         > span 
-            color #000
+            color color3
             margin-right 20px 
 
     .input-error
