@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="main-width">
-            <p class="product-top">首页>金融超市>{{$route.params.id}}</p>
+            <p class="common-detail-top">首页>金融超市>{{$route.params.id}}</p>
             
             <div class="product-main main-width">
                 <div class="product-main-l">
@@ -86,7 +86,7 @@
                                 <p>上海宽象资本投资</p>
                             </div>
                             <div>
-                                <a href="javascript:;">咨询ta</a>
+                                <a class="common-zixun" href="javascript:;">咨询ta</a>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                                 <img src="" />
                                 <p>蔡大大</p>
                                 <p>上海宽象资本投资</p>
-                                <a href="javascript:;">咨询ta</a>
+                                <a class="common-zixun" href="javascript:;">咨询ta</a>
                             </div>
                         </div>
                     </li>
@@ -155,11 +155,7 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../../styl/base";
-    .product-top
-        height 40px 
-        line-height 40px
-        font-size size3
-        color color3
+    
     .product-main
         display flex
         .product-main-l
@@ -359,17 +355,6 @@
                     color color-black
         > div:nth-child(2)
             flex 2
-            > a 
-                margin 0 auto
-                display block
-                width 72px
-                height 26px
-                line-height 26px
-                text-align center
-                font-size 14px
-                color color-blue
-                border-radius 5px
-                border 1px solid color-blue
 
     .product-detail,.product-aside
         margin-top 16px
@@ -567,17 +552,7 @@
                     &:nth-of-type(2)
                         font-size size3
                         color color3
-                > a
-                    margin: 0 auto;
-                    display: block;
-                    width: 72px;
-                    height: 26px;
-                    line-height: 26px;
-                    text-align: center;
-                    font-size: 14px;
-                    color: color-blue;
-                    border-radius: 5px;
-                    border: 1px solid color-blue
+                
     .product-other-box-t
         display flex
         > div 

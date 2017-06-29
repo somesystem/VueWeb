@@ -2,10 +2,11 @@
     <div class="financial-item">
         <p>已在金豆成交100单</p>
         <div class="financial-item-t">
+            <router-link :to="{name:'f_pro',params:{id:11}}" tag="a"></router-link>
             <div class="financial-item-l">
                 <img src="" />
                 <p><span>蔡大大</span><i>江西</i></p>
-                <a href="javascript:;">咨询ta</a>
+                <a class="common-zixun" href="javascript:;">咨询ta</a>
             </div>
             <div class="financial-item-r">
                 <div class="financial-item-r-t">
@@ -70,9 +71,16 @@
             font-size size4
             color color4 
     .financial-item-t
+        position relative
         padding 0 18px 20px
         border-bottom color-border
         display flex 
+        > a
+            position absolute
+            top 0
+            left 0
+            right 0
+            bottom 0
 
     .financial-item-l
         width 100px 
@@ -93,18 +101,6 @@
                 margin-left 12px 
                 font-size size5
                 color color5 
-        > a 
-            display block
-            margin 0 auto 
-            width 72px
-            height 26px 
-            line-height 26px
-            text-align center
-            border 1px solid color-blue
-            color color-blue
-            font-size 14px 
-            border-radius 5px 
-
 
     .financial-item-r
         flex 1

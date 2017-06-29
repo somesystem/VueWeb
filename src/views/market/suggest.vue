@@ -7,13 +7,7 @@
             <div class="suggest-main">
                 <common-item v-for="i in 3" :key="i"></common-item>
 
-                <nav class="common-top-page">
-                    <a href="javascript:;">首页</a>
-                    <a href="javascript:;">上一页</a>
-                    <span>第1页/共3页</span>
-                    <a href="javascript:;">下一页</a>
-                    <a href="javascript:;">尾页</a>
-                </nav>
+                <common-page></common-page>
             </div>
         </div>
 
@@ -31,18 +25,12 @@
 </template>
 
 <script type="text/javascript">
-    import commonItem from "../../modules/common-item.vue";
-    import financialItem from "../../modules/financial-item.vue";
 
     export default {
         data(){
             return {
                 
             }
-        },
-        components: {
-            commonItem,
-            financialItem
         }
     }
 </script>

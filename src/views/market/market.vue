@@ -54,13 +54,7 @@
         </div>
         <div class="main-width market-main">
             <common-item :key="item" v-for="item in 5"></common-item>
-            <nav class="common-top-page">
-                <a href="javascript:;">首页</a>
-                <a href="javascript:;">上一页</a>
-                <span>第1页/共5页</span>
-                <a href="javascript:;">下一页</a>
-                <a href="javascript:;">尾页</a>
-            </nav>
+            <common-page></common-page>
         </div>
 
         <div class="market-bottom">
@@ -72,8 +66,6 @@
 </template>
 
 <script>
-    import commonItem from "../../modules/common-item.vue";
-    import financialAdv from "../../modules/financial-adv.vue";
 
     export default {
         data(){
@@ -171,10 +163,6 @@
                 }
                 item.sort = true;
             }
-        },
-        components: {
-            commonItem,
-            financialAdv
         }
     }
 </script>

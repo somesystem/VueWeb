@@ -103,16 +103,9 @@
 </template>
 
 <script type="text/javascript">
-    import commonItem from "../modules/common-item.vue";
-    import financialAdv from "../modules/financial-adv.vue";
-
     export default {
         data(){
             return {}
-        },
-        components: {
-            commonItem,
-            financialAdv
         }
     }
 </script>

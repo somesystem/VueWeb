@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-grey">
+    <div>
         <div class="common-nav-top main-width">
             <p>首页>找理财师</p>
             <nav>
@@ -46,13 +46,7 @@
                 <financial-item :key="i" v-for="i in 9"></financial-item>
             </div>
 
-            <nav class="common-top-page">
-                <a href="javascript:;">首页</a>
-                <a href="javascript:;">上一页</a>
-                <span>第1页/共5页</span>
-                <a href="javascript:;">下一页</a>
-                <a href="javascript:;">尾页</a>
-            </nav>
+            <common-page></common-page>
         </div>
 
         <div class="financial-bottom">
@@ -93,7 +87,6 @@
 </template>
 
 <script type="text/javascript">
-    import financialItem from "../modules/financial-item.vue";
 
     export default {
         data(){
@@ -218,15 +211,12 @@
                 json.active = !this.more.active;
                 this.more = json;
             }
-        },
-        components: {
-            financialItem
         }
     }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
+    @import "../../styl/base";
 
     .financial-bottom
         background-color #fff

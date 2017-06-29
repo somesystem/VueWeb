@@ -23,17 +23,12 @@
 </template>
 
 <script>
-    import commonCell from "./common-cell.vue";
-
     export default {
         props: {
             title: ""
         },
         data(){
             return {}
-        },
-        components: {
-            commonCell
         }
     }
 </script>
@@ -74,8 +69,9 @@
     .top-aside-sort
         position relative 
         width 158px
-        height 208px 
+        height 206px 
         border color-border
+        box-sizing border-box
         > h3
             height 24px 
             line-height 24px 
