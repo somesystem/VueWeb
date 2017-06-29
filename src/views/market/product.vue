@@ -105,28 +105,41 @@
                     </nav>
                 </div>
             </div>
-
-            <div class="product-other">
-                <div class="main-width">
-                    <div class="product-other-t">
-                        <h2 class="common-h2">相似的产品</h2>
-                        <a href="javascript:;">换一批</a>
-                    </div>
-                    <!-- <ul class="product-other-c">
-                        <li :key="item" v-for="item in 3">
-                            <h4>腾讯资产 - 天山1号<i>预热</i></h4>
-                            <div>
-                                <div>
-                                    <aside>
-                                        <p></p>
-                                        <p></p>
-                                    </aside>
-                                </div>
-                                <div></div>
-                            </div>
-                        </li>
-                    </ul> -->
+        </div>
+        <div class="product-other">
+            <div class="main-width">
+                <div class="product-other-t">
+                    <h2 class="common-h2">相似的产品</h2>
+                    <a href="javascript:;">换一批</a>
                 </div>
+                <ul class="product-other-c">
+                    <li :key="item" v-for="item in 3">
+                        <h4>腾讯资产 - 天山1号<i>预热</i></h4>
+                        <div class="product-other-box">
+                            <div>
+                                <aside class="product-other-box-t">
+                                    <div>
+                                        <p>30%</p>
+                                        <p>最高预期收益</p>
+                                    </div>
+                                    <div>
+                                        <p>10%</p>
+                                        <p>返佣率</p>
+                                    </div>
+                                </aside>
+                                <p>投资区域：云南</p>
+                                <p>产品状态：在售</p>
+                            </div>
+                            <div></div>
+                            <div>
+                                <img src="" />
+                                <p>蔡大大</p>
+                                <p>上海宽象资本投资</p>
+                                <a href="javascript:;">咨询ta</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>    
@@ -482,6 +495,10 @@
                         width 85%
                         color color2
                         font-size size2
+    
+    .product-other
+        background-color #fff
+        margin-bottom 40px
 
     .product-other-t
         position relative
@@ -492,4 +509,100 @@
             right 12px
             font-size size3
             color color3
+
+    .product-other-c
+        display flex
+        > li 
+            flex 1
+            margin-right 14px
+            border color-border
+            &:last-child
+                margin-right 0
+            > h4
+                height 40px 
+                line-height 40px
+                border-bottom color-border
+                text-align center
+                color color1
+                font-size size1
+                i
+                    display inline-block
+                    width 36px
+                    height 18px
+                    line-height 18px
+                    font-size size5
+                    vertical-align middle
+                    text-align center
+                    background url('/public/sign.png') no-repeat center center
+                    color #fff
+                    margin-left 10px 
+    
+    .product-other-box
+        display flex
+        justify-content center
+        align-items center
+        > div
+            &:nth-child(1)
+                flex 1
+                padding 30px 0 18px
+            &:nth-child(2)
+                width 0
+                height 120px
+                border-left color-border
+            &:nth-child(3)
+                width 148px
+                padding 18px 0
+                > img 
+                    display block
+                    width 50px
+                    height 50px
+                    margin 0 auto 12px
+                > p
+                    margin-bottom 12px
+                    text-align center
+                    &:nth-of-type(1)
+                        color color2
+                        font-size size2
+                        line-height size2
+                    &:nth-of-type(2)
+                        font-size size3
+                        color color3
+                > a
+                    margin: 0 auto;
+                    display: block;
+                    width: 72px;
+                    height: 26px;
+                    line-height: 26px;
+                    text-align: center;
+                    font-size: 14px;
+                    color: color-blue;
+                    border-radius: 5px;
+                    border: 1px solid color-blue
+    .product-other-box-t
+        display flex
+        > div 
+            flex 1
+            text-align center
+            margin-bottom 38px
+            > p 
+                &:nth-child(1)
+                    height 20px
+                    line-height 20px
+                    color color-red
+                    font-size 20px
+                    margin-bottom 14px
+                &:nth-child(2)
+                    height 14px
+                    line-height 14px
+                    font-size size5
+                    color color5
+        ~ p
+            text-align center
+            height size2
+            line-height size2
+            font-size size2
+            color color2
+            margin-bottom 18px
+            &:last-of-type
+                margin-bottom 0
 </style>
