@@ -44,31 +44,35 @@
                 <div class="join-step2-t-contet">
                     <div v-show="licaiType==1">
                         <div class="join-input-box">
-                            <input class="input-bg-company" type="text" placeholder="请输入您的所属公司" /> 
-                            <p v-show="false" class="color-red">所属公司不能为空！</p>
+                            <input @focus="yzfocus2('company')" :class="companyType>1?'input-error input-bg-company':'input-bg-company'" v-model="yz2.company" type="text" placeholder="请输入您的所属公司" /> 
+                            <p v-show="companyType==2" class="color-red">所属公司不能为空！</p>
                         </div>
                         <div class="join-input-box">
-                            <input class="join-input-readonly" type="text" v-model="fileName1" readonly="readonly" />
+                            <input :class="companyFileType>1?'input-error join-input-readonly':'join-input-readonly'" type="text" v-model="yz2.companyFile" readonly="readonly" />
                             <input id="file1" class="join-input-file" type="file" />
                             <a class="active join-input-upload" href="javascript:;">上传证明文件</a>
                             <p>营业执照/私募基金管理人登记证明</p>
+                            <p v-show="companyFileType==2" class="color-red">公司证明不能为空</p>
                         </div>
                         <div class="join-input-box">
-                            <input class="input-bg-user" type="text" placeholder="请填写您的职位" /> 
+                            <input @focus="yzfocus2('job')" :class="jobType>1?'input-error input-bg-user':'input-bg-user'" v-model="yz2.job" type="text" placeholder="请填写您的职位" /> 
+                            <p v-show="jobType==2" class="color-red">职位不能为空</p>
                         </div>
                         <div class="join-input-box">
-                            <input class="join-input-readonly" type="text" v-model="fileName2" readonly="readonly" />
+                            <input :class="jobFileType>1?'input-error join-input-readonly':'join-input-readonly'" type="text" v-model="yz2.jobFile" readonly="readonly" />
                             <input id="file2" class="join-input-file" type="file" />
                             <a class="active join-input-upload" href="javascript:;">上传证明文件</a>
                             <p>名片/工牌与身份证</p>
+                            <p v-show="jobFileType==2" class="color-red">职位证明不能为空</p>
                         </div> 
                     </div>
                     <div v-show="licaiType==2">
                         <div class="join-input-box">
-                            <input class="join-input-readonly" type="text" v-model="fileName3" readonly="readonly" />
+                            <input :class="personFileType>1?'input-error join-input-readonly':'join-input-readonly'" type="text" v-model="yz2.personFile" readonly="readonly" />
                             <input id="file3" multiple="multiple" class="join-input-file" type="file" />
                             <a class="active join-input-upload" href="javascript:;">上传证明文件</a>
                             <p>身份证与许可证</p>
+                            <p v-show="personFileType==2" class="color-red">证明文件不能为空</p>
                         </div>
                     </div>
                 </div>
@@ -101,18 +105,32 @@
                     telFocus: false,
                     codeFocus: false
                 },
+                yz2: {
+                    company: '',
+                    companyFile: '',
+                    job: '',
+                    jobFile: '',
+                    personFile: ''
+                },
+                
+
+
+
                 nameType: 0,
                 passType: 0,
                 pass2Type: 0,
                 telType: 0,
                 codeType: 0,
 
+                companyType: 0,
+                companyFileType: 0,
+                jobType: 0,
+                jobFileType: 0,
+                personFileType: 0,
+
                 licaiType: 1,
                 isRead: true,
-                type: this.$route.params.type,
-                fileName1: '',
-                fileName2: '',
-                fileName3: '',
+                type: this.$route.params.type
             }
         },
         mounted(){
@@ -127,11 +145,14 @@
         methods: {
             yzfocus(type){
                 this.yz[type+'Focus'] = true;
-                this[type+'Type'] = 1
+                this[type+'Type'] = 1;
+            },
+            yzfocus2(type){
+                this[type+'Type'] = 0;
             },
             yzBlur(type){
                 this.yz[type+'Focus'] = false;
-                this[type+'Type'] = 0
+                this[type+'Type'] = 0;
             },
             yzAll(){
                 var reName = /^[\w\-\u4E00-\u9FA5\uFE30-\uFFA0]{4,20}$/;
@@ -171,6 +192,36 @@
                     this.codeType = 2;
                     status = false;
                 }else if(!reCode.test(this.yz.code)){
+                    this.codeType = 3;
+                    status = false;
+                }
+
+                if (this.type == 'account') {
+                    if (this.licaiType == 1) {
+                        if (!this.yz2.company) {
+                            this.companyType = 2;
+                            status = false;
+                        }
+                        if (!this.yz2.companyFile) {
+                            this.companyFileType = 2;
+                            status = false;
+                        }
+
+                        if (!this.yz2.job) {
+                            this.jobType = 2;
+                            status = false;
+                        }
+                        if (!this.yz2.jobFile) {
+                            this.jobFileType = 2;
+                            status = false;
+                        }
+
+                    }else{
+                        if (!this.yz2.personFile) {
+                            this.personFileType = 2;
+                            status = false;
+                        }
+                    }
 
                 }
 
@@ -180,17 +231,20 @@
                 // 切换页面时绑定得取消,故用on
                 var _this = this;
                 document.getElementById('file1').onchange = function(){
-                    _this.fileName1 = this.files[0].name;
+                    _this.yz2.companyFile = this.files[0].name;
+                    _this.companyFileType = 0;
                 }
                 document.getElementById('file2').onchange = function(){
-                    _this.fileName2 = this.files[0].name;
+                    _this.yz2.jobFile = this.files[0].name;
+                    _this.jobFileType = 0;
                 }
                 document.getElementById('file3').onchange = function(){
                     var aName = [];
                     for (var i = 0; i < this.files.length; i++) {
                         aName[i] = this.files[i].name;
                     }
-                    _this.fileName3 = String(aName);
+                    _this.yz2.personFile = String(aName);
+                    _this.personFileType = 0;
                 }
             },
             fnNext(){
@@ -285,6 +339,11 @@
             line-height 18px 
             font-size 12px 
             color color-black
+            &:last-of-type
+                position absolute
+                bottom 0 
+                left 0
+                width 100%
     
     .join-input-box .join-input-file
         z-index 10 

@@ -40,6 +40,7 @@
     .suggest-top 
         width 1200px 
         height 200px 
+        margin 0 auto
         background url('/public/suggest-banner.jpg') no-repeat
 
     .suggest-main

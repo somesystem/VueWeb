@@ -70,7 +70,8 @@ export function createRouter () {
                                 component: marketView
                             },
                             {
-                                path: 'suggest',
+                                path: 'suggest/:id?',
+                                name: 'suggest',
                                 component: suggestView
                             },
                             {

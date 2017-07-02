@@ -2,7 +2,8 @@
     <div class="join-step3">
         <join-top step="3"></join-top>
         <nav class="join-step3-main">
-            <p>请选择您擅长的投资领域：</p>
+            <p v-if="type=='investor'">请选择您擅长的投资领域：</p>
+            <p v-else>您做过的理财有：</p>
             <ul>
                 <li @click="item.select=!item.select" :class="item.select?'active':''" v-for="item in list">{{item.name}}</li>
             </ul>

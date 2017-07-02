@@ -30,7 +30,7 @@
                             <option>36月以上</option>
                         </select>
                     </div>
-                    <a class="top-select-btn" href="javascript:;">快速获取投资方案</a>
+                    <a @click="toSuggest()" class="top-select-btn" href="javascript:;">快速获取投资方案</a>
                 </div> 
             </div>
         </div>
@@ -106,6 +106,11 @@
     export default {
         data(){
             return {}
+        },
+        methods: {
+            toSuggest(){
+                this.$router.push({"name":"suggest",params:{id:111}});
+            }
         }
     }
 </script>
