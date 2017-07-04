@@ -56,6 +56,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
     .common-item
+        position relative
         padding 18px
         display flex
         border color-border
@@ -66,6 +67,7 @@
         &:first-of-type
             margin-top 12px
         &:hover
+            z-index 2
             border 1px solid color-red
             
     .common-item-l

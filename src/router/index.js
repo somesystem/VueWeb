@@ -27,6 +27,11 @@ const finanDetailEva = () => import('../views/financial/finan-detail-eva.vue')
 const finanDetailPro = () => import('../views/financial/finan-detail-pro.vue')
 const finanDetailQue = () => import('../views/financial/finan-detail-que.vue')
 
+// 个人中心
+const person = () => import('../views/person/index.vue')
+const orderBuy = () => import('../views/person/order_buy.vue')
+const orderSell = () => import('../views/person/order_sell.vue')
+
 
 // 搜索
 const search = () => import('../views/search/index.vue')
@@ -138,8 +143,23 @@ export function createRouter () {
                                 component: searchTopicView
                             }
                         ]
+                    },
+                    {
+                        path: 'person/:id',
+                        component: person,
+                        children: [
+                            {
+                                path: '',
+                                name: 'order_buy',
+                                component: orderBuy
+                            },
+                            {
+                                path: 'sell',
+                                name: 'order_sell',
+                                component: orderSell
+                            }
+                        ]
                     }
-                    // ...
                 ]
             },
 

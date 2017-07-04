@@ -3,8 +3,8 @@
         <div class="main-width">
             <p class="common-detail-top">首页>找理财师>岳大大1号</p>
 
-            <div class="finan-detail-top">
-                <img src="http://t.cn/RoTYhet" />
+            <div class="common-person-top">
+                <img src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />
                 <p>岳大大</p>
                 <p>上海宽象资本投资</p>
                 <nav>
@@ -34,7 +34,7 @@
                     <a class="common-zixun" href="javascript:;">咨询</a>
                     <p>已有320位金友联系过他</p>
                 </div>
-                <div class="finan-detail-man-r">
+                <div class="common-person-order-top finan-detail-man-r">
                     <ul>
                         <router-link :to="{name:'f_pro'}" tag="li" exact><a href="javascript:;">发布的产品</a></router-link>
                         <router-link :to="{name:'f_art'}" tag="li"><a href="javascript:;">发布的文章</a></router-link>
@@ -64,53 +64,12 @@
     @import "../../styl/base";
     .pd40
         padding-bottom 40px
-    .finan-detail-top
-        padding 34px 0
-        margin-bottom 12px
-        border color-border
-        background-color #fff
-        > img
-            display block
-            width 100px
-            height 100px
-            box-shadow 0 0 20px rgba(0,0,0,.2)
-            margin 0 auto 14px
-            border-radius 50%
-        > p
-            text-align center
-            &:nth-of-type(1)
-                margin-bottom 12px
-                line-height size1
-                font-size size1
-                color color1
-            &:nth-of-type(2),&:nth-of-type(3)
-                line-height size3
-                font-size size3
-                color color3
-
-        > nav 
-            display flex
-            margin 14px auto
-            justify-content center
-            > a
-                display block
-                width 76px
-                height 24px
-                line-height 24px
-                border 1px solid color-red
-                margin-right 20px
-                color color-red
-                text-align center
-                border-radius 5px
-                &:last-child
-                    margin-right 0
     
     .finan-detail-man
         display flex
         justify-content space-between
     .finan-detail-man-l
         width 248px
-        height 1015px
         border color-border
         background-color #fff
         box-sizing border-box
@@ -170,36 +129,5 @@
     .finan-detail-man-r
         background-color #fff
         width 900px
-        > ul
-            display flex
-            border color-border
-            > li
-                position relative
-                width 120px
-                padding 9px 0
-                a   
-                    display block
-                    width 100%
-                    height 22px
-                    line-height 22px
-                    font-size size3
-                    color color3
-                    text-align center
-                    border-right color-border
-                    box-sizing border-box
-                &:last-child a
-                    border-right 0
-                &:hover,&.router-link-active
-                    &:after
-                        content ""
-                        position absolute
-                        bottom 0
-                        left 50%
-                        margin-left -45px
-                        width 90px
-                        height 2px
-                        background-color color-red
-                    a
-                        color color-red
     
 </style>

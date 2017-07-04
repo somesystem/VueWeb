@@ -28,7 +28,7 @@
             <router-link tag="a" to="/nav" exact>首页</router-link>
             <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
             <router-link tag="a" to="/nav/financial">找理财师</router-link>
-            <router-link tag="a" to="/nav/t3">理财社区</router-link>
+            <router-link tag="a" to="/nav/person/id">理财社区</router-link>
           </nav>
         </header>
         <transition name="fade" mode="out-in">
