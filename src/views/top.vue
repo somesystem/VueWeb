@@ -37,18 +37,7 @@
 
         <nav class="top-menu">
             <ul>
-                <li class="active">股权基金</li>
-                <li>信托计划</li>
-                <li>债券基金</li>
-                <li>证券基金</li>
-                <li>捐资计划</li>
-                <!-- 
-                <router-link tag="li" to="stock">股权基金</router-link>
-                <router-link tag="li" to="trust">信托计划</router-link>
-                <router-link tag="li" to="bond">债券基金</router-link>
-                <router-link tag="li" to="negotiable">证券基金</router-link>
-                <router-link tag="li" to="donations">捐资计划</router-link> 
-                -->
+                <li @click="navTab(item)" v-for="item in navList" :class="item.active?'active':''">{{item.name}}</li>
             </ul>
             
             <section>
@@ -105,11 +94,24 @@
 <script type="text/javascript">
     export default {
         data(){
-            return {}
+            return {
+                navList: [
+                    {name: "股权基金", active: true, id: 1},
+                    {name: "信托计划", active: false, id: 2},
+                    {name: "债券基金", active: false, id: 3},
+                    {name: "证券基金", active: false, id: 4},
+                    {name: "捐资计划", active: false, id: 5}
+                ]
+            }
         },
         methods: {
             toSuggest(){
                 this.$router.push({"name":"suggest",params:{id:111}});
+            },
+            navTab(item){
+                this.navList.forEach(item=>item.active=false);
+                item.active = true;
+
             }
         }
     }
@@ -173,6 +175,7 @@
                 background-position center top
                 background-repeat no-repeat
                 cursor pointer
+                transition transform 0.3s
 
                 &:nth-child(1){
                     background-image: url(/public/guquan.png)
@@ -190,16 +193,19 @@
                     background-image: url(/public/ziguan.png)
                 }
                 
-                &.active:after{
-                    content ""
-                    position absolute
-                    bottom -32px
-                    left 50%
-                    margin-left -18px
-                    width 37px
-                    height 19px
-                    background #fff url(/public/arrow-top.png) no-repeat
-                }
+                &:hover
+                    transform scale(1.05)
+                &.active
+                    transform none
+                    &:after
+                        content ""
+                        position absolute
+                        bottom -32px
+                        left 50%
+                        margin-left -18px
+                        width 37px
+                        height 19px
+                        background #fff url(/public/arrow-top.png) no-repeat
 
         > section
             width main-width
@@ -252,6 +258,13 @@
             width 320px 
             height 210px
             position relative
+            > a
+                display block
+                width 100%
+                height 100%
+                transition transform 0.3s
+                &:hover,&:active
+                    transform scale(0.98)
 
             &:nth-child(1)
                 margin-right 20px
@@ -292,6 +305,8 @@
                 a 
                     font-size size3 
                     color color3 
+                &:hover a 
+                    color color-red
                 
                 &:last-of-type
                     margin-bottom 0

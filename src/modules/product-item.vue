@@ -65,6 +65,8 @@
 
         &:first-of-type
             margin-top 12px
+        &:hover
+            border 1px solid color-red
             
     .common-item-l
         width 860px

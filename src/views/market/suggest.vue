@@ -38,7 +38,7 @@
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../../styl/base";
     .suggest-top 
-        width 1200px 
+        width 1160px 
         height 200px 
         margin 0 auto
         background url('/public/suggest-banner.jpg') no-repeat

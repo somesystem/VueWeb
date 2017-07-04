@@ -59,6 +59,8 @@
         margin-bottom 16px
         box-sizing border-box
         border color-border 
+        &:hover
+            border 1px solid color-red
 
         &:nth-child(3n)
             margin-right 0
