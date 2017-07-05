@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="product-main-r">
-                    <div class="product-man">
+                    <div @click="toLicai()" class="product-man">
                         <p class="product-man-t">已成交100单</p>
                         <div class="product-man-c">
                             <div>
@@ -113,7 +113,7 @@
                     <a href="javascript:;">换一批</a>
                 </div>
                 <ul class="product-other-c">
-                    <li :key="item" v-for="item in 3">
+                    <li @click="toProduct()" :key="item" v-for="item in 3">
                         <h4>腾讯资产 - 天山1号<i>预热</i></h4>
                         <div class="product-other-box">
                             <div>
@@ -146,9 +146,19 @@
 </template>
 
 <script>
+    var a = 666;
+    var d = 888;
     export default {
         data(){
             return {
+            }
+        },
+        methods: {
+            toProduct(){
+                this.$router.push({name:'product',params:{id:++a}});
+            },
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++d}});
             }
         }
     }
@@ -299,6 +309,7 @@
         border color-border
         padding 18px 0 30px
         background-color #fff
+        cursor pointer 
     .product-man-t
         height 14px
         font-size size5
@@ -501,6 +512,7 @@
             flex 1
             margin-right 14px
             border color-border
+            cursor pointer
             &:last-child
                 margin-right 0
             > h4

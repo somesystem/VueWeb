@@ -205,6 +205,7 @@ body
                     margin-right 0
     
 .common-person-order-top
+    position relative
     > ul
         display flex
         border color-border
@@ -257,6 +258,52 @@ body
             &:hover a,&.active a
                 color color-red
 
+    > nav
+        display flex
+        position absolute
+        top 0
+        right 0
+        width 50%
+        height 40px
+        justify-content flex-end
+        align-items center
+
+        > a, > input
+            display block
+            height 26px
+            line-height 26px
+            font-size size3
+            color color3
+            margin-right 14px
+            
+        > input 
+            width 136px
+            border color-border
+            border-radius 13px
+            padding 0 14px
+            background #fff url('/public/find.png') no-repeat 143px center
+
+.common-person-custom-table
+    border color-border
+    margin 12px 0
+    dt,dd
+        display flex
+        height 40px
+        line-height 40px
+        > p
+            flex 1
+            text-align center
+
+            a:nth-child(2)
+                margin-left 10px
+    dt
+        background-color #e6effc
+        font-size size2
+        color color2
+    dd
+        border-top color-border
+        font-size size3
+        color color3
 
 .input-error
     border 1px solid color-red !important

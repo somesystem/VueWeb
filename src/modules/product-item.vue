@@ -1,5 +1,5 @@
 <template>
-    <div class="common-item-l">
+    <div @click="toProduct()" class="common-item-l">
         <div class="common-item-l-t">
             <p><span>天交所-林州重机</span><span>在售</span></p>
             <p>本期起售日 2017/05/15</p>
@@ -40,15 +40,21 @@
                 <a href="javascript:;">预览资料</a>
             </div>
             
-            <router-link :to="{name:'product',params:{id:'xxx'}}" tag="a">立即预约</router-link>
+            <router-link :to="{name:'product',params:{id:'221'}}" tag="a">立即预约</router-link>
         </div>
     </div>
 </template>
 
 <script type="text/javascript">
+    var c = 222;
     export default {
         data(){
             return {}
+        },
+        methods: {
+            toProduct(){
+                this.$router.push({name:'product',params:{id:++c}});
+            }
         }
     }
 </script>
@@ -72,6 +78,7 @@
             
     .common-item-l
         width 860px
+        cursor pointer
     .common-item-l-t
         height 20px
         line-height 20px

@@ -31,6 +31,10 @@ const finanDetailQue = () => import('../views/financial/finan-detail-que.vue')
 const person = () => import('../views/person/index.vue')
 const orderBuy = () => import('../views/person/order_buy.vue')
 const orderSell = () => import('../views/person/order_sell.vue')
+const customPlace = () => import('../views/person/custom_place.vue')
+const customNo = () => import('../views/person/custom_no.vue')
+
+
 
 
 // 搜索
@@ -150,13 +154,23 @@ export function createRouter () {
                         children: [
                             {
                                 path: '',
-                                name: 'order_buy',
+                                redirect: 'buy'
+                            },
+                            {
+                                path: 'buy',
                                 component: orderBuy
                             },
                             {
                                 path: 'sell',
-                                name: 'order_sell',
                                 component: orderSell
+                            },
+                            {
+                                path: 'cus_place',
+                                component: customPlace
+                            },
+                            {
+                                path: 'cus_no',
+                                component: customNo
                             }
                         ]
                     }

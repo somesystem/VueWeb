@@ -1,9 +1,9 @@
 <template>
-    <div class="common-cell">
+    <div @click="toLicai()" class="common-cell">
         <h3>已在金豆成交100单</h3>
         <div class="common-cell-c">
             <div class="common-cell-c-img">
-                <img src="" />
+                <img src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />
                 <div>
                     <p><span>蔡大大</span><span>江西</span></p>
                     <a href="javascript:;">马山咨询</a>
@@ -16,10 +16,16 @@
     </div>
 </template>
 <script>
+    var b = 121;
     export default {
         data(){
             return {
 
+            }
+        },
+        methods: {
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++b}});
             }
         }
     }
@@ -28,6 +34,7 @@
     @import "../styl/base";
     .common-cell
         padding 18px 0
+        cursor pointer
         > h3 
             height 14px 
             line-height 14px

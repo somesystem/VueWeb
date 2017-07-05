@@ -4,7 +4,7 @@
 			<div v-for="item in list">
 				<h3 :class="item.active?'':'active'" @click="item.active=!item.active">{{item.title}}</h3>
 				<ul :style="{'height':item.active?item.height:'0px'}">
-					<router-link v-for="i in item.item" to="/" tag="li" exact>{{i.name}}</router-link>
+					<router-link :key="index" v-for="(i,index) in item.item" :to="i.to" tag="li">{{i.name}}</router-link>
 				</ul>
 			</div>
 			
@@ -24,11 +24,98 @@
 						item: [
 							{
 								name: '我是买家的订单',
-								to: "order_buy"
+								to: "buy"
 							},
 							{
 								name: '我是卖家的订单',
-								to: "order_cell"
+								to: "sell"
+							}
+						]
+					},
+					{
+						title: '我的产品',
+						active: false,
+						height: '123px',
+						item: [
+							{
+								name: '发布的产品',
+								to: "publish"
+							},
+							{
+								name: '认购的产品',
+								to: "take"
+							},
+							{
+								name: '收藏的产品',
+								to: "select"
+							}
+						]
+					},
+					{
+						title: '我的客户',
+						active: false,
+						height: '82px',
+						item: [
+							{
+								name: '已下单用户',
+								to: "cus_place"
+							},
+							{
+								name: '未下单用户',
+								to: "cus_no"
+							}
+						]
+					},
+					{
+						title: '我的社区',
+						active: false,
+						height: '82px',
+						item: [
+							{
+								name: '我的回答',
+								to: "answer"
+							},
+							{
+								name: '我的收藏',
+								to: "myselect"
+							}
+						]
+					},
+					{
+						title: '我的资料',
+						active: false,
+						height: '123px',
+						item: [
+							{
+								name: '个人信息',
+								to: "myinfo1"
+							},
+							{
+								name: '个人资质',
+								to: "myinfo2"
+							},
+							{
+								name: '个人擅长',
+								to: "myinfo3"
+							}
+						]
+					},
+					{
+						title: '我的消息',
+						active: false,
+						height: '123px',
+						item: [
+							{
+								name: '系统消息',
+								to: "sysmsg"
+							},
+							{
+								name: '客户消息',
+								to: "cusmsg"
+							},
+							{
+								name: '社区消息',
+								to: "conmsg"
 							}
 						]
 					}
@@ -45,8 +132,9 @@
 		background-color #fff
 		width 248px
 		border color-border
-
+		
 	.person-menu-cell
+		padding-bottom 50px
 		h3
 			height 40px
 			line-height 40px

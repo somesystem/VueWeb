@@ -1,7 +1,7 @@
 <template>
     <div class="common-item">
         <product-item></product-item>
-        <div class="common-item-r">
+        <div @click="toLicai()" class="common-item-r">
             <p class="common-item-r-t">已成交100单</p>
             <div class="common-item-r-c">
                 <div>
@@ -26,9 +26,15 @@
 </template>
 
 <script type="text/javascript">
+    var e = 777;
     export default {
         data(){
             return {}
+        },
+        methods: {
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++e}});
+            }
         }
     }
 
@@ -38,6 +44,7 @@
     @import "../styl/base";
     .common-item-r
         width 240px
+        cursor pointer
     
     .common-item-r
         border-left color-border
