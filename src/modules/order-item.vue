@@ -28,7 +28,7 @@
 				<a class="color-red" href="javascript:;">去预付返佣</a>
 			</p>
 			<p>
-				<b><a href="javascript:;">取消订单</a></b>
+				<b class="mr20"><a href="javascript:;">取消订单</a></b>
 				<i><a href="javascript:;">投诉</a></i>
 			</p>
 		</div>
@@ -88,6 +88,8 @@
 
 	.order-item-b
 		display flex
+		.mr20
+			margin-right 20px
 		> p
 			flex 1
 			height 40px 
