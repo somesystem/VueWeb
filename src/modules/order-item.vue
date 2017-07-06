@@ -98,7 +98,7 @@
 			b
 				font-size size2
 				color color2
-				margin-right 10px
+				margin-right 8px
 			i
 				font-size size3
 				color color3

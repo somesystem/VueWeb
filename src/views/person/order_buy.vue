@@ -3,8 +3,8 @@
 		<div class="common-person-order-top">
             <ul>
                 <li class="active"><a href="javascript:;">全部订单</a></li>
-                <li><a href="javascript:;">待打款订单</a></li>
-                <li><a href="javascript:;">待提取佣金</a></li>
+                <li><a href="javascript:;">待预付返佣</a></li>
+                <li><a href="javascript:;">待确认到账</a></li>
                 <li><a href="javascript:;">待评价订单</a></li>
                 <li><a href="javascript:;">投诉订单</a></li>
             </ul>
