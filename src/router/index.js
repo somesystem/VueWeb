@@ -33,6 +33,10 @@ const orderBuy = () => import('../views/person/order_buy.vue')
 const orderSell = () => import('../views/person/order_sell.vue')
 const customPlace = () => import('../views/person/custom_place.vue')
 const customNo = () => import('../views/person/custom_no.vue')
+const customDetail = () => import('../views/person/custom_detail.vue')
+const proPub = () => import('../views/person/pro_pub.vue')
+const proTake = () => import('../views/person/pro_take.vue')
+const proSelect = () => import('../views/person/pro_select.vue')
 
 
 
@@ -171,6 +175,23 @@ export function createRouter () {
                             {
                                 path: 'cus_no',
                                 component: customNo
+                            },
+                            {
+                                path: 'detail',
+                                name: 'cus_detail',
+                                component: customDetail
+                            },
+                            {
+                                path: 'publish',
+                                component: proPub
+                            },
+                            {
+                                path: 'take',
+                                component: proTake
+                            },
+                            {
+                                path: 'select',
+                                component: proSelect
                             }
                         ]
                     }
