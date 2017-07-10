@@ -88,15 +88,15 @@
 						item: [
 							{
 								name: '个人信息',
-								to: "myinfo1"
+								to: "my_info1"
 							},
 							{
 								name: '个人资质',
-								to: "myinfo2"
+								to: "my_info2"
 							},
 							{
 								name: '个人擅长',
-								to: "myinfo3"
+								to: "my_info3"
 							}
 						]
 					},

@@ -37,6 +37,9 @@ const customDetail = () => import('../views/person/custom_detail.vue')
 const proPub = () => import('../views/person/pro_pub.vue')
 const proTake = () => import('../views/person/pro_take.vue')
 const proSelect = () => import('../views/person/pro_select.vue')
+const myInfo1 = () => import('../views/person/my_info1.vue')
+const myInfo2 = () => import('../views/person/my_info2.vue')
+const myInfo3 = () => import('../views/person/my_info3.vue')
 
 
 
@@ -192,6 +195,18 @@ export function createRouter () {
                             {
                                 path: 'select',
                                 component: proSelect
+                            },
+                            {
+                                path: 'my_info1',
+                                component: myInfo1
+                            },
+                            {
+                                path: 'my_info2',
+                                component: myInfo2
+                            },
+                            {
+                                path: 'my_info3',
+                                component: myInfo3
                             }
                         ]
                     }
