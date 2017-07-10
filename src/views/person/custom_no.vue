@@ -6,6 +6,7 @@
                 <li @click="user_controller=2" :class="user_controller==2?'active':''"><a href="javascript:;">理财师用户</a></li>
             </ul>
             <nav>
+                <a @click="edit(null,true)" href="javascript:;">新增客户</a>
             	<a href="javascript:;">导出列表</a>
             	<input placeholder="姓名" type="text" />
             </nav>
@@ -52,7 +53,7 @@
             </dl>
             <common-page></common-page>
         </div>
-        <custom-edit :show="editShow" :type="user_controller"></custom-edit>
+        <custom-edit :show="editShow" :is-add="isAdd" :type="user_controller"></custom-edit>
 	</div>
 </template>
 
@@ -62,6 +63,7 @@
     export default {
         data(){
             return {
+                isAdd: false,
                 user_controller: 1,
                 user_normal: [],
                 user_special: [],
@@ -78,8 +80,9 @@
             });
         },
         methods: {
-            edit(item){
+            edit(item,isAdd){
                 this.editShow = true;
+                this.isAdd = !!isAdd;
             }
         },
         components: {

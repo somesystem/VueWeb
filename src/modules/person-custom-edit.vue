@@ -15,7 +15,11 @@
             <a @click="confirm()" href="javascript:;">确定</a>
         </div>
         <div v-if="type==1" class="content">
-            <h3><span>新增客户</span><a @click="close()" href="javascript:;"></a></h3>
+            <h3>
+                <span v-if="isAdd">新增客户</span>
+                <span v-else>编辑客户信息</span>
+                <a @click="close()" href="javascript:;"></a>
+            </h3>
             <ul class="clearfix">
                 <li><span>用户姓名：</span><input type="text" v-model="name" placeholder="请输入姓名" /></li>
                 <li><span>性别：</span><div class="checkbox-ui"><div @click="sex=1" :class="sex==1?'active':''">男</div><div @click="sex=2" :class="sex==2?'active':''">女</div></div></li>
@@ -40,6 +44,10 @@
             },
             type: {
                 required: true
+            },
+            isAdd: {
+                type: Boolean,
+                default: false
             }
         },
         data(){

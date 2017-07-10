@@ -286,6 +286,7 @@
         display flex
         justify-content center
         align-items center
+        margin-top 18px
         margin-bottom 60px  
         > i 
             display block
