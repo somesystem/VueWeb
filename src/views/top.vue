@@ -59,7 +59,7 @@
             <common-item :key="item" v-for="item in 5"></common-item>
             
             <!-- <router-view class="view"></router-view> -->
-            <a href="javascript:;" class="top-more">查看更多</a>
+            <a href="javascript:;" class="top-more">查询全部266个信托产品</a>
         </div>
 
         <financial-adv title="优秀理财师"></financial-adv>
@@ -245,7 +245,7 @@
         margin 12px auto
         border 1px solid color-red
         color color-red
-        font-size 18px
+        font-size 16px
 
     .top-articel
         background-color #fff

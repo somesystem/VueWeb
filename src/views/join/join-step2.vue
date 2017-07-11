@@ -69,10 +69,17 @@
                     <div v-show="licaiType==2">
                         <div class="join-input-box">
                             <input :class="personFileType>1?'input-error join-input-readonly':'join-input-readonly'" type="text" v-model="yz2.personFile" readonly="readonly" />
-                            <input id="file3" multiple="multiple" class="join-input-file" type="file" />
+                            <input id="file3" class="join-input-file" type="file" />
                             <a class="active join-input-upload" href="javascript:;">上传证明文件</a>
-                            <p>身份证与许可证</p>
+                            <p>身份证</p>
                             <p v-show="personFileType==2" class="color-red">证明文件不能为空</p>
+                        </div>
+                        <div class="join-input-box">
+                            <input :class="personFile2Type>1?'input-error join-input-readonly':'join-input-readonly'" type="text" v-model="yz2.personFile2" readonly="readonly" />
+                            <input id="file4" class="join-input-file" type="file" />
+                            <a class="active join-input-upload" href="javascript:;">上传证明文件</a>
+                            <p>许可证</p>
+                            <p v-show="personFile2Type==2" class="color-red">证明文件不能为空</p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +117,8 @@
                     companyFile: '',
                     job: '',
                     jobFile: '',
-                    personFile: ''
+                    personFile: '',
+                    personFile2: ''
                 },
                 
 
@@ -127,6 +135,7 @@
                 jobType: 0,
                 jobFileType: 0,
                 personFileType: 0,
+                personFile2Type: 0,
 
                 licaiType: 1,
                 isRead: true,
@@ -221,6 +230,10 @@
                             this.personFileType = 2;
                             status = false;
                         }
+                        if (!this.yz2.personFile2) {
+                            this.personFileType2 = 2;
+                            status = false;
+                        }
                     }
 
                 }
@@ -239,12 +252,12 @@
                     _this.jobFileType = 0;
                 }
                 document.getElementById('file3').onchange = function(){
-                    var aName = [];
-                    for (var i = 0; i < this.files.length; i++) {
-                        aName[i] = this.files[i].name;
-                    }
-                    _this.yz2.personFile = String(aName);
+                    _this.yz2.personFile = this.files[0].name;
                     _this.personFileType = 0;
+                }
+                document.getElementById('file4').onchange = function(){
+                    _this.yz2.personFile2 = this.files[0].name;
+                    _this.personFile2Type = 0;
                 }
             },
             fnNext(){

@@ -7,7 +7,7 @@
                 <li><a href="javascript:;">未通过审核</a></li>
             </ul>
             <ol>
-                <li>订单状态：</li>
+                <li>产品类型：</li>
                 <li class="active"><a href="javascript:;">不限</a></li>
                 <li><a href="javascript:;">信托</a></li>
                 <li><a href="javascript:;">资管</a></li>
@@ -16,7 +16,7 @@
                 <li><a href="javascript:;">股权基金</a></li>
             </ol>
             <ol>
-                <li>订单状态：</li>
+                <li>产品状态：</li>
                 <li class="active"><a href="javascript:;">不限</a></li>
                 <li><a href="javascript:;">预热</a></li>
                 <li><a href="javascript:;">在售</a></li>

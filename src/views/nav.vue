@@ -74,17 +74,17 @@
         > div
             position relative
             margin: 0 auto
-            width 520px
+            width 420px
             > input
-                width 480px 
+                width 384px 
                 display: block
                 height 24px;
-                line-height 24px
-                padding 10px 20px
+                line-height 20px
+                padding 8px 16px
                 border 2px solid color-red
-                font-size 18px
+                font-size 14px
                 color #666
-                background url(/public/search.png) no-repeat 484px center
+                background url(/public/search.png) no-repeat 382px center
             > a 
                 position absolute
                 top 50%
@@ -95,7 +95,7 @@
 
         > nav
             margin 12px auto 0
-            width 520px
+            width 420px
             line-height 14px
             > a
                 margin 0 5px
@@ -135,7 +135,7 @@
             line-height 40px
             color #fff
             text-align center
-            font-size 18px
+            font-size 16px
 
             > i 
                 position absolute
