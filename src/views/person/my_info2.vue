@@ -1,7 +1,9 @@
 <template>
 	<div class="common_person_my_info">
         <h3>个人资质</h3>
-		
+		<div class="common_person_my_info_main">
+			
+		</div>
 	</div>
 </template>
 

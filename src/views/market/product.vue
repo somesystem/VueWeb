@@ -23,8 +23,8 @@
                         </div>
                         <div class="product-name-b">
                             <div>
-                                <span>评分：</span>
-                                <span><i></i><i></i><i></i><i></i></span>
+                                <span v-if="false">评分：</span>
+                                <span v-if="false"><i></i><i></i><i></i><i></i></span>
                                 <a href="javascript:;">1230</a>
                                 <a href="javascript:;">56</a>
                                 <a href="javascript:;">12</a>

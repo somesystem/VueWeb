@@ -166,34 +166,4 @@
             &:active,&:hover
                 background-color color-red-select
         
-    .checkbox-ui 
-        width 234px
-        > div
-            position relative
-            float left
-            width 50%
-            text-indent 25px
-            cursor pointer
-
-            &:before,&:after
-                content ""
-                position absolute
-                top 50%
-                border-radius 50%
-                box-sizing border-box
-            
-            &:before
-                left 0
-                margin-top -7px
-                width 14px
-                height 14px
-                border color-border
-            &.active:before
-                border-color color-red
-            &.active:after
-                left 3px
-                margin-top -4px
-                width 8px
-                height 8px
-                background-color color-red
 </style>
