@@ -35,7 +35,7 @@
 					{
 						title: '我的产品',
 						active: false,
-						height: '123px',
+						height: '164px',
 						item: [
 							{
 								name: '发布的产品',
@@ -48,6 +48,10 @@
 							{
 								name: '收藏的产品',
 								to: "select"
+							},
+							{
+								name: '上传产品',
+								to: "upfile1"
 							}
 						]
 					},

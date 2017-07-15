@@ -1,0 +1,211 @@
+@import "./base";
+.pmain
+    width 840px
+    margin 0 auto
+    > h3
+        padding-top 18px
+        color color-red
+        font-size size3
+        line-height size3
+
+    > nav 
+        padding 60px 0
+        display flex
+        justify-content center
+        a 
+            display block
+            margin-right 60px
+            width 80px
+            height 80px
+            border color-border
+            box-sizing border-box
+            text-align center
+            line-height 78px
+            color #a5a5a5
+            cursor pointer
+
+            &:last-child
+                margin-right 0
+
+            &.active
+                border 1px solid color-red
+                color color-red
+                background url(/public/select-red.png) no-repeat right bottom
+    > a
+        display block
+        margin 0 auto
+        width 120px
+        height 30px
+        line-height 30px
+        background-color #a5a5a5
+        color #fff
+        text-align center
+        border-radius 2px
+        font-size size3
+
+        &.active
+            background-color color-yellow
+
+            &:active,&:hover
+                background-color color-yellow-select
+
+.pmain-item
+    margin-top 18px 
+    display flex 
+    justify-content center
+    > span
+        display flex
+        width 98px
+        text-align center
+        font-size size3 
+        color color3
+        line-height 40px
+
+    > input,> textarea
+        display block
+        width 570px
+        height 40px
+        padding 10px
+        border color-border
+        font-size size3
+        color color3
+        box-sizing border-box
+    > textarea
+        height 120px
+        line-height 20px
+        outline none
+        resize none
+
+
+.pmain-cell
+    position relative
+    margin 18px auto 0
+    display flex 
+    width 668px
+
+    > span
+        display flex
+        width 98px
+        text-align center
+        font-size size3 
+        color color3
+        line-height 40px
+    .pfile
+        opacity 0
+        z-index 10
+        position absolute
+        left 98px
+        top 0
+        width 104px
+        height 40px
+        font-size 0
+        box-sizing border-box
+        cursor pointer
+        &:hover + .pfileBtn
+            background-color color-yellow-select
+
+    .preadonly
+        display block
+        width 570px
+        height 40px
+        padding 10px 10px 10px 100px
+        border color-border
+        font-size size3
+        color color3
+        box-sizing border-box
+    .pfileBtn
+        position absolute
+        top 6px
+        left 105px
+        width 90px
+        height 28px
+        line-height 28px
+        text-align center
+        color #fff
+        font-size size4
+        color #fff
+        background-color color-black
+        &.active 
+            background-color color-yellow 
+            &:active,&:hover
+                background-color color-yellow-select
+        
+.pmain-btn
+    display flex
+    padding-top 29px
+    justify-content center
+    > a
+        display block
+        width 120px
+        height 30px
+        line-height 30px
+        background-color #a5a5a5
+        margin-right 20px
+        color #fff
+        text-align center
+        border-radius 2px
+        font-size size3
+        
+        &:last-child
+            margin-right 0
+        &.active
+            background-color color-yellow
+
+            &:active,&:hover
+                background-color color-yellow-select
+        &.pre:active
+            background-color color-yellow
+
+.pmain-alert-mask
+    z-index 900
+    position fixed
+    top 0 
+    left 0
+    right 0
+    bottom 0
+    background-color rgba(0,0,0,.5)
+.pmain-alert-con
+    z-index 1000
+    position fixed
+    top 50% 
+    left 50%
+    margin-left -130px
+    margin-top -80px
+    width 260px
+    background-color #fff
+    border-radius 5px
+    > a 
+        position absolute
+        top 0
+        right 0 
+        width 30px
+        height 30px
+        line-height 30px
+        text-align center
+        font-size 16px 
+        color color3
+    > p 
+        height 119px
+        line-height 119px
+        text-align center
+        border-bottom color-border
+        font-size size3 
+        color color3
+    > nav 
+        display flex
+        padding 10px 0
+        > a
+            display block
+            flex 1
+            height 20px 
+            line-height 20px 
+            font-size size3 
+            color color3
+            text-align center
+            border-right color-border
+            &:last-child
+                border-right none
+
+.dashLine
+    height 30px
+    border-bottom color-border2
