@@ -18,13 +18,13 @@
                 <span>产品话题：</span>
                 <section>
                     <ul class="clearfix topic_menu">
-                        <li><span>信托</span><a href="javascript:;">×</a></li>
-                        <li class="add">+</li>
+                        <li v-for="item in topic"><span>{{item.name}}</span><a @click="removeTopic(item)" href="javascript:;">×</a></li>
+                        <li @click="topic_ctrl=true" class="add">+</li>
                     </ul>
-                    <div class="topic_input">
-                        <input type="text" />
+                    <div v-show="topic_ctrl" class="topic_input">
+                        <input @input="getTopic()" v-model="newTopic" type="text" />
                         <ol>
-                            <li>#信托</li>
+                            <li @click="setTopic(item)" v-for="item in newTopicArr">#{{item.name}}</li>
                         </ol>
                     </div>
                 </section>
@@ -65,20 +65,17 @@
             </div>
             <div class="pmain-item">
                 <span>付息方式：</span>
-                <select>
-                    <option>请选择付息方式</option>
-                    <option>按年付息</option>
-                    <option>半年付息</option>
-                    <option>按季付息</option>
-                    <option selected>固定日期</option>
+                <select v-model="methodId">
+                    <option value="">请选择付息方式</option>
+                    <option :value="item.id" v-for="item in payMethod">{{item.name}}</option>
                 </select>
             </div>
-            <div class="pmain-item5">
+            <div v-show="methodId==4" class="pmain-item5">
                 <ul class="clearfix topic_menu">
-                    <li><span>2017-07-08</span><a href="javascript:;">×</a></li>
-                    <li class="add">+</li>
+                    <li v-for="item in methodDateArr"><span>{{item}}</span><a @click="removeDate(item)" href="javascript:;">×</a></li>
+                    <li v-show="methodDateArr.length>0" @click="methodDate_ctrl=true" class="add">+</li>
                 </ul>
-                <input type="date" placeholder="固定日期（请选择日期）" />
+                <input v-show="methodDateArr.length==0 | methodDate_ctrl" @change="addDate()" v-model="methodDate" type="date" placeholder="固定日期（请选择日期）" />
             </div>
 
 
@@ -88,29 +85,28 @@
                     <div>预期收益：</div>
                     <div>返佣比率：</div>
                 </dt>
-                <dd>
+                <dd v-for="item in detail">
                     <div class="input-section2">
-                        <input type="text" />
+                        <input v-model="item.min" min="0" type="number" />
                         <span>~</span>
-                        <input type="text" />
-                        <aside v-show="false">∞</aside>
+                        <input v-model="item.max" @focus="item.focus=true" @blur="detailBlur(item)" type="text" />
+                        <aside @click="item.max = '∞'" v-show="item.focus && item.max==''">∞</aside>
                     </div>
                     <div class="input-section">
-                        <input min="0" type="number" />
+                        <input min="0" v-mode="item.pre" type="number" />
                         <span>%</span>
                     </div>
                     <div class="input-section">
-                        <input min="0" type="number" />
+                        <input min="0" v-mode="item.scale" type="number" />
                         <span>%</span>
                     </div>
                 </dd>
 
                 <dd class="add">
-                    <a href="javascript:;">+</a>
-                    <a href="javascript:;">-</a>
+                    <a @click="addDetail()" href="javascript:;">+</a>
+                    <a @click="removeDetail()" v-show="detail.length>1" href="javascript:;">-</a>
                 </dd>
             </dl>
-
 
             <div class="pmain-item3">
                 <span>抵/质押率：</span>
@@ -151,13 +147,81 @@
     export default {
         data(){
             return {
-                term2: ""
+                term2: "",
+                topic: [],
+                topic_ctrl: false,
+                newTopic: "",
+                newTopicArr: [],
+
+                payMethod: [
+                    {name:"按年付息",id:1},
+                    {name:"半年付息",id:2},
+                    {name:"按季付息",id:3},
+                    {name:"固定日期",id:4},
+                ],
+                methodId: "",
+                methodDateArr: [],
+                methodDate: "",
+                methodDate_ctrl: false,
+
+                detail: [{min:"",max:"",pre:"",focus:false,scale:""}]
+
             }
         },
-        computed: {
-            
+        watch: {
+            methodId(newVal){
+                if (newVal == 4) {
+
+                }
+            } 
         },
         methods: {
+            addDate(){
+                if (this.methodDate != "") {
+                    this.methodDateArr.push(this.methodDate);
+                    this.methodDate = "";
+                    this.methodDate_ctrl = false;
+                }
+            },
+            removeDate(item){
+                this.methodDateArr.splice(this.methodDateArr.indexOf(item),1);
+            },
+            getTopic(){
+                if (!this.newTopic.trim()) {return }
+                // forgeries
+                setTimeout(()=>{
+                    var num = (Math.random()*3|0)+1;
+                    var arr = [];
+                    for (var i = 0; i < num; i++) {
+                        arr[i] = {name: this.newTopic+i,id: i}
+                    }
+                    this.newTopicArr = arr;
+                },Math.random()*400+100);
+            },
+            setTopic(item){
+                this.topic.push(item);
+                this.newTopic = "";
+                this.newTopicArr = [];
+                this.topic_ctrl = false;
+            },
+            removeTopic(item){
+                for (var i = 0; i < this.topic.length; i++) {
+                    if (this.topic[i].name == item.name) {
+                        this.topic.splice(i,1);
+                        break;
+                    }
+                }
+            },
+            detailBlur(item){
+                setTimeout(()=>item.focus=false, 200);
+            },
+            addDetail(){
+                this.detail.push({min:"",max:"",pre:"",focus:false,scale:""});
+            },
+            removeDetail(){
+                this.detail.splice(this.detail.length-1,1);
+            },
+
             prev(){
                 this.$router.go(-1);
             },
