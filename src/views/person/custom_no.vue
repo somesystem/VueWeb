@@ -27,7 +27,7 @@
     				<p>18810658874</p>
     				<p>12345678@3456.com</p>
     				<p>340万</p>
-    				<p><a @click="edit()" href="javascript:;">编辑</a><a href="javascript:;">删除</a></p>
+    				<p><a @click="edit()" href="javascript:;">编辑</a><a @click="dele()" href="javascript:;">删除</a></p>
     			</dd>
     		</dl>
     		<common-page></common-page>
@@ -54,6 +54,16 @@
             <common-page></common-page>
         </div>
         <custom-edit :show="editShow" :is-add="isAdd" :type="user_controller"></custom-edit>
+
+        <div v-show="deleteCtrl" class="delete-mask"></div>
+        <div v-show="deleteCtrl" class="delete-con">
+            <a @click="deleteCtrl=false" href="javascript:;"></a>
+            <p>确定要删除该条信息吗？</p>
+            <nav>
+                <a @click="deleteCtrl=false" href="javascript:;">取消</a>
+                <a @click="dele2()" href="javascript:;">确定</a>
+            </nav>
+        </div>
 	</div>
 </template>
 
@@ -67,7 +77,8 @@
                 user_controller: 1,
                 user_normal: [],
                 user_special: [],
-                editShow: false
+                editShow: false,
+                deleteCtrl: false
             }
         },
         mounted(){
@@ -83,7 +94,15 @@
             edit(item,isAdd){
                 this.editShow = true;
                 this.isAdd = !!isAdd;
+            },
+            dele(item){
+                this.deleteCtrl = true;
+            },
+            dele2(){
+                this.deleteCtrl = false;
+                // DELETE
             }
+
         },
         components: {
             customEdit
@@ -91,7 +110,54 @@
     }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" scoped rel="stylesheet/stylus">
     @import "../../styl/base";
-	
+	.delete-mask
+        z-index 900
+        position fixed
+        top 0
+        left 0
+        right 0
+        bottom 0
+        background-color rgba(0,0,0,0.5)
+    .delete-con
+        z-index 1000
+        position fixed
+        top 50%
+        left 50%
+        margin-left -140px
+        margin-top -80px
+        width 280px
+        height 160px
+        background-color #fff
+        border-radius 5px
+        > a
+            position absolute
+            top 0
+            right 0
+            width 32px
+            height 32px 
+            background url('/public/close.png') no-repeat center center
+        > p 
+            height 120px 
+            border-bottom color-border
+            box-sizing border-box
+            padding 50px 15px 20px
+            font-size size3
+            color color3
+            text-align center
+        > nav
+            display flex 
+            padding 10px 0
+            a 
+                display block
+                flex 1
+                height 20px 
+                line-height 20px 
+                font-size size3
+                color color3 
+                text-align center 
+                border-right color-border
+                &:last-child
+                    border-right none
 </style>
