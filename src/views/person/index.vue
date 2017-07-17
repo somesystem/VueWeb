@@ -1,7 +1,7 @@
 <template>
 	<div class="bg-grey">
         <div class="main-width">
-    		<p class="common-detail-top">首页>我是卖家的订单</p>
+    		<p class="common-detail-top">首页>{{personTitle}}</p>
 
             <div class="common-person-top">
             	<a href="javascript:;">更改封面图</a>
@@ -26,6 +26,7 @@
 
 <script type="text/javascript">
 	import personMenu from "../../modules/person-menu.vue";
+    import {mapState} from "vuex";
 
 	export default {
 		data(){
@@ -33,6 +34,9 @@
 
 			}
 		},
+        computed: {
+            ...mapState(["personTitle"])
+        },
 		components: {
 			personMenu
 		}

@@ -1,3 +1,4 @@
+console.log("if your meet error,please install again");
 const glob = require('glob')
 const webpack = require('webpack')
 const merge = require('webpack-merge')

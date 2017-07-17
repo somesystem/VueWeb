@@ -7,22 +7,13 @@ import getters from './getters'
 Vue.use(Vuex)
 
 export function createStore () {
-  return new Vuex.Store({
-    state: {
-      activeType: null,
-      itemsPerPage: 20,
-      items: {/* [id: number]: Item */},
-      users: {/* [id: string]: User */},
-      lists: {
-        top: [/* number */],
-        new: [],
-        show: [],
-        ask: [],
-        job: []
-      }
-    },
-    actions,
-    mutations,
-    getters
-  })
+    return new Vuex.Store({
+        state: {
+            "personTitle": "我是买家的订单",
+            "upfileStep": 1
+        },
+        actions,
+        mutations,
+        getters
+    })
 }

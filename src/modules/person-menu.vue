@@ -4,7 +4,8 @@
 			<div v-for="item in list">
 				<h3 :class="item.active?'':'active'" @click="item.active=!item.active">{{item.title}}</h3>
 				<ul :style="{'height':item.active?item.height:'0px'}">
-					<router-link :key="index" v-for="(i,index) in item.item" :to="i.to" tag="li">{{i.name}}</router-link>
+					<li @click="to(i,item.item
+					)" :class="i.active?'active':''" :key="index" v-for="(i,index) in item.item">{{i.name}}</li>
 				</ul>
 			</div>
 			
@@ -13,6 +14,8 @@
 </template>
 
 <script type="text/javascript">
+	import {mapMutations} from "vuex";
+
 	export default {
 		data(){
 			return {
@@ -24,11 +27,13 @@
 						item: [
 							{
 								name: '我是买家的订单',
-								to: "buy"
+								to: "p_buy",
+								active: true
 							},
 							{
 								name: '我是卖家的订单',
-								to: "sell"
+								to: "p_sell",
+								active: false
 							}
 						]
 					},
@@ -38,20 +43,24 @@
 						height: '164px',
 						item: [
 							{
+								active: false,
 								name: '发布的产品',
-								to: "publish"
+								to: "p_publish"
 							},
 							{
+								active: false,
 								name: '认购的产品',
-								to: "take"
+								to: "p_take"
 							},
 							{
+								active: false,
 								name: '收藏的产品',
-								to: "select"
+								to: "p_select"
 							},
 							{
+								active: false,
 								name: '上传产品',
-								to: "upfile1"
+								to: "p_upfile"
 							}
 						]
 					},
@@ -61,12 +70,14 @@
 						height: '82px',
 						item: [
 							{
+								active: false,
 								name: '已下单用户',
-								to: "cus_place"
+								to: "p_cus_place"
 							},
 							{
+								active: false,
 								name: '未下单用户',
-								to: "cus_no"
+								to: "p_cus_no"
 							}
 						]
 					},
@@ -76,12 +87,14 @@
 						height: '82px',
 						item: [
 							{
+								active: false,
 								name: '我的回答',
-								to: "answer"
+								to: "p_answer"
 							},
 							{
+								active: false,
 								name: '我的收藏',
-								to: "myselect"
+								to: "p_myselect"
 							}
 						]
 					},
@@ -91,16 +104,19 @@
 						height: '123px',
 						item: [
 							{
+								active: false,
 								name: '个人信息',
-								to: "my_info1"
+								to: "p_my_info1"
 							},
 							{
+								active: false,
 								name: '个人资质',
-								to: "my_info2"
+								to: "p_my_info2"
 							},
 							{
+								active: false,
 								name: '个人擅长',
-								to: "my_info3"
+								to: "p_my_info3"
 							}
 						]
 					},
@@ -110,20 +126,35 @@
 						height: '123px',
 						item: [
 							{
+								active: false,
 								name: '系统消息',
-								to: "sysmsg"
+								to: "p_sysmsg"
 							},
 							{
+								active: false,
 								name: '客户消息',
-								to: "cusmsg"
+								to: "p_cusmsg"
 							},
 							{
+								active: false,
 								name: '社区消息',
-								to: "conmsg"
+								to: "p_conmsg"
 							}
 						]
 					}
 				]
+			}
+		},
+		methods: {
+			...mapMutations(["setPersonTitle"]),
+			to(item,parent){
+				this.$router.push({name: item.to});
+				for (var i = 0; i < parent.length; i++) {
+					parent[i].active=false;
+				}
+				
+				this.setPersonTitle(item.name);
+				item.active = true;
 			}
 		}
 	}
@@ -162,6 +193,6 @@
 				border-bottom color-border
 				cursor pointer
 
-				&:hover,&.router-link-active
+				&:hover,&.router-link-active,&.active
 					background-color #f1f1f1
 </style>
