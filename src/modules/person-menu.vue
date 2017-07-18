@@ -101,7 +101,7 @@
 					{
 						title: '我的资料',
 						active: false,
-						height: '123px',
+						height: '164px',
 						item: [
 							{
 								active: false,
@@ -117,6 +117,11 @@
 								active: false,
 								name: '个人擅长',
 								to: "p_my_info3"
+							},
+							{
+								active: false,
+								name: '修改密码',
+								to: "p_my_info4"
 							}
 						]
 					},

@@ -87,7 +87,6 @@
                 
             </div>
         </article>
-
     </div>
 </template>
 

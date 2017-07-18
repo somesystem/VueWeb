@@ -24,16 +24,14 @@
             </ol>
         </div>
         <div class="person-pro-box">
-            <div class="common-item" :key="i" v-for="i in 3">
-                <person-product-item></person-product-item>
-            </div>
+            <product-cell v-for="i in 4" :key="i"></product-cell>
             <common-page></common-page>
         </div>
     </div>
 </template>
 
 <script type="text/javascript">
-    import personProductItem from "../../modules/person-product-item.vue";
+    import productCell from "../../modules/product-cell.vue";
     export default {
         data(){
             return {
@@ -41,7 +39,7 @@
             }
         },
         components: {
-            personProductItem
+            productCell
         }
     }
 </script>

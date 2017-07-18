@@ -40,6 +40,7 @@ const proSelect = () => import('../views/person/pro_select.vue')
 const myInfo1 = () => import('../views/person/my_info1.vue')
 const myInfo2 = () => import('../views/person/my_info2.vue')
 const myInfo3 = () => import('../views/person/my_info3.vue')
+const myInfo4 = () => import('../views/person/my_info4.vue')
 const upfile = () => import('../views/person/upfile.vue')
 const upfile1 = () => import('../views/person/upfile1.vue')
 const upfile2 = () => import('../views/person/upfile2.vue')
@@ -222,6 +223,11 @@ export function createRouter () {
                                 path: 'my_info3',
                                 name: 'p_my_info3',
                                 component: myInfo3
+                            },
+                            {
+                                path: 'my_info4',
+                                name: 'p_my_info4',
+                                component: myInfo4
                             },
                             {
                                 path: 'upfile',

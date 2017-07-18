@@ -1,10 +1,10 @@
 <template>
-    <div @click="toProduct()" class="common-item-l">
-        <div class="common-item-l-t">
+    <div class="common-item-l">
+        <div @click="toProduct()" class="common-item-l-t">
             <p><span>天交所-林州重机</span><span>在售</span></p>
             <p>本期起售日 2017/05/15</p>
         </div>
-        <div class="common-item-l-c">
+        <div @click="toProduct()" class="common-item-l-c">
             <div>
                 <p>30%</p>
                 <p>最高预期收益</p>
@@ -40,21 +40,32 @@
                 <a href="javascript:;">预览资料</a>
             </div>
             
-            <router-link :to="{name:'product',params:{id:'221'}}" tag="a">立即预约</router-link>
+            <a @click="booking()" href="javascript:;">立即预约</a>
         </div>
+
+        <booking-product :show.sync="bookShow"></booking-product>
     </div>
 </template>
 
 <script type="text/javascript">
     var c = 222;
+    import bookingProduct from './booking-product.vue';
     export default {
         data(){
-            return {}
+            return {
+                bookShow: false
+            }
         },
         methods: {
             toProduct(){
                 this.$router.push({name:'product',params:{id:++c}});
+            },
+            booking(){
+                this.bookShow = true;
             }
+        },
+        components: {
+            bookingProduct
         }
     }
 </script>
