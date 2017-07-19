@@ -48,6 +48,7 @@ const upfile3 = () => import('../views/person/upfile3.vue')
 const upfile4 = () => import('../views/person/upfile4.vue')
 const msgSys = () => import('../views/person/msg_sys.vue')
 const msgCus = () => import('../views/person/msg_cus.vue')
+const msgCon = () => import('../views/person/msg_con.vue')
 
 
 
@@ -266,6 +267,11 @@ export function createRouter () {
                                 path: 'cus_sys',
                                 name: 'p_msg_cus',
                                 component: msgCus
+                            },
+                            {
+                                path: 'con_sys',
+                                name: 'p_msg_con',
+                                component: msgCon
                             }
                         ]
                     }
