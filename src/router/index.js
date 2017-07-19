@@ -46,6 +46,8 @@ const upfile1 = () => import('../views/person/upfile1.vue')
 const upfile2 = () => import('../views/person/upfile2.vue')
 const upfile3 = () => import('../views/person/upfile3.vue')
 const upfile4 = () => import('../views/person/upfile4.vue')
+const msgSys = () => import('../views/person/msg_sys.vue')
+const msgCus = () => import('../views/person/msg_cus.vue')
 
 
 
@@ -254,6 +256,16 @@ export function createRouter () {
                                         component: upfile4
                                     }
                                 ]
+                            },
+                            {
+                                path: 'msg_sys',
+                                name: 'p_msg_sys',
+                                component: msgSys
+                            },
+                            {
+                                path: 'cus_sys',
+                                name: 'p_msg_cus',
+                                component: msgCus
                             }
                         ]
                     }

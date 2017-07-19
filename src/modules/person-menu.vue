@@ -133,17 +133,17 @@
 							{
 								active: false,
 								name: '系统消息',
-								to: "p_sysmsg"
+								to: "p_msg_sys"
 							},
 							{
 								active: false,
 								name: '客户消息',
-								to: "p_cusmsg"
+								to: "p_msg_cus"
 							},
 							{
 								active: false,
 								name: '社区消息',
-								to: "p_conmsg"
+								to: "p_msg_con"
 							}
 						]
 					}
