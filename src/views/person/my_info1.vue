@@ -39,10 +39,10 @@
                 <li>
                     <span>学历：</span>
                     <article v-show="!isEdit && isHasSchool">{{school}}</article>
-                    <section v-show="!isEdit && !isHasSchool" class="add">添加学历信息</section>
-                    <input v-show="isEdit" v-model="school" placeholder="请输入学校名称" type="text" />
+                    <section @click="isEdit?showSchool=true:''" v-show="!showSchool && !isHasSchool" class="add">添加学历信息</section>
+                    <input v-show="isEdit && showSchool" v-model="school" placeholder="请输入学校名称" type="text" />
                 </li>
-                <li class="fileLi" :style="{opacity:isEdit?'1':'0'}">
+                <li class="fileLi" :style="{opacity:(isEdit && showSchool)?'1':'0'}">
                     <input type="text" v-model="schoolFile" readonly="readonly" />
                     <input id="file5" type="file" />
                     <a class="active" href="javascript:;">上传证明文件</a>
@@ -50,10 +50,10 @@
                 <li>
                     <span>证书：</span>
                     <article v-show="!isEdit && isHasBook">{{book}}</article>
-                    <section v-show="!isEdit && !isHasBook" class="add">添加证书</section>
-                    <input v-show="isEdit" v-model="book" placeholder="请输入证书名称" type="text" />
+                    <section @click="isEdit?showBook=true:''" v-show="!showBook && !isHasBook" class="add">添加证书</section>
+                    <input v-show="isEdit && showBook" v-model="book" placeholder="请输入证书名称" type="text" />
                 </li>
-                <li class="fileLi" :style="{opacity:isEdit?'1':'0'}">
+                <li class="fileLi" :style="{opacity:(isEdit && showBook)?'1':'0'}">
                     <input type="text" v-model="bookFile" readonly="readonly" />
                     <input id="file6" type="file" />
                     <a class="active" href="javascript:;">上传证明文件</a>
@@ -86,8 +86,10 @@
                 area: '',
                 school: '',
                 schoolFile: '',
+                showSchool: false,
                 book: '',
                 bookFile: '',
+                showBook: false,
                 other: ''
             }
         },
@@ -126,6 +128,13 @@
                         this.editAlert = false;
                     },1500)
                 }
+                if (!this.isHasSchool) {
+                    this.showSchool = false;
+                }
+                if (!this.isHasBook) {
+                    this.showBook = false;
+                }
+
                 this.isEdit = !this.isEdit;
             }
         }
