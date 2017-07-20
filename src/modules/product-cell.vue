@@ -48,11 +48,11 @@
                     <img src="" />
                 </div>
                 <div>
-                    <p>4.5</p>
-                    <p>综合评分</p>
+                    <p>100<i>单</i></p>
+                    <p>已成交</p>
                 </div>
                 <div>
-                    <p>10位</p>
+                    <p>10<i>位</i></p>
                     <p>服务客户</p>
                 </div>
             </div>
@@ -292,6 +292,8 @@
                 line-height 18px
                 color color-red
                 margin-bottom 12px
+                i 
+                    font-size 12px 
             p:nth-child(2)
                 height 14px
                 line-height 14px

@@ -4,11 +4,20 @@
         <div v-if="type==2" class="content">
             <h3><span>编辑理财师信息</span><a @click="close()" href="javascript:;"></a></h3>
             <ul class="clearfix">
-                <li><span>理财师姓名：</span><input v-model="name" type="text" placeholder="请输入姓名" /></li>
+                <li>
+                    <span>理财师姓名：</span><input v-model="name" type="text" placeholder="请输入姓名" />
+                    <p><!--理财师姓名--></p>
+                </li>
                 <li><span>性别：</span><div class="checkbox-ui"><div @click="sex=1" :class="sex==1?'active':''">男</div><div @click="sex=2" :class="sex==2?'active':''">女</div></div></li>
                 <li><span>手机号码：</span><input type="tel" v-model="tel" placeholder="请输入手机号码" /></li>
-                <li><span>邮箱：</span><input v-model="email" type="email" placeholder="请输入邮箱" /></li>
-                <li class="large"><span>所属机构：</span><input v-model="card" type="text" placeholder="请输入所属机构" /></li>
+                <li>
+                    <span>邮箱：</span><input v-model="email" type="email" placeholder="请输入邮箱" />
+                    <p><!--请输入正确的手机号码--></p>
+                </li>
+                <li class="large">
+                    <span>所属机构：</span><input v-model="card" type="text" placeholder="请输入所属机构" />
+                    <p><!--请输入所属机构--></p>
+                </li>
                 <li class="large"><span>地址：</span><input v-model="address" type="text" placeholder="请输入地址" /></li>
                 <li class="large"><span>备注：</span><input v-model="note" type="text" placeholder="请输入备注" /></li>
             </ul>
@@ -21,11 +30,23 @@
                 <a @click="close()" href="javascript:;"></a>
             </h3>
             <ul class="clearfix">
-                <li><span>用户姓名：</span><input type="text" v-model="name" placeholder="请输入姓名" /></li>
+                <li class="warn">
+                    <span>用户姓名：</span><input type="text" v-model="name" placeholder="请输入姓名" />
+                    <p>请输入正确的用户姓名</p>
+                </li>
                 <li><span>性别：</span><div class="checkbox-ui"><div @click="sex=1" :class="sex==1?'active':''">男</div><div @click="sex=2" :class="sex==2?'active':''">女</div></div></li>
-                <li><span>手机号码：</span><input type="tel" v-model="tel" placeholder="请输入手机号码" /></li>
-                <li><span>邮箱：</span><input type="email" v-model="email" placeholder="请输入邮箱" /></li>
-                <li class="large"><span>身份证号：</span><input v-model="card" type="text" placeholder="请输入所属机构" /></li>
+                <li class="warn">
+                    <span>手机号码：</span><input type="tel" v-model="tel" placeholder="请输入手机号码" />
+                    <p>请输入正确的手机号码</p>
+                </li>
+                <li class="warn">
+                    <span>邮箱：</span><input type="email" v-model="email" placeholder="请输入邮箱" />
+                    <p>请输入正确的邮箱</p>
+                </li>
+                <li class="warn large">
+                    <span>身份证号：</span><input v-model="card" type="text" placeholder="请输入身份证号" />
+                    <p>请输入正确的身份证号</p>
+                </li>
                 <li class="large"><span>地址：</span><input v-model="address" type="text" placeholder="请输入地址" /></li>
                 <li class="large"><span>备注：</span><input v-model="note" type="text" placeholder="请输入备注" /></li>
             </ul>
@@ -129,8 +150,9 @@
             li 
                 float left 
                 width 50%
-                height 40px
-                margin-bottom 18px
+                height 58px
+                &.warn input 
+                    border 1px solid color-red
                 > span,> input,> div
                     float left
                     height 40px
@@ -147,6 +169,13 @@
                     line-height 22px
                     border color-border
                     box-sizing border-box
+                > p 
+                    clear both
+                    height 18px 
+                    line-height 18px 
+                    color color-red 
+                    text-indent 84px 
+                    font-size 12px 
 
                 &.large
                     width 100%
