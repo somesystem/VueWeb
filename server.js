@@ -1,4 +1,3 @@
-console.log("if your meet error,please install again");
 const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
