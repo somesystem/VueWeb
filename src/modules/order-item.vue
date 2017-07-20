@@ -50,6 +50,7 @@
     .order-item
     	border color-border
     	margin 12px 0
+    	background-color #fff
 	.order-item-t
 		height 40px
 		line-height 40px
