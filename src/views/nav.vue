@@ -4,8 +4,13 @@
             <nav class="common-search main-width">
                 <div class="common-search-box">
                     <div>
-                        <input v-model="searchKey" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
+                        <input v-model="searchKey" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
                         <a @click="fnSeach()" href="javascript:;"></a>
+                        <ul v-show="isFocus" class="common-search-lx">
+                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
+                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
+                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
+                        </ul>
                     </div>
                     <nav>
                         <span>热点：</span>
@@ -15,11 +20,15 @@
                         <a href="javascript:;">很赚钱</a>
                     </nav>
                 </div>
-                <div class="common-sign">
+                <div v-if="!test" class="common-sign">
                     <i></i>
                     <router-link tag="a" to="/login">登录</router-link>
                     <span>|</span>
                     <router-link tag="a" to="/join">注册</router-link>
+                </div>
+                <div v-if="test" class="common-sign">
+                    <i class="active" @click="toMyhome()"></i>
+                    <a @click="loginOut()" href="javascript:;">退出登录</a>
                 </div>
             </nav>
         </div>
@@ -28,35 +37,52 @@
             <router-link tag="a" to="/nav" exact>首页</router-link>
             <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
             <router-link tag="a" to="/nav/financial">找理财师</router-link>
-            <router-link tag="a" to="/nav/person/id">理财社区</router-link>
+            <router-link tag="a" to="/" exact>理财社区</router-link>
           </nav>
         </header>
         <transition name="fade" mode="out-in">
             <router-view></router-view>
         </transition>
 
-        <footer class="common-foot">
-            <nav class="main-width">
-                <a href="javascript:;">关于我们</a>
-                <a href="javascript:;">媒体报道</a>
-            </nav>
-        </footer>
+        <common-foot></common-foot>
     </div>
 </template>
 
 <script type="text/javascript">
+    import commonFoot from "../modules/common-foot.vue";
+
     export default {
         data(){
             return {
-                searchKey: ""
+                searchKey: "",
+                isFocus: false,
+                test: true
             }
         },
         methods: {
+            fnFocus(){
+                this.isFocus = true;
+            },
+            fnBlur(){
+                setTimeout(()=>{
+                    this.isFocus = false;
+                },300);
+            },
             fnSeach(){
                 if (this.searchKey) {
                     this.$router.push({name:'s_pro',params:{id:this.searchKey}});
                 }
+            },
+            toMyhome(){
+                this.$router.push({path:'/nav/person/id'});
+            },
+            loginOut(){
+                this.test = false;
+                this.$router.push({path:"/"});
             }
+        },
+        components: {
+            commonFoot
         }
     }
 
@@ -64,7 +90,32 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
-    
+    .common-search-lx
+        z-index 10
+        position absolute
+        top 44px
+        left 0
+        width 100%
+        border color-border
+        border-top none
+        box-sizing border-box 
+
+        li 
+            display flex 
+            background-color #fff
+            height 32px 
+            line-height 32px 
+            cursor pointer
+            > span 
+                display block 
+                flex 1 
+                text-align center
+                color color3
+                font-size size3
+            &:hover 
+                background-color #cdcdcd
+                color color2
+
     .common-search
         position relative
         height 126px
@@ -118,6 +169,8 @@
             height 30px
             margin-right 12px
             background url(/public/user.png) no-repeat
+            &.active 
+                cursor pointer 
         > span
             margin 0 5px
   
@@ -148,16 +201,4 @@
             &.router-link-active
                 background-color color-red-select
 
-    .common-foot
-        padding 40px 0 200px
-        background-color #353535
-        > nav
-            padding 0 15px
-            box-sizing border-box
-            > a
-                height 20px
-                line-height 20px
-                font-size 14px
-                color color-black
-                margin-right 15px
 </style>

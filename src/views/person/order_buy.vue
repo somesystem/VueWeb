@@ -17,7 +17,15 @@
             </ol>
         </div>
         <div class="order-box">
-        	<order-item :key="i" v-for="i in 5"></order-item>
+
+
+            <order-item :status="1"></order-item>
+            <order-item :status="2"></order-item>
+            <order-item :status="3"></order-item>
+            <order-item :status="4"></order-item>
+        	<order-item :status="5"></order-item>
+
+
 
         	<common-page></common-page>
         </div>

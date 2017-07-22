@@ -26,58 +26,14 @@
                         height: '82px',
                         item: [
                             {
-                                name: '我是买家的订单',
+                                name: '我的订单',
                                 to: "p_buy",
                                 active: true
                             },
                             {
-                                name: '我是卖家的订单',
-                                to: "p_sell",
-                                active: false
-                            }
-                        ]
-                    },
-                    {
-                        title: '我的产品',
-                        active: false,
-                        height: '164px',
-                        item: [
-                            {
-                                active: false,
-                                name: '发布的产品',
-                                to: "p_publish"
-                            },
-                            {
-                                active: false,
-                                name: '认购的产品',
-                                to: "p_take"
-                            },
-                            {
-                                active: false,
                                 name: '收藏的产品',
-                                to: "p_select"
-                            },
-                            {
-                                active: false,
-                                name: '上传产品',
-                                to: "p_upfile"
-                            }
-                        ]
-                    },
-                    {
-                        title: '我的客户',
-                        active: false,
-                        height: '82px',
-                        item: [
-                            {
-                                active: false,
-                                name: '已下单用户',
-                                to: "p_cus_place"
-                            },
-                            {
-                                active: false,
-                                name: '未下单用户',
-                                to: "p_cus_no"
+                                to: "p_select",
+                                active: false
                             }
                         ]
                     },
@@ -101,17 +57,12 @@
                     {
                         title: '我的资料',
                         active: false,
-                        height: '164px',
+                        height: '123px',
                         item: [
                             {
                                 active: false,
                                 name: '个人信息',
                                 to: "p_my_info1"
-                            },
-                            {
-                                active: false,
-                                name: '个人资质',
-                                to: "p_my_info2"
                             },
                             {
                                 active: false,

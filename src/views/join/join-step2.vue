@@ -231,7 +231,7 @@
                             status = false;
                         }
                         if (!this.yz2.personFile2) {
-                            this.personFileType2 = 2;
+                            this.personFile2Type = 2;
                             status = false;
                         }
                     }

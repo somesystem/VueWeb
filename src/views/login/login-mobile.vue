@@ -12,7 +12,7 @@
             <router-link tag="a" to="/">忘记密码？</router-link>
         </aside>
         <div class="height58"></div>
-        <a class="login-btn" href="javascript:;">登录</a>
+        <a class="login-btn" @click="goHome()" href="javascript:;">登录</a>
     </div>
 </template>
 
@@ -46,6 +46,9 @@
                 clearInterval(this.code.timer);
                 this.code.msg = '获取';
                 this.code.iNow = 60;
+            },
+            goHome(){
+                this.$router.push({"path":"/"});
             }
         }
     }

@@ -11,7 +11,7 @@
             <router-link tag="a" to="/join">免费注册</router-link>
             <router-link tag="a" to="/">忘记密码？</router-link>
         </aside>
-        <a class="login-btn" href="javascript:;">登录</a>
+        <a class="login-btn" @click="goHome()" href="javascript:;">登录</a>
     </div>
 </template>
 
@@ -28,6 +28,9 @@
             })
         },
         methods: {
+            goHome(){
+                this.$router.push({"path":"/"});
+            },
             fnSwiper(){
                 var oSwiper = document.getElementById("login-swiper");
                 

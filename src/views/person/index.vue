@@ -17,7 +17,8 @@
             </div>
     		
     		<div class="person-main">
-    			<person-menu class="person-main-l"></person-menu>
+                <person-menu v-if="test" class="person-main-l"></person-menu>
+    			<person-menu2 v-if="!test" class="person-main-l"></person-menu2>
     			<router-view class="person-main-r"></router-view>
     		</div>
         </div>		
@@ -25,20 +26,22 @@
 </template>
 
 <script type="text/javascript">
-	import personMenu from "../../modules/person-menu.vue";
+    import personMenu from "../../modules/person-menu.vue";
+	import personMenu2 from "../../modules/person-menu2.vue";
     import {mapState} from "vuex";
 
 	export default {
 		data(){
 			return {
-
+                test: Math.random()<0.5
 			}
 		},
         computed: {
             ...mapState(["personTitle"])
         },
 		components: {
-			personMenu
+            personMenu,
+			personMenu2
 		}
 	}
 </script>

@@ -17,6 +17,7 @@ const market = () => import('../views/market/index.vue')
 const marketView = () => import('../views/market/market.vue')
 const suggestView = () => import('../views/market/suggest.vue')
 const productDetailView = () => import('../views/market/product.vue')
+const productVS = () => import('../views/market/productVS.vue')
 
 // 找理财师
 const financial = () => import('../views/financial/index.vue')
@@ -49,7 +50,7 @@ const upfile4 = () => import('../views/person/upfile4.vue')
 const msgSys = () => import('../views/person/msg_sys.vue')
 const msgCus = () => import('../views/person/msg_cus.vue')
 const msgCon = () => import('../views/person/msg_con.vue')
-
+const orderDetail = () => import('../views/person/order_detail.vue')
 
 
 
@@ -98,6 +99,11 @@ export function createRouter () {
                                 path: 'suggest/:id?',
                                 name: 'suggest',
                                 component: suggestView
+                            },
+                            {
+                                path: 'productVS',
+                                name: 'productVS',
+                                component: productVS
                             },
                             {
                                 path: ':id',
@@ -181,6 +187,11 @@ export function createRouter () {
                                 path: 'sell',
                                 name: 'p_sell',
                                 component: orderSell
+                            },
+                            {
+                                path: 'order_detail',
+                                name: 'p_order_detail',
+                                component: orderDetail
                             },
                             {
                                 path: 'cus_place',
