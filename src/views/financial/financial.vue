@@ -25,8 +25,12 @@
                 <ul :style="{'height': more.height}">
                     <li @click="fnChoose(item,mechanism)" v-for="(item,index) in mechanism"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
-                <a @click="showMore()" :class="more.active?'active':''" href="javascript:;"><span>{{more.msg}}</span><i></i></a>
             </nav>
+            <aside :class="more.active?'active':''">
+                <input type="text" placeholder="搜索其他机构" />
+                <i><!--搜索--></i>
+                <a @click="showMore()" href="javascript:;"><span>{{more.msg}}</span><i></i></a>
+            </aside>
         </div>
         <div class="main-width common-nav-sort">
             <nav>
@@ -37,9 +41,9 @@
             </nav>
             <ul>
                 <li @click="fnSort(item)" :class="item.sort?'active':''" v-for="(item,key) in sort_type"><a href="javascript:;"><span>{{item.name}}</span><i></i></a></li>  
-
             </ul>
         </div>
+
 
         <div class="main-width">
             <div class="financial-item-box">
@@ -225,8 +229,12 @@
         display flex
     .financial-article
         flex 1
-        padding 26px 
-        box-shadow 0 0 8px rgba(0,0,0,0.11)
+        padding 25px 
+        border color-border
+        cursor pointer
+        &:hover
+            border 1px solid #fff
+            box-shadow 0 0 8px rgba(0,0,0,0.11)
 
         &:first-child
             margin-right 16px 
