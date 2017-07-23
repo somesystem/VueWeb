@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<!--实际应通过item判断，123均为测试，以下仅为显示方便，仅需要一个order-item即可-->
+		<!--实际应通过item判断，12345均为测试，以下仅为显示方便，仅需要一个order-item即可
+			status 和 hasLicai 都应通过item判断
+			以下仅为显示方便
+		-->
 		<div v-show="status==1" class="order-item">
 			<div class="order-item-t">
 				<p>
@@ -12,8 +15,8 @@
 				<p>
 					<b>客户:</b>
 					<i>张三</i>
-					<b>理财师:</b>
-					<i>蔡大大</i>
+					<b v-if="hasLicai">理财师:</b>
+					<i v-if="hasLicai">蔡大大</i>
 				</p>
 			</div>
 			<div class="order-item-c">
@@ -47,8 +50,8 @@
 				<p>
 					<b>客户:</b>
 					<i>张三</i>
-					<b>理财师:</b>
-					<i>蔡大大</i>
+					<b v-if="hasLicai">理财师:</b>
+					<i v-if="hasLicai">蔡大大</i>
 				</p>
 			</div>
 			<div class="order-item-c">
@@ -82,8 +85,8 @@
 				<p>
 					<b>客户:</b>
 					<i>张三</i>
-					<b>理财师:</b>
-					<i>蔡大大</i>
+					<b v-if="hasLicai">理财师:</b>
+					<i v-if="hasLicai">蔡大大</i>
 				</p>
 			</div>
 			<div class="order-item-c">
@@ -115,8 +118,8 @@
 				<p>
 					<b>客户:</b>
 					<i>张三</i>
-					<b>理财师:</b>
-					<i>蔡大大</i>
+					<b v-if="hasLicai">理财师:</b>
+					<i v-if="hasLicai">蔡大大</i>
 				</p>
 			</div>
 			<div class="order-item-c">
@@ -149,8 +152,8 @@
 				<p>
 					<b>客户:</b>
 					<i>张三</i>
-					<b>理财师:</b>
-					<i>蔡大大</i>
+					<b v-if="hasLicai">理财师:</b>
+					<i v-if="hasLicai">蔡大大</i>
 				</p>
 			</div>
 			<div class="order-item-c">
@@ -176,7 +179,7 @@
 
 <script type="text/javascript">
 	export default {
-		props: ["status"],
+		props: ["status","hasLicai"],
 		data(){
 			return {
 				

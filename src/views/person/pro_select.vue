@@ -1,11 +1,6 @@
 <template>
     <div>
         <div class="common-person-order-top">
-            <ul>
-                <li class="active"><a href="javascript:;">审核通过</a></li>
-                <li><a href="javascript:;">正在审核</a></li>
-                <li><a href="javascript:;">未通过审核</a></li>
-            </ul>
             <ol>
                 <li>产品类型：</li>
                 <li class="active"><a href="javascript:;">不限</a></li>
