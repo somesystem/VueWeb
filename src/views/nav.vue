@@ -2,6 +2,7 @@
     <div>
         <div class="bg-white">
             <nav class="common-search main-width">
+                <img class="common-logo" src="/public/logo.png" />
                 <div class="common-search-box">
                     <div>
                         <input v-model="searchKey" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
@@ -37,7 +38,7 @@
             <router-link tag="a" to="/nav" exact>首页</router-link>
             <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
             <router-link tag="a" to="/nav/financial">找理财师</router-link>
-            <router-link tag="a" to="/" exact>理财社区</router-link>
+            <router-link tag="a" to="/nav/forum" exact>理财社区</router-link>
           </nav>
         </header>
         <transition name="fade" mode="out-in">
@@ -90,6 +91,10 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
+    .common-logo
+        position absolute
+        top 20px 
+        left 20px
     .common-search-lx
         z-index 10
         position absolute
@@ -118,9 +123,9 @@
 
     .common-search
         position relative
-        height 126px
+        height 100px
     .common-search-box
-        padding 26px 0
+        padding 20px 0
 
         > div
             position relative
@@ -132,7 +137,7 @@
                 height 24px;
                 line-height 20px
                 padding 8px 16px
-                border 2px solid color-red
+                border 2px solid color-base
                 font-size 14px
                 color #666
                 background url(/public/search.png) no-repeat 382px center
@@ -157,7 +162,7 @@
     .common-sign
         position absolute
         right 20px
-        top 48px 
+        top 33px 
         height 30px
         line-height 30px
         width 120px
@@ -175,7 +180,7 @@
             margin 0 5px
   
     .common-header 
-        background-color color-red
+        background-color #fff
     .common-inner
         width main-width
         margin: 0 auto
@@ -183,22 +188,25 @@
         > a
             position relative
             display block
-            width 120px
-            height 40px
-            line-height 40px
-            color #fff
+            width 110px
+            margin-right 10px 
+            height 28px
+            line-height 28px
+            color color3
             text-align center
             font-size 16px
+            border-radius 5px
 
             > i 
                 position absolute
-                right 9px
-                top 18px
-                border-top 6px solid #fff
+                right 7px
+                top 11px
+                border-top 6px solid #000
                 border-left 6px solid transparent
                 border-right 6px solid transparent
 
             &.router-link-active
-                background-color color-red-select
+                background-color #e6effc
+                color #0069b8
 
 </style>

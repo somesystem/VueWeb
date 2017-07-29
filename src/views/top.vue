@@ -120,8 +120,8 @@
     @import "../styl/base";
 
     .top-banner
-        height 400px
-        padding-top 50px
+        height 340px
+        padding-top 30px
         background url("/public/banner.png") no-repeat center center
         box-sizing border-box
     .top-fill
@@ -142,7 +142,7 @@
                 background transparent
                 border none
 
-    .top-select-btn
+    a.top-select-btn
         display block
         margin 30px auto 0
         width 200px
@@ -152,6 +152,8 @@
         font-size 18px
         color #fff
         background-color color-yellow
+        &:active,&:hover 
+            background-color color-yellow-select
 
     .top-menu
         background-color #fff
@@ -160,7 +162,7 @@
             padding 40px 0 30px
             margin 0 auto
             width main-width
-            border-bottom 2px solid color-red
+            border-bottom 2px solid color-base
 
             > li
                 position relative
@@ -170,7 +172,7 @@
                 text-align center
                 font-size 18px
                 line-height 18px
-                color #000
+                color color-base
                 background-position center top
                 background-repeat no-repeat
                 cursor pointer
@@ -202,7 +204,7 @@
                         bottom -32px
                         left 50%
                         margin-left -18px
-                        width 37px
+                        width 36px
                         height 19px
                         background #fff url(/public/arrow-top.png) no-repeat
 
@@ -214,7 +216,7 @@
             display flex
             
             h2
-                color color-red
+                color color-base
                 font-size 18px
                 width 125px
 
@@ -242,8 +244,8 @@
         border-radius 16px
         text-align center 
         margin 12px auto
-        border 1px solid color-red
-        color color-red
+        border 1px solid color-base
+        color color-base
         font-size 16px
 
     .top-articel
@@ -294,13 +296,25 @@
             padding 18px
             box-sizing border-box
 
-            li 
+            li  
+                position relative
                 height 14px 
                 margin-bottom 26px 
                 overflow hidden
                 white-space nowrap
                 text-overflow ellipsis
                 line-height 14px 
+                text-indent 24px 
+                &:after 
+                    content ""
+                    position absolute
+                    top 50%
+                    left 0
+                    margin-top -4px 
+                    width 8px
+                    height 8px 
+                    border-radius 50%
+                    background-color color-yellow
                 a 
                     font-size size3 
                     color color3 

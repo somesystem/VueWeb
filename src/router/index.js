@@ -52,7 +52,8 @@ const msgCus = () => import('../views/person/msg_cus.vue')
 const msgCon = () => import('../views/person/msg_con.vue')
 const orderDetail = () => import('../views/person/order_detail.vue')
 
-
+// 理财社区
+const forum = () => import('../views/forum/index.vue')
 
 // 搜索
 const search = () => import('../views/search/index.vue')
@@ -285,6 +286,10 @@ export function createRouter () {
                                 component: msgCon
                             }
                         ]
+                    },
+                    {
+                        path: 'forum',
+                        component: forum
                     }
                 ]
             },
