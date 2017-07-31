@@ -3,7 +3,7 @@
         <div class="main-width">
             <ul class="forum-top clearfix">
                 <li><a href="javascript:;">发布话题</a></li>
-                <li><a href="javascript:;">创建话题</a></li>
+                <li><a @click="isShowCreate=true" href="javascript:;">创建话题</a></li>
                 <li><a href="javascript:;">分享理财经</a></li>
                 <li><a href="javascript:;">我的知识库</a></li>
             </ul>
@@ -111,22 +111,87 @@
         </div>
 
         <booking-product :show.sync="bookShow"></booking-product>
+        
+        <!--创建话题 start-->
+        <div class="create-topic-mask" v-show="isShowCreate"></div>
+        <div class="create-topic" v-show="isShowCreate">
+            <h4>创建话题<a @click="isShowCreate=false" class="close" href="javascript:;"></a></h4>
+            <div class="create-input">
+                <div class="create-input-box clearfix">
+                    <div class="create-input-item" v-for="item in aTopic">{{item}}<a href="javascript:;" @click="delTopic(item)"></a></div>
+                    <input @input="getTopic()" v-model="newTopic" type="text" :placeholder="aTopic.length?'可添加10个话题':'创建话题'" />
+                </div>
+                <ul><li @click="setTopic(item,'lxTopic')" v-for="item in lxTopic">#{{item}}</li></ul>
+            </div>
+            <h5>热门话题</h5>
+            <nav class="clearfix">
+                <a @click="setTopic(item)" v-for="item in hotTopic" href="javascript:;">{{item}}</a>
+            </nav>
+            <a @click='createTopic()' href="javascript:;">创建</a>
+
+        </div>
+        <!--创建话题 end-->
     </div>
 </template>
 
 <script type="text/javascript">
     import bookingProduct from '../../modules/booking-product.vue';
+    import { mapActions } from 'vuex';
 
     export default {
         data(){
             return {
                 openMore: false,
-                bookShow: false
+                bookShow: false,
+
+                isShowCreate: false,
+                newTopic: '',
+                hotTopic: ["私募基金","股权基金","信托","房地产","股权基金","股权基金","信托"],
+                lxTopic: [],
+                aTopic: []
             }
         },
         methods: {
+            ...mapActions(["toast"]),
             booking(){
                 this.bookShow = true;
+            },
+            getTopic(){
+                if (!this.newTopic.trim()) {return}
+                var num = Math.random() * 4 | 0;
+                var lxTopic = [];
+                for (var i = 0; i < num; i++) {
+                    lxTopic[i] = this.newTopic + (i + 1);
+                }
+                this.lxTopic = lxTopic;
+            },
+            setTopic(item,type){
+                var index = this.aTopic.indexOf(item);
+                if (index == -1 && this.aTopic.length < 10) {
+                    this.aTopic.push(item);
+                }
+                if (type == 'lxTopic') {
+                    this.lxTopic = [];
+                    this.newTopic = '';
+                }
+                
+            },
+            delTopic(item){
+                for (var i = 0; i < this.aTopic.length; i++) {
+                    if(this.aTopic[i] == item){
+                        this.aTopic.splice(i,1);
+                        break;
+                    }
+                }
+            },
+            createTopic(){
+                if (this.newTopic.trim()) {
+                    this.toast("话题审核中<br/>请耐心等待");
+
+                    setTimeout(()=>{
+                        this.isShowCreate = false;
+                    }, 2500);
+                }
             }
         },
         components: {
@@ -136,316 +201,5 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
-    @import "../../styl/base";
-    .pt20   
-        padding-top 20px
-    .forum-top
-        border color-border
-        background-color #fff
-        padding 20px 
-        > li 
-            float left 
-            margin-right 60px
-            height 30px 
-            line-height 30px 
-            font-size size3
-            color color3 
-            text-indent 20px 
-            background-repeat no-repeat
-            background-position left center
-            &:nth-child(1)
-                background-image url('/public/i1.png')
-            &:nth-child(2)
-                background-image url('/public/i2.png')
-            &:nth-child(3)
-                background-image url('/public/i3.png')
-            &:nth-child(4)
-                float right
-                margin-right 0
-
-    .forum-hot
-        padding 20px 0
-        display flex 
-        > h3,nav,aside
-            height 26px 
-        > h3 
-            width 80px 
-            line-height 26px 
-            text-align center
-            font-size size3
-            color color3 
-        > nav 
-            width 1036px
-            min-height 36px 
-            overflow hidden 
-            margin-top -10px
-            &.active 
-                height auto 
-            > a 
-                float left
-                width 74px
-                height 24px
-                line-height 24px
-                border 1px solid color-base
-                color color-base
-                font-size 14px 
-                text-align center 
-                margin-top 10px 
-                margin-right 20px
-                border-radius 5px 
-                
-                &:nth-child(11n)
-                    margin-right 0
-
-
-
-        > aside 
-            align-self flex-end
-            cursor pointer
-            width 42px
-            transition 0.3s
-            background url('/public/more.png') no-repeat center center
-
-            &.active
-                transform rotateZ(180deg) 
-
-    .forum-main
-        display flex 
-    .forum-main-l
-        width 900px
-        margin-right 12px
-        
-        > ul
-            background-color #fff
-            border color-border
-            display flex 
-            padding 9px 0
-            > li 
-                position relative
-                display block
-                width 120px 
-                height 22px 
-                line-height 22px 
-                text-align center
-                font-size size3 
-                border-right color-border
-                &:last-child
-                    border-right none
-                &:nth-child(1)
-                    width 70px
-                    border-right none
-                    a 
-                        color color-base 
-                &.active a
-                    color color-base
-                a 
-                    color color3 
-
-                &.active:after
-                    content ""
-                    position absolute
-                    bottom -9px
-                    left 50%
-                    margin-left -20px
-                    height 4px 
-                    width 40px 
-                    background-color color-base
-
-                &.active:nth-child(4):after
-                    width 70px 
-                    margin-left -35px 
-
-    .forum-item
-        margin-top 10px 
-        padding 18px 
-        border color-border 
-        background-color #fff
-        
-        > p 
-            height size3
-            line-height size3
-            margin-bottom 12px 
-            font-size size3 
-            color color3 
-
-            i 
-                margin: 0 14px
-                font-size size5
-                color color5
-            time 
-                font-size size4 
-                color color4 
-        
-        > h4 
-            margin-bottom 12px
-            height size1  
-            font-size size1 
-            line-height size1
-            color color1 
-
-        > nav 
-            display flex 
-            a 
-                margin-right 20px 
-                color color-base 
-                font-size size3 
-                line-height size3 
-
-        > section
-            padding 14px 0 12px 
-            display flex 
-            > div 
-                width 42px 
-                margin-right 20px 
-                img 
-                    display block
-                    margin-bottom 12px
-                    width 42px
-                    height 42px 
-
-                span 
-                    display block
-                    font-size size2
-                    color color2 
-                    line-height size2 
-                    text-align center
-            > p 
-                flex 1
-                font-size size3 
-                line-height 24px 
-                text-align jusitify
-                a 
-                    color color-red 
-
-        > aside
-            display flex 
-            a 
-                display block
-                height 20px 
-                line-height 20px 
-                font-size size4
-                color color5 
-                background-repeat no-repeat
-                background-position left center 
-                margin-right 14px 
-                text-indent 20px 
-                &:nth-child(1)
-                    background-image url('/public/zan.png')
-                    text-indent 14px 
-                    margin-right 20px 
-                    color #fff 
-                &:nth-child(2)
-                    background-image url('/public/pl.png')
-                &:nth-child(3)
-                    background-image url('/public/share.png')
-                &:nth-child(4)
-                    background-image url('/public/sel.png')
-                &:nth-child(5)
-                    background-image url('/public/jb.png')
-    .forum-more 
-        display block
-        width 300px 
-        height 30px 
-        line-height 30px 
-        color color-base
-        font-size 14px 
-        border 1px solid color-base
-        border-radius 15px 
-        margin 12px auto
-        text-align center
-
-    .forum-main-r
-        flex 1
-
-        > h4 
-            height 40px 
-            line-height 40px 
-            border 1px solid transparent
-            border-bottom color-border
-            color color-base
-            text-indent 6px 
-
-    .forum-cell 
-        background-color #fff
-        margin-top 10px 
-        border color-border 
-        padding-top 10px 
-        > h5 
-            line-height 18px 
-            color color2
-            font-size size2 
-            text-align center
-            text-indent 18px 
-            i 
-                display inline-block
-                vertical-align top
-                color #fff
-                width 36px 
-                height 18px 
-                text-align center
-                margin-left 11px 
-                font-size 12px 
-                background url('/public/sign.png') no-repeat
-                text-indent 0px 
-
-        > div 
-            width 206px 
-            margin 0 auto
-            padding 16px 0 20px 
-            border-bottom color-border2
-            display flex
-            > section
-                flex 1 
-                p 
-                    font-size size4
-                    color color4 
-                    text-align center
-                    &:nth-child(1)
-                        height 22px 
-                        line-height 22px 
-                        margin-bottom 10px 
-                    &:nth-child(2)
-                        line-height 16px 
-                &:nth-child(1) p:nth-child(1)
-                    color color-red
-                    font-size 24px 
-                &:nth-child(3) p 
-                    font-size size2 
-                    color color2 
-                    text-align left
-
-        > aside
-            display flex 
-            padding 0 20px 
-            img 
-                width 42px 
-                height 42px 
-                border-radius 50%
-                margin 12px 14px
-            > div 
-                h6 
-                    padding-top 12px 
-                    font-size size2
-                    color color2 
-                    line-height size2
-                    margin-bottom 12px 
-                p  
-                    line-height size4 
-                    font-size size4 
-                    color color4 
-
-        > nav 
-            display flex
-            border-top color-border 
-            a 
-                display block
-                flex 1 
-                border-right color-border 
-                height 40px 
-                line-height 40px 
-                text-align center
-                color color2 
-                font-size size2 
-                &:last-child 
-                    border-right none
+    @import "../../styl/forum";
 </style>

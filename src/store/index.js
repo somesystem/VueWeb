@@ -10,7 +10,12 @@ export function createStore () {
     return new Vuex.Store({
         state: {
             "personTitle": "我是买家的订单",
-            "upfileStep": 1
+            "upfileStep": 1,
+            "toast": {
+                msg: "",
+                timer: null,
+                status: 0
+            },
         },
         actions,
         mutations,

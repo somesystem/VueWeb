@@ -3,13 +3,21 @@
         <transition name="fade" mode="out-in">
             <router-view></router-view>
         </transition>
+        <d-toast :status="toast.status" :msg="toast.msg"></d-toast>
     </div>
 </template>
 
 <script type="text/javascript">
+    import dToast from './modules/d-toast.vue';
+    import { mapState } from "vuex";
     export default {
         data(){
             return {}
+        },
+
+        computed: mapState(["toast"]),
+        components:{
+            dToast
         }
     }
 </script>
