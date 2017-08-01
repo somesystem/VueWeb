@@ -139,6 +139,7 @@
             color color4 
     
     > h4 
+        cursor pointer
         margin-bottom 12px
         height size1  
         font-size size1 
@@ -157,6 +158,7 @@
         padding 14px 0 12px 
         display flex 
         > div 
+            cursor pointer
             width 42px 
             margin-right 20px 
             img 
@@ -325,8 +327,7 @@
     position fixed 
     top 50%
     left 50%
-    margin-left -240px
-    margin-top -170px
+    transform translate3d(-50%,-50%,0)
     width 480px
     border-radius 5px
     background-color #fff
@@ -389,6 +390,7 @@
         min-height 38px
         padding 8px 10px 0
         border color-border
+        box-sizing border-box
 
         font-size size3
         color color3
@@ -446,3 +448,83 @@
                 background-color #f1f1f1
                 
     
+
+
+.send-topic
+    z-index 950
+    position fixed 
+    top 50%
+    left 50%
+    transform translate3d(-50%,-50%,0)
+    width 480px
+    border-radius 5px
+    background-color #fff
+    padding-bottom 20px
+
+    > h4
+        height 40px 
+        line-height 40px 
+        text-indent 10px
+        color color2
+        font-size size2
+        border-bottom color-border
+
+    > h5 
+        padding 20px 0 10px
+        text-align center
+        font-size size1
+        color color1
+        line-height size1
+
+    > p
+        padding-bottom 20px
+        font-size size3
+        color color3
+        line-height size3
+        text-align center
+
+    textarea
+        resize none
+        display block
+        width 380px
+        margin 0 auto 
+        box-sizing border-box
+        border color-border
+        font-size size3
+        color color3
+        padding 5px 10px
+        line-height 25px
+        outline none
+    .textarea1
+        height 60px
+    .textarea2
+        height 80px
+    .create-input
+        margin 18px auto
+
+    h6
+        font-size size3
+        color color3
+        line-height size3
+        text-indent 56px
+        padding-bottom 10px
+
+    .close
+        position absolute
+        top 0
+        right 0
+        width 40px
+        height 40px
+        background url('/public/close.png') no-repeat center center
+
+    > a 
+        margin 20px auto 0
+        display block
+        width 120px
+        height 30px
+        line-height 30px
+        border-radius 3px
+        text-align center
+        color #fff
+        font-size size3
+        background-color #fcc850

@@ -53,7 +53,9 @@ const msgCon = () => import('../views/person/msg_con.vue')
 const orderDetail = () => import('../views/person/order_detail.vue')
 
 // 理财社区
-const forum = () => import('../views/forum/index.vue')
+const forumView = () => import('../views/forum/index.vue')
+const forum = () => import('../views/forum/forum.vue')
+const article = () => import('../views/forum/article.vue')
 
 // 搜索
 const search = () => import('../views/search/index.vue')
@@ -289,7 +291,18 @@ export function createRouter () {
                     },
                     {
                         path: 'forum',
-                        component: forum
+                        component: forumView,
+                        children: [
+                            {
+                                path: '',
+                                component: forum
+                            },
+                            {
+                                path: 'article/:id?',
+                                name: 'article',
+                                component: article
+                            }
+                        ]
                     }
                 ]
             },

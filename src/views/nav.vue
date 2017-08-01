@@ -38,7 +38,7 @@
             <router-link tag="a" to="/nav" exact>首页</router-link>
             <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
             <router-link tag="a" to="/nav/financial">找理财师</router-link>
-            <router-link tag="a" to="/nav/forum" exact>理财社区</router-link>
+            <router-link tag="a" to="/nav/forum">理财社区</router-link>
           </nav>
         </header>
         <transition name="fade" mode="out-in">
@@ -183,6 +183,7 @@
         background-color #fff
     .common-inner
         width main-width
+        padding 6px 0
         margin: 0 auto
         display flex
         > a
