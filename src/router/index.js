@@ -56,6 +56,7 @@ const orderDetail = () => import('../views/person/order_detail.vue')
 const forumView = () => import('../views/forum/index.vue')
 const forum = () => import('../views/forum/forum.vue')
 const article = () => import('../views/forum/article.vue')
+const question = () => import('../views/forum/question.vue')
 
 // 搜索
 const search = () => import('../views/search/index.vue')
@@ -301,6 +302,11 @@ export function createRouter () {
                                 path: 'article/:id?',
                                 name: 'article',
                                 component: article
+                            },
+                            {
+                                path: 'question/:id?',
+                                name: 'question',
+                                component: question
                             }
                         ]
                     }

@@ -107,6 +107,7 @@
             left 0
             width 100%
             border-bottom color-border
+            box-shadow 0 5px 5px rgba(229,229,229,0.3)
 
     .article-top-main
         display flex

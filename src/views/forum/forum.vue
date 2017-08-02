@@ -60,7 +60,7 @@
                                 <img src="/public/noimg.png" />
                                 <span>蔡大大</span>
                             </div>
-                            <p>如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时...<a @click="toArticle(i)" href="javascript:;">阅读原文</a></p>
+                            <p>如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时...<a @click="toQuestion(i)" href="javascript:;">阅读原文</a></p>
                         </section>
                         <aside>
                             <a href="javascript:;">3984</a>
@@ -230,6 +230,9 @@
             },
             toArticle(item){
                 this.$router.push({"name":"article","params":{"id":item}});
+            },
+            toQuestion(item){
+                this.$router.push({"name":"question","params":{"id":item}});
             },
             toLicai(){
                 this.$router.push({name:'f_pro',params:{id:++k}});
