@@ -84,12 +84,17 @@
                     {
                         title: '我的社区',
                         active: false,
-                        height: '82px',
+                        height: '123px',
                         item: [
                             {
                                 active: false,
                                 name: '我的回答',
                                 to: "p_answer"
+                            },
+                            {
+                                active: false,
+                                name: '我的文章',
+                                to: "p_article"
                             },
                             {
                                 active: false,

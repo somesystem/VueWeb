@@ -47,37 +47,16 @@
                         <li><a href="javascript:;">最热</a></li>
                         <li><a href="javascript:;">等待回复</a></li>
                     </ul>
-
-                    <div v-for="i in 5" key="i" class="forum-item">
-                        <p><span>我为理财狂</span><i>发布该问题</i><time>1小时前</time></p>
-                        <h4 @click="toArticle(i)">当前经济形势下，安全稳健的投资策略是什么？</h4>
-                        <nav>
-                            <a href="javascript:;">#股权基金</a>
-                            <a href="javascript:;">#固定收益</a>
-                        </nav>
-                        <section>
-                            <div @click="toLicai()">
-                                <img src="/public/noimg.png" />
-                                <span>蔡大大</span>
-                            </div>
-                            <p>如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时期，如今我们处在一个非常关键的时...<a @click="toQuestion(i)" href="javascript:;">阅读原文</a></p>
-                        </section>
-                        <aside>
-                            <a href="javascript:;">3984</a>
-                            <a href="javascript:;">100条评论</a>
-                            <a href="javascript:;">分享</a>
-                            <a href="javascript:;">收藏</a>
-                            <a href="javascript:;">举报</a>
-                        </aside>
-                    </div>
-
+                    
+                    <article-cell v-for="i in 2" :key="i"></article-cell>
+                    <question-cell v-for="i in 3" :key="i"></question-cell>
 
                     <a href="javascript:;" class="forum-more">查看更多</a>
                 </div>
                 <div class="forum-main-r">
                     <h4>相关产品推荐</h4>
 
-                    <div v-for="i in 3" key="i" class="forum-cell">
+                    <div v-for="i in 3" :key="i" class="forum-cell">
                         <h5><span>天交所-林州重机</span><i>在售</i></h5>
                         <div>
                             <section>
@@ -158,6 +137,8 @@
     var k = 1000;
     import bookingProduct from '../../modules/booking-product.vue';
     import { mapActions } from 'vuex';
+    import questionCell from '../../modules/question-cell.vue';
+    import articleCell from '../../modules/article-cell.vue';
 
     export default {
         data(){
@@ -228,18 +209,14 @@
                     }, 2500);
                 }
             },
-            toArticle(item){
-                this.$router.push({"name":"article","params":{"id":item}});
-            },
-            toQuestion(item){
-                this.$router.push({"name":"question","params":{"id":item}});
-            },
             toLicai(){
                 this.$router.push({name:'f_pro',params:{id:++k}});
             }
         },
         components: {
-            bookingProduct
+            bookingProduct,
+            questionCell,
+            articleCell
         }
     }
 </script>

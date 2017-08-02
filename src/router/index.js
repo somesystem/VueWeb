@@ -51,6 +51,11 @@ const msgSys = () => import('../views/person/msg_sys.vue')
 const msgCus = () => import('../views/person/msg_cus.vue')
 const msgCon = () => import('../views/person/msg_con.vue')
 const orderDetail = () => import('../views/person/order_detail.vue')
+const comAnswer = () => import('../views/person/com_answer.vue')
+const comArticle = () => import('../views/person/com_article.vue')
+const comMyselect = () => import('../views/person/com_myselect.vue')
+
+
 
 // 理财社区
 const forumView = () => import('../views/forum/index.vue')
@@ -226,6 +231,21 @@ export function createRouter () {
                                 path: 'select',
                                 name: 'p_select',
                                 component: proSelect
+                            },
+                            {
+                                path: 'answer',
+                                name: 'p_answer',
+                                component: comAnswer
+                            },
+                            {
+                                path: 'article',
+                                name: 'p_article',
+                                component: comArticle
+                            },
+                            {
+                                path: 'myselect',
+                                name: 'p_myselect',
+                                component: comMyselect
                             },
                             {
                                 path: 'my_info1',

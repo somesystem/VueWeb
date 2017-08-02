@@ -33,7 +33,8 @@
 	export default {
 		data(){
 			return {
-                test: Math.random()<0.5
+                // test: Math.random()<0.5
+                test: true
 			}
 		},
         computed: {
