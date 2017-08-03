@@ -81,6 +81,10 @@ const joinStep2View = () => import('../views/join/join-step2.vue')
 const joinStep3View = () => import('../views/join/join-step3.vue')
 const joinStep4View = () => import('../views/join/join-step4.vue')
 
+// 404
+const NotFound = () => import('../views/404.vue')
+
+
 export function createRouter () {
     return new Router({
         mode: 'history',
@@ -316,6 +320,7 @@ export function createRouter () {
                         children: [
                             {
                                 path: '',
+                                name: 'forum',
                                 component: forum
                             },
                             {
@@ -371,6 +376,11 @@ export function createRouter () {
                         component: joinStep4View
                     }
                 ]
+            },
+
+            {
+                path: '*',
+                component: NotFound
             }
         ]
     })

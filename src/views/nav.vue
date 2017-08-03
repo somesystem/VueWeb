@@ -35,11 +35,20 @@
         </div>
         <header class="common-header">
             <nav class="common-inner">
-            <router-link tag="a" to="/nav" exact>首页</router-link>
-            <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
-            <router-link tag="a" to="/nav/financial">找理财师</router-link>
-            <router-link tag="a" to="/nav/forum">理财社区</router-link>
-          </nav>
+                <router-link tag="a" to="/nav" exact>首页</router-link>
+                <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
+                <router-link tag="a" to="/nav/financial">找理财师</router-link>
+                <router-link tag="a" to="/nav/forum">理财社区</router-link>
+                
+                <aside @click="toggleMarket()"></aside>
+                <ul :class="[showMarket?'active':'']">
+                    <li @click="chooseM(1)">股权基金</li>
+                    <li @click="chooseM(2)">信托计划</li>
+                    <li @click="chooseM(3)">债权基金</li>
+                    <li @click="chooseM(4)">证券基金</li>
+                    <li @click="chooseM(5)">资管计划</li>
+                </ul>
+              </nav>
         </header>
         <transition name="fade" mode="out-in">
             <router-view></router-view>
@@ -57,7 +66,9 @@
             return {
                 searchKey: "",
                 isFocus: false,
-                test: true
+                test: true,
+
+                showMarket: false
             }
         },
         methods: {
@@ -80,6 +91,13 @@
             loginOut(){
                 this.test = false;
                 this.$router.push({path:"/"});
+            },
+            toggleMarket(){
+                this.showMarket = !this.showMarket;
+            },
+            chooseM(type){
+                this.showMarket = false;
+                this.$router.push({path:'/nav/market'});
             }
         },
         components: {
@@ -182,6 +200,7 @@
     .common-header 
         background-color #fff
     .common-inner
+        position relative
         width main-width
         padding 6px 0
         margin: 0 auto
@@ -209,5 +228,38 @@
             &.router-link-active
                 background-color #e6effc
                 color #0069b8
+        
+        > aside
+            cursor pointer 
+            z-index 10
+            position absolute
+            top 0
+            left 120px 
+            width 110px 
+            height 34px 
+        > ul 
+            opacity 0
+            z-index -1
+            position absolute
+            top 40px
+            left 120px 
+            width 110px 
+            background-color #fff
+            border-radius 5px 
+            box-shadow 0 0 8px 2px rgba(0,0,0,0.1)
+            transition 0.3s 
+
+            &.active 
+                opacity 1
+                z-index 10
+            li  
+                font-size size3 
+                color color3 
+                line-height 32px 
+                cursor pointer 
+                text-align center
+                &:hover 
+                    background-color #f1f1f1
+
 
 </style>

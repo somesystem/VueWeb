@@ -11,6 +11,8 @@
     box-sizing border-box
 .color-red
     color color-red !important
+.color-base
+    color color-base !important
 .bg-white
     background-color #fff
 .bg-grey
@@ -46,18 +48,18 @@ body
     font-size 14px 
     border-radius 5px 
 
+.common-nav-top-p
+    width main-width
+    margin 0 auto
+    height 40px
+    line-height 40px
+    color color2
+    font-size size2
 .common-nav-top
     background-color #fff
     box-sizing border-box
     padding 18px
-    margin-top 18px 
-    > p 
-        margin-top -36px
-        margin-left -18px
-        height 40px
-        line-height 40px
-        color color2
-        font-size size2
+    border color-border
     > nav 
         display flex
         font-size size3 
@@ -136,7 +138,7 @@ body
             height 30px
             line-height 30px 
             margin-right 12px
-            background-color color-red
+            background-color color-base
             font-size 14px 
             color #fff
             box-sizing border-box
@@ -353,7 +355,9 @@ body
     border 1px solid color-red !important
 
 .financial-item-box
-    padding-top 18px 
+    width main-width
+    margin 0 auto
+    padding 18px 18px 0
     overflow hidden
 
     .financial-item 

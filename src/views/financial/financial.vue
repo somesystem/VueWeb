@@ -1,29 +1,29 @@
 <template>
     <div>
+        <p class="common-nav-top-p">首页>找理财师</p>
         <div class="common-nav-top main-width">
-            <p>首页>找理财师</p>
             <nav>
                 <div><span>地区：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,area)" v-for="(item,index) in area"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,area)" v-for="(item,index) in area"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>性别：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,sex)" v-for="(item,index) in sex"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,sex)" v-for="(item,index) in sex"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul> 
             </nav>
             <nav>
                 <div><span>专业：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,major)" v-for="(item,index) in major"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,major)" v-for="(item,index) in major"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>机构：</span></div>
                 <ul :style="{'height': more.height}">
-                    <li @click="fnChoose(item,mechanism)" v-for="(item,index) in mechanism"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,mechanism)" v-for="(item,index) in mechanism"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <aside :class="more.active?'active':''">
@@ -45,53 +45,40 @@
         </div>
 
 
-        <div class="main-width">
-            <div class="financial-item-box">
-                <financial-item :key="i" v-for="i in 9"></financial-item>
-            </div>
-
-            <common-page></common-page>
+        
+        <div class="financial-item-box">
+            <financial-item :key="i" v-for="i in 9"></financial-item>
         </div>
+
+        <common-page></common-page>
+        
 
         <div class="financial-bottom">
             <div class="main-width">
                 <h2 class="common-h2">Ta的理财经</h2>
                 <div class="financial-article-box">
-                    <div class="financial-article">
-                        <h3><a href="javascript:;">当前经济形势下，安全稳健的投资策略是什么？</a></h3>
+                    <div v-for="i in 2" :key="i" class="financial-article">
+                        <h3><a @click="toQuestion()" href="javascript:;">当前经济形势下，安全稳健的投资策略是什么？</a></h3>
                         <div>
-                            <div>
-                                <img src="" />
+                            <div @click="toLicai()">
+                                <img src="/public/noimg.png" />
                                 <a href="javascript:;">3984</a>
                             </div>
                             <div>
-                                <h4><span>蔡大大</span><i>上海宽象资本投资</i></h4>
-                                <p>如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的...<a class="color-red" href="javascript:;">查看全部</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="financial-article">
-                        <h3><a href="javascript:;">当前经济形势下，安全稳健的投资策略是什么？</a></h3>
-                        <div>
-                            <div>
-                                <img src="" />
-                                <a href="javascript:;">3984</a>
-                            </div>
-                            <div>
-                                <h4><span>蔡大大</span><i>上海宽象资本投资</i></h4>
-                                <p>如今我们处们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的...<a class="color-red" href="javascript:;">查看全部</a></p>
+                                <h4 @click="toLicai()"><span>蔡大大</span><i>上海宽象资本投资</i></h4>
+                                <p @click="toQuestion()">如今我们处们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的时期。如今我们处于一个非常关键的...<a @click="toQuestion()" class="color-red" href="javascript:;">查看全部</a></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <a class="financial-article-more" href="javascript:;">查看全部理财问答>></a>
+                <a @click="toForum()" class="financial-article-more" href="javascript:;">查看全部理财问答>></a>
             </div>
         </div>
     </div>
 </template>
 
 <script type="text/javascript">
-
+    var k = 3000;
     export default {
         data(){
             return {
@@ -214,6 +201,15 @@
                 }
                 json.active = !this.more.active;
                 this.more = json;
+            },
+            toQuestion(){
+                this.$router.push({"name":"question","params":{"id":++k}});
+            },
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++k}});
+            },
+            toForum(){
+                this.$router.push({name:'forum'});
             }
         }
     }

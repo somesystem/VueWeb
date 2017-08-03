@@ -13,9 +13,9 @@
                 <div class="top-aside-sort">
                     <h3>理财师排名</h3>
                     <ol>
-                        <li v-for="i in 4"><i>{{i}}</i><span>蔡大大</span><b>已成交100单</b></li>
+                        <li @click="toLicai()" v-for="i in 4"><i>{{i}}</i><span>蔡大大</span><b>已成交100单</b></li>
                     </ol>
-                    <a href="javascript:;">查看全部理财师</a>
+                    <a @click="toAllLicai()" href="javascript:;">查看全部理财师</a>
                 </div>
             </div>
         </div>
@@ -23,12 +23,21 @@
 </template>
 
 <script>
+    var k = 4000;
     export default {
         props: {
             title: ""
         },
         data(){
             return {}
+        },
+        methods: {
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++k}});
+            },
+            toAllLicai(){
+                this.$router.push({path:'/nav/financial'});
+            }
         }
     }
 </script>

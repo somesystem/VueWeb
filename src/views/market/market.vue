@@ -1,41 +1,42 @@
 <template>
     <div>
+        <p class="common-nav-top-p">首页>金融超市</p>
         <div class="common-nav-top main-width">
-            <p>首页>金融超市</p>
+            
             <nav>
                 <div><span>产品类型：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,pro_type)" v-for="(item,index) in pro_type"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,pro_type)" v-for="(item,index) in pro_type"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>认购起点：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,origin)" v-for="(item,index) in origin"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,origin)" v-for="(item,index) in origin"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>产品期限：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,pro_time)" v-for="(item,index) in pro_time"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,pro_time)" v-for="(item,index) in pro_time"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>预期收益：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,expect)" v-for="(item,index) in expect"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,expect)" v-for="(item,index) in expect"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>产品状态：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,pro_status)" v-for="(item,index) in pro_status"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,pro_status)" v-for="(item,index) in pro_status"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
             <nav>
                 <div><span>金斗云评级：</span></div>
                 <ul>
-                    <li @click="fnChoose(item,star)" v-for="(item,index) in star"><a :class="item.select?'color-red':''" href="javascript:;">{{item.name}}</a></li>
+                    <li @click="fnChoose(item,star)" v-for="(item,index) in star"><a :class="item.select?'color-base':''" href="javascript:;">{{item.name}}</a></li>
                 </ul>
             </nav>
         </div>

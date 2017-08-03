@@ -27,7 +27,7 @@
                 <p>擅长领域：基础建设、房地产</p>
             </div>
         </div>
-        <nav class="financial-item-b">
+        <nav @click="toLicai()" class="financial-item-b">
             <a href="javascript:;"><span>腾云资产 - 天山1号(12月期 年化率 7%)</span><i>在售</i></a>
             <a href="javascript:;"><span>腾云资产 - 天山1号(12月期 年化率 8%)</span><i>预热</i></a>
         </nav>
@@ -40,10 +40,16 @@
 </template>
 
 <script type="text/javascript">
+    var k = 3000;
     export default {
         data(){
             return {
 
+            }
+        },
+        methods: {
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++k}});
             }
         }
     }
@@ -60,7 +66,7 @@
         box-sizing border-box
         border color-border 
         &:hover
-            border 1px solid color-red
+            box-shadow 0 0 10px 3px rgba(0,0,0,0.2)
 
         &:nth-child(3n)
             margin-right 0
@@ -160,4 +166,7 @@
                 background url(/public/sign.png) no-repeat center center 
                 color #fff 
                 text-align center 
+
+            &:nth-of-type(2) > i
+                background-image url(/public/sign2.png)
 </style>
