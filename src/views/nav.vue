@@ -5,7 +5,7 @@
                 <img class="common-logo" src="/public/logo.png" />
                 <div class="common-search-box">
                     <div>
-                        <input v-model="searchKey" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
+                        <input v-model="s_key" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
                         <a @click="fnSeach()" href="javascript:;"></a>
                         <ul v-show="isFocus" class="common-search-lx">
                             <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
@@ -60,18 +60,30 @@
 
 <script type="text/javascript">
     import commonFoot from "../modules/common-foot.vue";
+    import {mapState,mapMutations} from "vuex";
 
     export default {
         data(){
             return {
-                searchKey: "",
                 isFocus: false,
                 test: true,
 
-                showMarket: false
+                showMarket: false,
+                s_key: ''
             }
         },
+        computed: {
+            /*searchKey: {
+                get () {
+                  return this.$store.state.searchKey
+                },
+                set (value) {
+                  this.$store.commit('setSearchKey', value)
+                }
+            }*/
+        },
         methods: {
+            ...mapMutations(["setSearchKey","setSearchNum"]),
             fnFocus(){
                 this.isFocus = true;
             },
@@ -81,8 +93,15 @@
                 },300);
             },
             fnSeach(){
-                if (this.searchKey) {
-                    this.$router.push({name:'s_pro',params:{id:this.searchKey}});
+                if (this.s_key) {
+                    this.setSearchKey(this.s_key);
+                    if (Math.random()<0.5) {
+                        this.setSearchNum((Math.random()*200|0)+20);
+                        this.$router.push({name:'s_pro',params:{id:this.s_key}});
+                    }else{
+                        this.setSearchNum(0);
+                        this.$router.push({name:'search',params:{id:this.s_key}});
+                    }
                 }
             },
             toMyhome(){

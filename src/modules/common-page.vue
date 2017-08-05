@@ -24,7 +24,7 @@
         display flex
         justify-content center 
         align-items center 
-        padding-bottom 12px
+        margin 12px 0
         > a 
             display block
             width 60px

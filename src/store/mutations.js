@@ -15,5 +15,11 @@ export default {
     },
     hideToast: (state) => {
         state.toast.status = 2;
+    },
+    setSearchKey: (state,key) => {
+        state.searchKey = key;
+    },
+    setSearchNum: (state,num) => {
+        state.searchNum = num;
     }
 }

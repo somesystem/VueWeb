@@ -22,6 +22,7 @@
         margin-top -1px
     .finan-detail-pro-page
         margin-top -1px
-        padding-top 12px
+        padding 12px 0
+        margin-bottom 0
         border color-border
 </style>

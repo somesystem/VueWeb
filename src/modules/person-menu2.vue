@@ -4,8 +4,7 @@
             <div v-for="item in list">
                 <h3 :class="item.active?'':'active'" @click="item.active=!item.active">{{item.title}}</h3>
                 <ul :style="{'height':item.active?item.height:'0px'}">
-                    <li @click="to(i,item.item
-                    )" :class="i.active?'active':''" :key="index" v-for="(i,index) in item.item">{{i.name}}</li>
+                    <li @click="to(i)" :class="i.active?'active':''" :key="index" v-for="(i,index) in item.item">{{i.name}}</li>
                 </ul>
             </div>
             
@@ -108,10 +107,12 @@
         },
         methods: {
             ...mapMutations(["setPersonTitle"]),
-            to(item,parent){
+            to(item){
                 this.$router.push({name: item.to});
-                for (var i = 0; i < parent.length; i++) {
-                    parent[i].active=false;
+                for (var i = 0; i < this.list.length; i++) {
+                    for (var j = 0; j < this.list[i].item.length; j++) {
+                        this.list[i].item[j].active=false;
+                    }
                 }
                 
                 this.setPersonTitle(item.name);
@@ -122,38 +123,5 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-    @import "../styl/base";
-    
-    .person-menu
-        background-color #fff
-        width 248px
-        border color-border
-        
-    .person-menu-cell
-        padding-bottom 50px
-        h3
-            height 40px
-            line-height 40px
-            font-size size3
-            color color-red
-            text-indent 14px
-            cursor pointer
-            border-bottom color-border
-            background url('/public/person1.png') no-repeat 220px center
-
-            &.active
-                background-image url('/public/person2.png')
-
-        ul
-            transition 0.3s
-            overflow hidden
-            li 
-                height 40px
-                line-height 40px
-                text-indent 28px
-                border-bottom color-border
-                cursor pointer
-
-                &:hover,&.router-link-active,&.active
-                    background-color #f1f1f1
+    @import "../styl/person-menu";
 </style>

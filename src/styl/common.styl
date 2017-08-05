@@ -193,57 +193,59 @@ body
                 text-align center
 
 .common-person-top
-        position relative
-        padding 34px 0
-        margin-bottom 12px
+    position relative
+    padding 36px 0
+    margin-bottom 12px
+    border color-border
+    background-color #fff
+    > a
+        position absolute
+        top 16px
+        right 16px
+        width 100px
+        height 30px
+        line-height 30px
+        background-color #fff 
+        text-align center
         border color-border
-        background-color #fff
+        border-radius 2px
+
+    > img
+        display block
+        width 100px
+        height 100px
+        box-shadow 0 0 20px rgba(0,0,0,.2)
+        margin 0 auto 14px
+        border-radius 50%
+    > p
+        text-align center
+        color #fff
+
+        &:nth-of-type(1)
+            margin-bottom 12px
+            line-height size1
+            font-size size1
+            
+        &:nth-of-type(2),&:nth-of-type(3)
+            line-height size3
+            font-size size3
+
+    > nav 
+        display flex
+        margin 14px auto
+        justify-content center
         > a
-            position absolute
-            top 16px
-            right 16px
-            width 100px
-            height 30px
-            line-height 30px
-            text-align center
-            border color-border
-            border-radius 2px
-
-        > img
             display block
-            width 100px
-            height 100px
-            box-shadow 0 0 20px rgba(0,0,0,.2)
-            margin 0 auto 14px
-            border-radius 50%
-        > p
+            width 76px
+            height 24px
+            line-height 24px
+            background-color color-base
+            margin-right 20px
+            color #fff
             text-align center
-            &:nth-of-type(1)
-                margin-bottom 12px
-                line-height size1
-                font-size size1
-                color color1
-            &:nth-of-type(2),&:nth-of-type(3)
-                line-height size3
-                font-size size3
-                color color3
-
-        > nav 
-            display flex
-            margin 14px auto
-            justify-content center
-            > a
-                display block
-                width 76px
-                height 24px
-                line-height 24px
-                border 1px solid color-red
-                margin-right 20px
-                color color-red
-                text-align center
-                border-radius 5px
-                &:last-child
-                    margin-right 0
+            border-radius 5px
+            &:last-child
+                margin-right 0
     
 .common-person-order-top
     position relative
@@ -276,9 +278,9 @@ body
                     margin-left -45px
                     width 90px
                     height 2px
-                    background-color color-red
+                    background-color color-base
                 a
-                    color color-red
+                    color color-base
 
     > ol
         border color-border
@@ -301,7 +303,7 @@ body
                 color color2
 
             &:hover a,&.active a
-                color color-red
+                color color-base
 
     > nav
         display flex
@@ -330,7 +332,7 @@ body
 
 .common-person-custom-table
     border color-border
-    margin 12px 0
+    margin-top 12px 
     dt,dd
         display flex
         height 40px
@@ -358,6 +360,7 @@ body
     width main-width
     margin 0 auto
     padding 18px 18px 0
+    margin-bottom -16px
     overflow hidden
 
     .financial-item 
@@ -567,9 +570,10 @@ body
 
     &:first-of-type
         margin-top 12px
+
     &:hover
         z-index 2
-        border 1px solid color-red
+        box-shadow 0 0 10px 3px rgba(0,0,0,0.2)
         
 .common-item-l
     width 860px

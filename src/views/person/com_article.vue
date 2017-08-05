@@ -2,7 +2,8 @@
     <div class="com_article">
         <h3>我的文章</h3>
 
-        <article-cell v-for="i in 2" :key="i"></article-cell>
+        <article-cell v-for="i in 4" :key="i"></article-cell>
+        <common-page></common-page>
     </div>
 </template>
 
