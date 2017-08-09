@@ -4,20 +4,23 @@
             <router-view></router-view>
         </transition>
         <d-toast :status="toast.status" :msg="toast.msg"></d-toast>
+        <d-zixun v-show="zixun.isOpen" :id="zixun.id"></d-zixun>
     </div>
 </template>
 
 <script type="text/javascript">
     import dToast from './modules/d-toast.vue';
+    import dZixun from './modules/d-zixun.vue';
     import { mapState } from "vuex";
     export default {
         data(){
             return {}
         },
 
-        computed: mapState(["toast"]),
+        computed: mapState(["toast","zixun"]),
         components:{
-            dToast
+            dToast,
+            dZixun
         }
     }
 </script>

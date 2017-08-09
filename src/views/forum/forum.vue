@@ -57,8 +57,8 @@
                     <h4>相关产品推荐</h4>
 
                     <div v-for="i in 3" :key="i" class="forum-cell">
-                        <h5><span>天交所-林州重机</span><i>在售</i></h5>
-                        <div>
+                        <h5 @click="toProduct()"><span>天交所-林州重机</span><i>在售</i></h5>
+                        <div @click="toProduct()">
                             <section>
                                 <p>30%</p>
                                 <p>最高收益</p>
@@ -72,7 +72,7 @@
                                 <p>云南</p>
                             </section>
                         </div>
-                        <aside>
+                        <aside @click="toLicai()">
                             <img src="/public/noimg.png" />
                             <div>
                                 <h6>蔡大大（宽象资本）</h6>
@@ -80,7 +80,7 @@
                             </div>
                         </aside>
                         <nav>
-                            <a href="javascript:;">咨询Ta</a>
+                            <a @click="setZixunId(555)" href="javascript:;">咨询Ta</a>
                             <a @click="booking()" href="javascript:;">立即预约</a>
                         </nav>
                     </div>
@@ -136,7 +136,7 @@
 <script type="text/javascript">
     var k = 1000;
     import bookingProduct from '../../modules/booking-product.vue';
-    import { mapActions } from 'vuex';
+    import { mapActions,mapMutations } from 'vuex';
     import questionCell from '../../modules/question-cell.vue';
     import articleCell from '../../modules/article-cell.vue';
 
@@ -158,6 +158,13 @@
         },
         methods: {
             ...mapActions(["toast"]),
+            ...mapMutations(["setZixunId"]),
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++K}});
+            },
+            toProduct(){
+                this.$router.push({name:'product',params:{id:++K}});
+            },
             booking(){
                 this.bookShow = true;
             },

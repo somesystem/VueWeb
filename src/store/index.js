@@ -16,6 +16,10 @@ export function createStore () {
                 timer: null,
                 status: 0
             },
+            "zixun": {
+                isOpen: false,
+                id: ""
+            },
             // 搜索 关键词、结果数量
             "searchKey": "",
             "searchNum": 0

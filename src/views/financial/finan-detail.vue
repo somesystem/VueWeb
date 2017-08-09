@@ -31,7 +31,7 @@
                         <li><span>星座</span><span>处女</span></li>
                         <li><span>其他</span><span>获得CFA证书<br/>二级理财师</span></li>
                     </ul>
-                    <a class="common-zixun" href="javascript:;">咨询</a>
+                    <a @click="setZixunId(666)" class="common-zixun" href="javascript:;">咨询</a>
                     <p>已有320位金友联系过他</p>
                 </div>
                 <div class="common-person-order-top finan-detail-man-r">
@@ -52,7 +52,9 @@
 </template>
 
 <script type="text/javascript">
+    import {mapMutations} from "vuex";
     export default {
+        methods: mapMutations(["setZixunId"]),
         data(){
             return {
             }

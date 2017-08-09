@@ -21,5 +21,12 @@ export default {
     },
     setSearchNum: (state,num) => {
         state.searchNum = num;
+    },
+    setZixunId: (state,id) => {
+        state.zixun.id = id;
+        state.zixun.isOpen = true;
+    },
+    closeZixun: (state) => {
+        state.zixun.isOpen = false;
     }
 }

@@ -1,9 +1,9 @@
 <template>
     <div class="common-item">
         <product-item></product-item>
-        <div @click="toLicai()" class="common-item-r">
-            <p class="common-item-r-t">已成交100单</p>
-            <div class="common-item-r-c">
+        <div class="common-item-r">
+            <p @click="toLicai()" class="common-item-r-t">已成交100单</p>
+            <div @click="toLicai()" class="common-item-r-c">
                 <div>
                     <img src="" />
                 </div>
@@ -13,12 +13,12 @@
                 </div>
             </div>
             <div class="common-item-r-b">
-                <div>
+                <div @click="toLicai()">
                     <p><span>蔡大大</span><span>江西</span></p>
                     <p>上海宽象资本投资</p>
                 </div>
                 <div>
-                    <a href="javascript:;">咨询ta</a>
+                    <a @click="setZixunId(888)" href="javascript:;">咨询ta</a>
                 </div>
             </div>
         </div>
@@ -27,11 +27,13 @@
 
 <script type="text/javascript">
     var e = 777;
+    import {mapMutations} from "vuex";
     export default {
         data(){
             return {}
         },
         methods: {
+            ...mapMutations(["setZixunId"]),
             toLicai(){
                 this.$router.push({name:'f_pro',params:{id:++e}});
             }

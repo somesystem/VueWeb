@@ -57,12 +57,12 @@
                 </div>
             </div>
             <div class="product-cell-r-b">
-                <div>
+                <div @click="toLicai()">
                     <p><span>蔡大大</span><span>江西</span></p>
                     <p>上海宽象资本投资</p>
                 </div>
                 <div>
-                    <a href="javascript:;">咨询ta</a>
+                    <a @click="setZixunId(999)" href="javascript:;">咨询ta</a>
                 </div>
             </div>
         </div>
@@ -73,6 +73,7 @@
 <script type="text/javascript">
     var cc = 2222;
     import bookingProduct from './booking-product.vue';
+    import {mapMutations} from "vuex";
     export default {
         props: {
             isYuyue: {
@@ -86,6 +87,10 @@
             }
         },
         methods:{
+            ...mapMutations(["setZixunId"]),
+            toLicai(){
+                this.$router.push({name:'f_pro',params:{id:++cc}});
+            },
             toProduct(){
                 this.$router.push({name:'product',params:{id:++cc}});
             },

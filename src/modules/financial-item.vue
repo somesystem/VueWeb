@@ -2,13 +2,12 @@
     <div class="financial-item">
         <p>已在金豆成交100单</p>
         <div class="financial-item-t">
-            <router-link :to="{name:'f_pro',params:{id:11}}" tag="a"></router-link>
             <div class="financial-item-l">
-                <img src="" />
-                <p><span>蔡大大</span><i>江西</i></p>
-                <a class="common-zixun" href="javascript:;">咨询ta</a>
+                <img @click="toLicai()" src="" />
+                <p @click="toLicai()"><span>蔡大大</span><i>江西</i></p>
+                <a @click="setZixunId(777)" class="common-zixun" href="javascript:;">咨询ta</a>
             </div>
-            <div class="financial-item-r">
+            <div @click="toLicai()" class="financial-item-r">
                 <div class="financial-item-r-t">
                     <div>
                         <p>4.7</p>
@@ -41,6 +40,7 @@
 
 <script type="text/javascript">
     var k = 3000;
+    import {mapMutations} from "vuex";
     export default {
         data(){
             return {
@@ -48,6 +48,7 @@
             }
         },
         methods: {
+            ...mapMutations(["setZixunId"]),
             toLicai(){
                 this.$router.push({name:'f_pro',params:{id:++k}});
             }
@@ -79,6 +80,7 @@
             font-size size4
             color color4 
     .financial-item-t
+        cursor pointer 
         position relative
         padding 0 18px 20px
         border-bottom color-border
