@@ -1,22 +1,23 @@
 <template>
-    <div @click="toLicai()" class="common-cell">
-        <h3>已在金豆成交100单</h3>
+    <div class="common-cell">
+        <h3 @click="toLicai()">已在金豆成交100单</h3>
         <div class="common-cell-c">
             <div class="common-cell-c-img">
-                <img src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />
+                <img @click="toLicai()" src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />
                 <div>
-                    <p><span>蔡大大</span><span>江西</span></p>
-                    <a href="javascript:;">马山咨询</a>
+                    <p @click="toLicai()"><span>蔡大大</span><span>江西</span></p>
+                    <a @click="setZixunId(222)" href="javascript:;">马山咨询</a>
                 </div>
             </div>
            
-            <p>所属机构：宽象资本</p>
-            <p>擅长领域：基础建设、房地产</p>
+            <p @click="toLicai()">所属机构：宽象资本</p>
+            <p @click="toLicai()">擅长领域：基础建设、房地产</p>
         </div>
     </div>
 </template>
 <script>
     var b = 121;
+    import {mapMutations} from "vuex";
     export default {
         data(){
             return {
@@ -24,6 +25,7 @@
             }
         },
         methods: {
+            ...mapMutations(["setZixunId"]),
             toLicai(){
                 this.$router.push({name:'f_pro',params:{id:++b}});
             }

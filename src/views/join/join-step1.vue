@@ -58,13 +58,13 @@
                     margin-bottom 60px
                     background-image url(/public/licai.png)
                     &.active,&:hover
-                        color color-red
+                        color color-base
                         background-image url(/public/licai-ac.png)
 
                 &:nth-child(2)
                     background-image url(/public/touzi.png)
                     &.active,&:hover
-                        color color-red
+                        color color-base
                         background-image url(/public/touzi-ac.png)
 
 </style>

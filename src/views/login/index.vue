@@ -67,7 +67,7 @@
                 &:nth-child(1) 
                     border-right color-border
                 &.router-link-active
-                    color color-red 
+                    color color-base 
         input
             display block
             width 300px
