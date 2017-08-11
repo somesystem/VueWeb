@@ -86,11 +86,10 @@
                 line-height size5
                 font-size size5
                 color color5
-                text-align right
-                padding-right 16px
+                text-align center
         > a
             margin-bottom 12px
-            margin-left 155px
+            
 
     .detail-man-nav
         margin-top 32px
@@ -129,7 +128,6 @@
     .finan-detail-man-l
         border color-border
     .finan-detail-man-r
-        background-color #fff
         width 900px
     
 </style>

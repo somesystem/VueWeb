@@ -306,8 +306,8 @@
                 width 76px
                 height 24px
                 line-height 24px
-                border 1px solid color-red
-                color color-red
+                border 1px solid color-base
+                color color-base
                 border-radius 5px
                 text-align center
                 margin-right 12px

@@ -6,7 +6,7 @@
                 <li @click="user_controller=2" :class="user_controller==2?'active':''"><a href="javascript:;">理财师用户</a></li>
             </ul>
             <nav>
-                <a @click="edit(null,true)" href="javascript:;">新增客户</a>
+                <a @click="zhikeConCtrl=true" href="javascript:;">新增客户</a>
             	<a href="javascript:;">导出列表</a>
             	<input placeholder="姓名" type="text" />
             </nav>
@@ -53,6 +53,18 @@
             </dl>
             <common-page></common-page>
         </div>
+
+        
+        <div v-show="zhikeConCtrl" class="custom-add-mask"></div>
+        <div v-show="zhikeConCtrl" class="custom-add-con">
+            <h4>新增客户</h4>
+            <div class="checkbox-ui">
+                <div @click="isZhike=true" :class="isZhike?'active':''">直客</div>
+                <div @click="isZhike=false" :class="!isZhike?'active':''">渠道</div>
+            </div> 
+            <a @click="edit(null,true)" href="javascript:;">确定</a>
+        </div>
+
         <custom-edit :show="editShow" :is-add="isAdd" :type="user_controller"></custom-edit>
 
         <div v-show="deleteCtrl" class="delete-mask"></div>
@@ -78,7 +90,10 @@
                 user_normal: [],
                 user_special: [],
                 editShow: false,
-                deleteCtrl: false
+                deleteCtrl: false,
+
+                isZhike: true,
+                zhikeConCtrl: false
             }
         },
         mounted(){
@@ -92,6 +107,8 @@
         },
         methods: {
             edit(item,isAdd){
+                this.zhikeConCtrl = false;
+                
                 this.editShow = true;
                 this.isAdd = !!isAdd;
             },
@@ -160,4 +177,39 @@
                 border-right color-border
                 &:last-child
                     border-right none
+
+    .custom-add-mask
+        z-index 900
+        position fixed
+        top 0
+        left 0
+        right 0
+        bottom 0
+        background-color rgba(0,0,0,0.5)
+    .custom-add-con
+        z-index 1000
+        position fixed
+        top 50%
+        left 50%
+        margin-left -140px
+        margin-top -80px
+        width 280px
+        height 160px
+        background-color #fff
+        border-radius 5px
+
+        h4
+            font-size size2
+            color color2 
+            text-align center 
+            line-height 40px 
+            border-bottom color-border 
+        .checkbox-ui
+            padding 20px 50px
+        > a 
+            display block
+            clear both
+            line-height 40px 
+            border-top color-border
+            text-align center 
 </style>

@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div :key="i" v-for="i in 5" class="finan-detail-pro-item common-item no-margin">
+        <div :key="i" v-for="i in 5" class="finan-detail-pro-item common-item">
             <product-item></product-item>
         </div>
-        <common-page class="finan-detail-pro-page"></common-page>
+        <common-page></common-page>
     </div>    
 </template>
 
@@ -17,12 +17,4 @@
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
     @import "../../styl/base";
-    .finan-detail-pro-item.common-item.no-margin
-        margin 0
-        margin-top -1px
-    .finan-detail-pro-page
-        margin-top -1px
-        padding 12px 0
-        margin-bottom 0
-        border color-border
 </style>

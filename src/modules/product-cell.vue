@@ -120,7 +120,7 @@
             margin-top 12px
         &:hover
             z-index 2
-            border 1px solid color-red
+            box-shadow 0 0 10px 3px rgba(0,0,0,0.2)
             
     .product-cell-l
         width 650px
