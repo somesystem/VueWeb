@@ -149,7 +149,7 @@
                 sort_type: [
                     {"name": "综合", "sort": true},
                     {"name": "成交量", "sort": false},
-                    {"name": "综合评分", "sort": false},
+                    {"name": "服务客户", "sort": false},
                     {"name": "理财师评级", "sort": false}
                 ]
             }

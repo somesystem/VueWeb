@@ -18,7 +18,7 @@
             <div class="finan-detail-man">
                 <div class="finan-detail-man-l">
                     <p>已成交100单</p>
-                    <div class="detail-man-nav">
+                    <div v-if="false" class="detail-man-nav">
                         <div><p>4.7</p><p>专业度</p></div>
                         <div><p>4.5</p><p>服务态度</p></div>
                         <div><p>4.9</p><p>诚信度</p></div>

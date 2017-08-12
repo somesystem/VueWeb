@@ -10,6 +10,10 @@
             <div @click="toLicai()" class="financial-item-r">
                 <div class="financial-item-r-t">
                     <div>
+                        <p><!-- 10位 --></p>
+                        <p><!-- 服务客户 --></p>
+                    </div>
+                    <!-- <div>
                         <p>4.7</p>
                         <p>专业度</p>
                     </div>
@@ -20,7 +24,7 @@
                     <div>
                         <p>4.9</p>
                         <p>诚信度</p>
-                    </div>
+                    </div> -->
                 </div>
                 <p>上海宽带资本投资</p>
                 <p>擅长领域：基础建设、房地产</p>

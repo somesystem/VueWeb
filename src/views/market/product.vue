@@ -77,8 +77,8 @@
                             <div @click="toLicai()">
                                 <img src=""></div>
                                 <div>
-                                    <p>4.5</p>
-                                    <p>综合评分</p>
+                                    <p>10位</p>
+                                    <p>服务客户</p>
                                 </div>
                             </div>
                             <div @click="toLicai()" class="product-man-b"><div>

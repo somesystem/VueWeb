@@ -1,7 +1,7 @@
 <template>
     <div v-show="show">
         <div class="mask"></div>
-        <div v-if="type==2" class="content">
+        <div v-if="type==2 && !isAdd" class="content">
             <h3><span>编辑理财师信息</span><a @click="close()" href="javascript:;"></a></h3>
             <ul class="clearfix">
                 <li>
@@ -23,13 +23,22 @@
             </ul>
             <a @click="confirm()" href="javascript:;">确定</a>
         </div>
-        <div v-if="type==1" class="content">
+        <div v-if="type==1 || isAdd" class="content">
+            
             <h3>
-                <span v-if="isAdd">新增客户</span>
+                <span v-if="isAdd">新增{{isZhike?'直客':'渠道'}}客户</span>
                 <span v-else>编辑客户信息</span>
                 <a @click="close()" href="javascript:;"></a>
             </h3>
             <ul class="clearfix">
+                <li class="large warn" v-if="!isZhike">
+                    <span>理财师：</span>
+                    <select>
+                        <option>请选择理财师</option>
+                        <option>张三</option>
+                        <option>李四</option>
+                    </select>
+                </li>
                 <li class="warn">
                     <span>用户姓名：</span><input type="text" v-model="name" placeholder="请输入姓名" />
                     <p>请输入正确的用户姓名</p>
@@ -69,6 +78,10 @@
             isAdd: {
                 type: Boolean,
                 default: false
+            },
+            isZhike: {
+                type: Boolean,
+                default: true
             }
         },
         data(){
@@ -122,8 +135,8 @@
         left 50%
         margin-left -350px
         margin-top -201px
+        padding-bottom 12px 
         width 700px
-        height 402px
         background-color #fff
         border-radius 8px
 
@@ -151,9 +164,9 @@
                 float left 
                 width 50%
                 height 58px
-                &.warn input 
+                &.warn input , &.warn select 
                     border 1px solid color-red
-                > span,> input,> div
+                > span,> input,> div, > select
                     float left
                     height 40px
                     line-height 40px
@@ -162,7 +175,7 @@
                 > span 
                     width 84px
                     text-align center
-                > input 
+                > input, > select
                     float left
                     width 234px
                     padding 8px 14px

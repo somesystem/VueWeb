@@ -65,7 +65,7 @@
             <a @click="edit(null,true)" href="javascript:;">确定</a>
         </div>
 
-        <custom-edit :show="editShow" :is-add="isAdd" :type="user_controller"></custom-edit>
+        <custom-edit :show="editShow" :is-zhike="isZhike" :is-add="isAdd" :type="user_controller"></custom-edit>
 
         <div v-show="deleteCtrl" class="delete-mask"></div>
         <div v-show="deleteCtrl" class="delete-con">
@@ -107,12 +107,19 @@
         },
         methods: {
             edit(item,isAdd){
-                this.zhikeConCtrl = false;
-                
+                // 此处item 为循环中单元，给予编辑赋值用
+
                 this.editShow = true;
-                this.isAdd = !!isAdd;
+                if (item===null) {
+                    // 新增
+                    this.zhikeConCtrl = false;
+                    this.isAdd = !!isAdd;
+                    this.isZhike = this.isZhike;
+                }
+                
             },
             dele(item){
+                // 此处item 为循环中单元，给予删除id用
                 this.deleteCtrl = true;
             },
             dele2(){
