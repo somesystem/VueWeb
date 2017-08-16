@@ -105,6 +105,19 @@
                 ]
             }
         },
+        mounted(){
+            var name = this.$route.name;
+            for (var i = 0; i < this.list.length; i++) {
+                for (var j = 0; j < this.list[i].item.length; j++) {
+                    if(this.list[i].item[j].to == name){
+                        this.list[i].item[j].active=true;
+                        this.list[i].active = true;
+                    }else{
+                        this.list[i].item[j].active=false;
+                    }
+                }
+            }
+        },
         methods: {
             ...mapMutations(["setPersonTitle"]),
             to(item){

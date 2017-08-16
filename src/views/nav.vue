@@ -2,7 +2,7 @@
     <div>
         <div class="bg-white">
             <nav class="common-search main-width">
-                <img class="common-logo" src="/public/logo.png" />
+                <a href="/"><img class="common-logo" src="/public/logo.png" /></a>
                 <div class="common-search-box">
                     <div>
                         <input v-model="s_key" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
@@ -81,6 +81,16 @@
                   this.$store.commit('setSearchKey', value)
                 }
             }*/
+        },
+        mounted(){
+            this.$nextTick(()=>{
+                document.addEventListener("click",(e)=>{
+                    var target = e.target || e.srcElement;
+                    if (target.tagName.toUpperCase() != "ASIDE") {
+                        this.showMarket = false;
+                    }
+                },false);
+            });
         },
         methods: {
             ...mapMutations(["setSearchKey","setSearchNum"]),

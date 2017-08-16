@@ -50,7 +50,9 @@
             <ul>
                 <li @click="fnSort(item)" :class="item.sort?'active':''" v-for="(item,key) in sort_type"><a href="javascript:;"><span>{{item.name}}</span><i></i></a></li>  
 
-                <li class="market-newproduct"><a href="javascript:;">发布新产品</a></li>
+                <li class="market-newproduct">
+                    <a @click="sendNew()" href="javascript:;">发布新产品</a>
+                </li>
             </ul>
         </div>
         <div class="main-width market-main">
@@ -136,7 +138,11 @@
                     .concat(this.fnSelect(this.star))
             }
         },
+        
         methods: {
+            sendNew(){
+                this.$router.push({name: "p_upfile", params: {id: "id1"}});
+            },
             fnSelect(parent){
                 var arr = [];
                 for (var i = 0; i < parent.length; i++) {

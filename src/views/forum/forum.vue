@@ -173,7 +173,8 @@
                 var num = Math.random() * 4 | 0;
                 var lxTopic = [];
                 for (var i = 0; i < num; i++) {
-                    lxTopic[i] = this.newTopic + (i + 1);
+                    // lxTopic[i] = this.newTopic + '--' + (i + 1);
+                    lxTopic[i] = "联想效果展示"+(Math.random()*10000|0);
                 }
                 this.lxTopic = lxTopic;
             },

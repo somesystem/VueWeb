@@ -75,7 +75,7 @@
                         <p @click="toLicai()" class="product-man-t">已成交100单</p>
                         <div class="product-man-c">
                             <div @click="toLicai()">
-                                <img src=""></div>
+                                <img src="/public/noimg.png"></div>
                                 <div>
                                     <p>10位</p>
                                     <p>服务客户</p>
@@ -132,7 +132,7 @@
                             </div>
                             <div></div>
                             <div>
-                                <img @click="toProduct()" src="" />
+                                <img @click="toProduct()" src="/public/noimg.png" />
                                 <p @click="toProduct()">蔡大大</p>
                                 <p @click="toProduct()">上海宽象资本投资</p>
                                 <a @click="setZixunId(333)" class="common-zixun" href="javascript:;">咨询ta</a>

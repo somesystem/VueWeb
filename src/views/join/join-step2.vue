@@ -29,7 +29,7 @@
                 </div>
                 <div class="join-input-box">
                     <input :class="codeType>1?'input-error input-bg-yzm':'input-bg-yzm'" v-model="yz.code" @focus="yzfocus('code')" @blur="yzBlur('code')" maxlength="6" type="text" placeholder="请输入短信验证码" />
-                    <a class="active join-yzm-btn" href="javascript:;">发送</a>
+                    <a @click="getcode()" :class="code.iNow==60?'active join-yzm-btn':'join-yzm-btn'" href="javascript:;">{{code.msg}}</a>
                     <p v-show="codeType==1">请输入6位由数字组成的短信验证码！</p> 
                     <p v-show="codeType==2" class="color-red">请输入短信验证码！</p>
                     <p v-show="codeType==3" class="color-red">短信验证码不正确！</p>
@@ -120,6 +120,12 @@
                     personFile: '',
                     personFile2: ''
                 },
+
+                code: {
+                    msg: "获取",
+                    timer: null,
+                    iNow: 60
+                },
                 
 
 
@@ -152,6 +158,25 @@
             
         },
         methods: {
+            getcode(){
+                if (this.code.iNow==60) {
+                    clearInterval(this.code.timer);
+                    this.timebase.call(this);
+                    this.code.timer = setInterval(this.timebase.bind(this),1000);
+                }
+            },
+            timebase(){
+                if (this.code.iNow-- >= 1) {
+                    this.code.msg = this.code.iNow + 's';
+                }else{
+                    this.cleanCode();
+                }
+            },
+            cleanCode(){
+                clearInterval(this.code.timer);
+                this.code.msg = '获取';
+                this.code.iNow = 60;
+            },
             yzfocus(type){
                 this.yz[type+'Focus'] = true;
                 this[type+'Type'] = 1;

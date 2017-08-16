@@ -3,7 +3,7 @@
         <p>已在金豆成交100单</p>
         <div class="financial-item-t">
             <div class="financial-item-l">
-                <img @click="toLicai()" src="" />
+                <img @click="toLicai()" src="/public/noimg.png" />
                 <p @click="toLicai()"><span>蔡大大</span><i>江西</i></p>
                 <a @click="setZixunId(777)" class="common-zixun" href="javascript:;">咨询ta</a>
             </div>

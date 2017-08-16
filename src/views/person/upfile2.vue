@@ -185,7 +185,8 @@
                     var num = (Math.random()*3|0)+1;
                     var arr = [];
                     for (var i = 0; i < num; i++) {
-                        arr[i] = {name: this.newTopic+i,id: i}
+                        // arr[i] = {name: this.newTopic+i,id: i}
+                        arr[i] = {name: "联想模拟"+(Math.random()*10|0),id: i}
                     }
                     this.newTopicArr = arr;
                 },Math.random()*400+100);

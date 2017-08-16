@@ -69,19 +69,19 @@
                 <h2 class="common-h2">媒体报道</h2>
                 <div class="top-articel-main">
                     <section>
-                        <a href="javascript:;">
-                            <img src="" />
+                        <a href="http://www.yoka.com/dna/d/259/533.html">
+                            <img src="http://p5.yokacdn.com/pic/star/topic/2014/U230P1T1D914160F9DT20140321145719.jpg" />
                             <p>是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算 打点撒旦按时</p>
                         </a>
                     </section>
                     <section>
-                        <a href="javascript:;">
-                            <img src="" />
+                        <a href="http://www.yoka.com/dna/d/259/533.html">
+                            <img src="http://p5.yokacdn.com/pic/star/topic/2014/U230P1T1D914160F23DT20140321145719.jpg" />
                             <p>xxx</p>
                         </a>
                     </section>
                     <ul>
-                        <li :key="i" v-for="i in 5"><a href="javascript:;">是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算</a></li>
+                        <li :key="i" v-for="i in 5"><a href="http://www.yoka.com/dna/d/259/533.html">是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算</a></li>
                     </ul>
                 </div>
                 
@@ -139,7 +139,7 @@
                 height 50px
                 color color-black
                 font-size 18px
-                background transparent
+                background-color transparent
                 border none
 
     a.top-select-btn

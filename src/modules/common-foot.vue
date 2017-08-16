@@ -16,12 +16,12 @@
 
             <div class="common-foot-c">
                 <div>
-                    <img src="" />
+                    <img src="/public/test.png" />
                     <p>AI小影</p>
                     <p>微信公众号</p>
                 </div>
                 <div>
-                    <img src="" />
+                    <img src="/public/test.png" />
                     <p>金斗云</p>
                     <p>小程序</p>
                 </div>

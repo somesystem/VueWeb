@@ -5,7 +5,7 @@
             <p @click="toLicai()" class="common-item-r-t">已成交100单</p>
             <div @click="toLicai()" class="common-item-r-c">
                 <div>
-                    <img src="" />
+                    <img src="/public/noImg.png" />
                 </div>
                 <div>
                     <p>10位</p>

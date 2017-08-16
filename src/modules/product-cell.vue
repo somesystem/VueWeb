@@ -45,7 +45,7 @@
         <div class="product-cell-r">
             <div class="product-cell-r-c">
                 <div>
-                    <img src="" />
+                    <img src="/public/noImg.png" />
                 </div>
                 <div>
                     <p>100<i>单</i></p>

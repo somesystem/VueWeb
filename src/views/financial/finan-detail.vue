@@ -3,7 +3,7 @@
         <div class="main-width">
             <p class="common-detail-top">首页>找理财师>岳大大1号</p>
 
-            <div class="common-person-top">
+            <div class="common-person-top" style='background-image: url("/public/warp/bg1.png");'>
                 <img src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />
                 <p>岳大大</p>
                 <p>上海宽象资本投资</p>
