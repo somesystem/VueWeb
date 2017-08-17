@@ -42,8 +42,8 @@
                 <router-link tag="a" to="/nav/financial">找理财师</router-link>
                 <router-link tag="a" to="/nav/forum">理财社区</router-link>
                 
-                <aside @click="toggleMarket()"></aside>
-                <ul :class="[showMarket?'active':'']">
+                <aside @mouseout="fnMarket()" @mouseover="fnMarket2()"></aside>
+                <ul @mouseout="fnMarket()" @mouseover="fnMarket2()" :class="[showMarket?'active':'']">
                     <li @click="chooseM(1)">股权基金</li>
                     <li @click="chooseM(2)">信托计划</li>
                     <li @click="chooseM(3)">债券基金</li>
@@ -71,6 +71,7 @@
                 test: true,
 
                 showMarket: false,
+                marketTimer: null,
                 s_key: ''
             }
         },
@@ -124,8 +125,15 @@
                 this.test = false;
                 this.$router.push({path:"/"});
             },
-            toggleMarket(){
-                this.showMarket = !this.showMarket;
+            fnMarket(){
+                clearTimeout(this.marketTimer);
+                this.marketTimer = setTimeout(()=>{
+                    this.showMarket = false;
+                },100);
+            },
+            fnMarket2(){
+                clearTimeout(this.marketTimer);
+                this.showMarket = true;
             },
             chooseM(type){
                 this.showMarket = false;

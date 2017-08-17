@@ -99,7 +99,7 @@
                     {name: "信托计划", active: false, id: 2},
                     {name: "债券基金", active: false, id: 3},
                     {name: "证券基金", active: false, id: 4},
-                    {name: "捐资计划", active: false, id: 5}
+                    {name: "资管计划", active: false, id: 5}
                 ]
             }
         },
@@ -137,7 +137,7 @@
                 display block
                 width 100%
                 height 50px
-                color color-black
+                color #fff
                 font-size 18px
                 background-color transparent
                 border none
