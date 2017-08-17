@@ -29,7 +29,9 @@
                 </div>
                 <div v-if="test" class="common-sign">
                     <i class="active" @click="toMyhome()"></i>
-                    <a @click="loginOut()" href="javascript:;">退出登录</a>
+
+                    <a v-if="loginStatus==1" @click="toMyhome()" href="javascript:;">个人中心</a>
+                    <a v-if="loginStatus==2" @click="loginOut()" href="javascript:;">退出登录</a>
                 </div>
             </nav>
         </div>
@@ -44,7 +46,7 @@
                 <ul :class="[showMarket?'active':'']">
                     <li @click="chooseM(1)">股权基金</li>
                     <li @click="chooseM(2)">信托计划</li>
-                    <li @click="chooseM(3)">债权基金</li>
+                    <li @click="chooseM(3)">债券基金</li>
                     <li @click="chooseM(4)">证券基金</li>
                     <li @click="chooseM(5)">资管计划</li>
                 </ul>
@@ -81,6 +83,7 @@
                   this.$store.commit('setSearchKey', value)
                 }
             }*/
+            ...mapState(["loginStatus"])
         },
         mounted(){
             this.$nextTick(()=>{

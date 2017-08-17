@@ -16,7 +16,7 @@ const topView = () => import('../views/top.vue')
 const market = () => import('../views/market/index.vue')
 const marketView = () => import('../views/market/market.vue')
 const suggestView = () => import('../views/market/suggest.vue')
-const productDetailView = () => import('../views/market/product.vue')
+const productDetailView = () => import('../views/market/product/index.vue')
 const productVS = () => import('../views/market/productVS.vue')
 
 // 找理财师

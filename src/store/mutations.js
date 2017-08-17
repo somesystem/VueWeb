@@ -28,5 +28,8 @@ export default {
     },
     closeZixun: (state) => {
         state.zixun.isOpen = false;
+    },
+    setLoginStatus: (state,status) => {
+        state.loginStatus = status;
     }
 }

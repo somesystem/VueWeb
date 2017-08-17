@@ -1,6 +1,6 @@
 <template>
     <div class="financial-item">
-        <p>已在金豆成交100单</p>
+        <p>已在该平台成交100单</p>
         <div class="financial-item-t">
             <div class="financial-item-l">
                 <img @click="toLicai()" src="/public/noimg.png" />

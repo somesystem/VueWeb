@@ -40,12 +40,11 @@
 <script type="text/javascript">
     import personMenu from "../../modules/person-menu.vue";
     import personMenu2 from "../../modules/person-menu2.vue";
-    import {mapState,mapActions} from "vuex";
+    import {mapState,mapActions,mapMutations} from "vuex";
 
     export default {
         data(){
             return {
-                // test: Math.random()<0.5
                 test: true,
                 bg: [
                     {"src":"/public/warp/bg1.png","src_m":"/public/warp/bg1-small.png","active":true},
@@ -57,6 +56,9 @@
                 ],
                 showChooseBg: false 
             }
+        },
+        mounted(){
+            this.test = Math.random() < 0.5;
         },
         computed: {
             ...mapState(["personTitle"]),
@@ -71,6 +73,7 @@
         },
         methods: {
             ...mapActions(["toast"]),
+            ...mapMutations(["setLoginStatus"]),
             changeBg(self){
                 this.bg.forEach((item)=>{
                     item.active = false;
@@ -85,6 +88,15 @@
         components: {
             personMenu,
             personMenu2
+        },
+        beforeRouteEnter(to, from, next){
+            next(vm=>{
+                vm.setLoginStatus(2);
+            });
+        },
+        beforeRouteLeave(to, from, next){
+            this.setLoginStatus(1);
+            next();
         }
     }
 </script>

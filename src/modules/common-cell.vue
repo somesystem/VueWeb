@@ -1,6 +1,6 @@
 <template>
     <div class="common-cell">
-        <h3 @click="toLicai()">已在金豆成交100单</h3>
+        <h3 @click="toLicai()">已在该平台成交100单</h3>
         <div class="common-cell-c">
             <div class="common-cell-c-img">
                 <img @click="toLicai()" src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />

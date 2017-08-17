@@ -22,8 +22,9 @@ export function createStore () {
             },
             // 搜索 关键词、结果数量
             "searchKey": "",
-            "searchNum": 0
-
+            "searchNum": 0,
+            // 登录状态 0未登录 1已登录（不在个人中心） 2已登录（在个人中心）
+            "loginStatus": 1
         },
         actions,
         mutations,
