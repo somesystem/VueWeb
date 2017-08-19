@@ -433,3 +433,95 @@
         margin-bottom 18px
         &:last-of-type
             margin-bottom 0
+
+.zq_nav
+    display flex
+    border-bottom color-border
+    > a 
+        display block
+        width 120px 
+        height 40px 
+        line-height 40px
+        text-align center
+        color color2
+        font-size size2
+        &.active
+            color #fff
+            background-color color-base
+
+.product-detail .zq_gaikuang
+    margin-top 30px
+    padding-bottom 22px 
+.zq_jinli
+    padding-bottom 30px
+    > h5 
+        padding 30px 0 10px 24px
+        font-size size3
+        line-height size3
+        color color3
+    > p 
+        padding 0 30px
+        line-height 22px
+        font-size size3
+        color color5
+        text-align justify
+
+.zq_yeji
+    padding 30px 30px 40px 
+    h5
+        line-height 40px
+        font-size size3
+        color color-base
+
+.zq_map
+    display flex 
+    .zq_map_l
+        flex 1
+        padding-top 7px
+        height 220px
+    .zq_map_r
+        width 320px
+
+.zq_table
+    border color-border
+    border-bottom none
+    li 
+        height 30px
+        line-height 30px
+        border-bottom color-border
+        display flex 
+        color color3 
+        font-size size3
+        &:nth-child(2n+1)
+            background-color #f1f1f1
+        span
+            display block
+            flex 1
+            text-align center
+
+.zq_table1 li span:last-child,
+.zq_table2 li span:nth-child(n+2)
+    color color-red
+.zq_table1 li:first-child span,
+.zq_table2 li:first-child span,
+.zq_table2 li:last-child span
+    color color3
+
+.zq_product
+    display flex 
+    padding 22px 22px 0
+    margin-bottom -6px
+    > div
+        flex 1
+        p
+            height 26px
+            font-size size3
+            color color3
+            line-height 26px
+            text-align center
+            i
+                color color-red
+        &:first-child p:first-child
+            font-size 30px
+            color color-red
+            line-height 14px

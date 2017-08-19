@@ -14,16 +14,32 @@
                                 <span v-if="test==1" class="signR">运行中</span>
                                 <span v-if="test==2" class="signG">已结束</span>
                                 <span v-if="test==3" class="signY">募集中</span>
-                                <span v-if="test==4">在售</span>
+                                <span v-if="test==4" class="signY">募集中</span>
                             </p>
                             <p>本期起售日 2017/05/15</p>
                         </div>
                         <div class="product-name-c">
-                            <section>
+                            <section v-if="test!=4">
                                 <p><span style="width:70%"></span></p>
                                 <p>70%</p> 
                             </section>
-                            <p>进度说明：【2017年5月18日10时更新】本期为第一期，本期规模不限，预热中，封账时间约定，有下期。</p>
+                            <p v-if="test!=4">进度说明：【2017年5月18日10时更新】本期为第一期，本期规模不限，预热中，封账时间约定，有下期。</p>
+                            
+                            <article class="zq_product" v-if="test==4">
+                                <div>
+                                    <p>2.0256</p>
+                                    <p>单位净值（2017-08-04）</p>
+                                </div>
+                                <div>
+                                    <p>今年来收益：<i>62.83%</i></p>
+                                    <p>基金经理：王洋</p>
+                                </div>
+                                <div>
+                                    <p>累计收益：<i>28.87%</i></p>
+                                    <p>基金状态：募集中</p>
+                                </div>
+                            </article>
+
                             <nav>
                                 <a href="javascript:;">固定收益</a>
                                 <a href="javascript:;">房地产</a>
@@ -41,11 +57,14 @@
                             <a @click="booking()" href="javascript:;">立即预约</a>
                         </div>
                     </div>
+
+                    
+
                     <xintuo v-if="test==0"></xintuo>
                     <ziguan v-if="test==1"></ziguan>
                     <guquan v-if="test==2"></guquan>
                     <zhaiquan v-if="test==3"></zhaiquan>
-                    <guquan v-if="test==4"></guquan>
+                    <zhengquan v-if="test==4"></zhengquan>
                 </div>
                 
                 <div class="product-main-r">

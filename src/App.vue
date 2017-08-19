@@ -11,6 +11,7 @@
 <script type="text/javascript">
     import dToast from './modules/d-toast.vue';
     import dZixun from './modules/d-zixun.vue';
+    
     import { mapState } from "vuex";
     export default {
         data(){

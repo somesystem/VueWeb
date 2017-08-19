@@ -31,6 +31,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: '/libs/',
         options: {
           presets: ["es2015", "stage-0"],
           plugins: ["transform-object-rest-spread"]

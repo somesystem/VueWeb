@@ -13,18 +13,18 @@
         </table>
         <h3>产品概况</h3>
         <ul>
-            <li><span>产品名称：</span><span>腾云资产天山9号私募管理基金</span></li>
-            <li><span>产品状态：</span><span>预热中</span></li>
-            <li><span>发行机构：</span><span>腾云资产</span></li>
+            <li><span>基金名称：</span><span>腾云资产天山9号私募管理基金</span></li>
+            <li></li>
+            <li><span>产品简称：</span><span>腾云资产天山9号私募管理基金</span></li>
+            <li><span>基金编号：</span><span>ABCDEF</span></li>
             <li><span>本期起售日：</span><span>2017/05/09</span></li>
-            <li><span>产品期限：</span><span>24个月</span></li>
-            <li><span>付息方式：</span><span>半年付息</span></li>
-            <li><span>产品类别：</span><span>债权基金</span></li>
-            <li><span>基金类型：</span><span>工商企业</span></li>
-            <li><span>规模：</span><span>3亿</span></li>
+            <li><span>发行机构：</span><span>腾云资产</span></li>
+            <li><span>起售日：</span><span>2017/05/15</span></li>
+            <li><span>产品期限：</span><span>3+4年</span></li>
+            <li><span>开放日：</span><span>2014/05/15</span></li>
+            <li><span>额度/规模：</span><span>3亿</span></li>
+            <li></li>
             <li><span>认购起点：</span><span>100万元</span></li>
-            <li><span>抵/质押率：</span><span>无抵押</span></li>
-            <li><span>投资区域：</span><span>广东 深圳</span></li>
         </ul>
         <ol>
             <li><span>融资主体：</span><span>MSJK控股股份有限公司</span></li>
