@@ -208,7 +208,7 @@
     > div:nth-child(2)
         flex 2
 
-.product-detail,.product-aside
+.product-detail,.product-aside,.product-aside2
     margin-top 16px
     background-color #fff
     border color-border
@@ -255,6 +255,31 @@
         background-image url('/public/pro_icon6.png')
         &:hover,&:active
             background-image url('/public/pro_icon6_ac.png')
+
+.product-aside2
+    padding 18px
+    &:empty
+        display none
+    li
+        position relative
+        text-align center
+        font-size size3
+        color color3
+        line-height 30px 
+        p 
+            cursor pointer
+            &:hover .close
+                display block
+
+        .close
+            position absolute
+            top 5px 
+            right 5px
+            display none
+            width 20px
+            height 20px
+            background url('/public/close.png') no-repeat center center
+
 
 .product-detail
     > h2 

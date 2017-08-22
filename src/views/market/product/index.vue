@@ -95,11 +95,16 @@
                             <a href="javascript:;">邮件发送</a>
                         </div>
                         <div>
-                            <a @click="toProductVs()" href="javascript:;">加入对比</a>
+                            <a @click="add()" href="javascript:;">加入对比</a>
                             <a href="javascript:;">下载资料</a>
                             <a href="javascript:;">预览资料</a>
                         </div>
                     </nav>
+                    <ul v-show="addProduct.length>0" class="product-aside2">
+                        <li v-for="item in addProduct"><p>{{item.name}}<a class="close" @click="dele(item.name)" href="javascript:;"></a></p></li>
+                        <li v-show="addProduct.length>1"><p><a @click="toProductVs()" href="javascript:;">进入对比</a></p></li>
+                    </ul> 
+                    
                 </div>
             </div>
         </div>
@@ -145,6 +150,7 @@
 
 <script>
     var a = 666;
+    var z = 3;
     import {mapMutations} from "vuex";
     import bookingProduct from '../../../modules/booking-product.vue';
 
@@ -157,6 +163,7 @@
     export default {
         data(){
             return {
+                addProduct: [{name:"产品1"},{name:"产品2"}],
                 bookShow: false,
                 test: 1
             }
@@ -166,6 +173,19 @@
         },
         methods: {
             ...mapMutations(["setZixunId"]),
+            dele(name){
+                for (var i = 0; i < this.addProduct.length; i++) {
+                    if(this.addProduct[i].name == name){
+                        this.addProduct.splice(i,1);
+                        break;
+                    }
+                }
+            },
+            add(){
+                this.addProduct.push({
+                    name: "产品" + z++
+                });
+            },
             toProduct(){
                 this.$router.push({name:'product',params:{id:++a}});
             },

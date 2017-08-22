@@ -4,7 +4,7 @@
         <h3>产品收益</h3>
         <table cellspacing="0" cellpadding="0">
             <thead>
-                <tr><th class="ac">期限</th><th>认购金额（万）</th><th class="ac">预期年化收益率</th><th>反拥率</th></tr>
+                <tr><th class="ac">期限</th><th>认购金额（万）</th><th class="ac">预期年化收益率</th><th>返拥率</th></tr>
             </thead>
             <tbody>
                 <tr><td class="ac" rowspan="2">36个月</td><td>100万≦X≦300万</td><td class="ac">6.8%</td><td>1.3%</td></tr>

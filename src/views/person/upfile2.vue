@@ -9,6 +9,10 @@
             <span>产品全称：</span>
             <input type="text" placeholder="请输入产品全称" />
         </div>
+        <div class="pmain-item">
+            <span>进度说明：</span>
+            <input type="text" placeholder="请输入进度说明" />
+        </div>
         
         <div class="pmain-item2">
             <span>产品话题：</span>
