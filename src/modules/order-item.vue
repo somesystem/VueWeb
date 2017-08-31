@@ -33,8 +33,8 @@
 					<a @click="toPay()" class="color-red" href="javascript:;">去预付返佣>></a>
 				</p>
 				<p>
-					<b class="mr20"><a href="javascript:;">取消订单</a></b>
-					<i><a href="javascript:;">投诉</a></i>
+					<b class="mr20"><a @click="cancel()" href="javascript:;">取消订单</a></b>
+					<i><a @click="tousu()" href="javascript:;">投诉</a></i>
 				</p>
 			</div>
 		</div>
@@ -69,7 +69,7 @@
 				</p>
 				<p>
 					<b class="mr20"><a @click="toPay()" href="javascript:;">订单详情</a></b>
-					<i><a href="javascript:;">投诉</a></i>
+					<i><a @click="tousu()" href="javascript:;">投诉</a></i>
 				</p>
 			</div>
 		</div>
@@ -178,6 +178,7 @@
 </template>
 
 <script type="text/javascript">
+	import {mapActions} from "vuex";
 	export default {
 		props: ["status","hasLicai"],
 		data(){
@@ -186,8 +187,19 @@
 			}
 		},
 		methods: {
+			...mapActions(["toast"]),
 			toPay(){
 				this.$router.push({name:"p_order_detail"});
+			},
+			tousu(){
+				if(window.confirm("投诉此订单?")){
+					this.toast("我们已收到您的投诉，<br>稍后会有客服和您联系.")
+				}
+			},
+			cancel(){
+				if(window.confirm("删除此订单?")){
+
+				}
 			}
 		}
 	}
