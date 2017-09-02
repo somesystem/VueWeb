@@ -24,7 +24,14 @@ export function createStore () {
             "searchKey": "",
             "searchNum": 0,
             // 登录状态 0未登录 1已登录（不在个人中心） 2已登录（在个人中心）
-            "loginStatus": 1
+            "loginStatus": 1,
+            "confirm": {
+                isShow: false,
+                msg: ""
+            },
+            "promt": {
+                isShow: false
+            }
         },
         actions,
         mutations,

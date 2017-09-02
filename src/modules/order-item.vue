@@ -173,12 +173,14 @@
 				</p>
 			</div>
 		</div>
+		
+		
 	</div>
 	
 </template>
 
 <script type="text/javascript">
-	import {mapActions} from "vuex";
+	import {mapActions,mapMutations} from "vuex";
 	export default {
 		props: ["status","hasLicai"],
 		data(){
@@ -188,18 +190,15 @@
 		},
 		methods: {
 			...mapActions(["toast"]),
+			...mapMutations(["setConfirm","setPromt"]),
 			toPay(){
 				this.$router.push({name:"p_order_detail"});
 			},
 			tousu(){
-				if(window.confirm("投诉此订单?")){
-					this.toast("我们已收到您的投诉，<br>稍后会有客服和您联系.")
-				}
+				this.setPromt({"isShow":true});
 			},
 			cancel(){
-				if(window.confirm("删除此订单?")){
-
-				}
+				this.setConfirm({"isShow":true,"msg":"取消订单？"});
 			}
 		}
 	}

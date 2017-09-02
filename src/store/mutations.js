@@ -31,5 +31,12 @@ export default {
     },
     setLoginStatus: (state,status) => {
         state.loginStatus = status;
+    },
+    setConfirm: (state,payload) => {
+        state.confirm.isShow = !!payload.isShow;
+        state.confirm.msg = payload.msg || '';
+    },
+    setPromt: (state,payload) => {
+        state.promt.isShow = !!payload.isShow;
     }
 }

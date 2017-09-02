@@ -34,12 +34,17 @@
                 <a @click="chooseBg()" href="javascript:;">确定更改</a>
             </div>
         </div>  
+
+        <d-confirm></d-confirm>
+        <d-promt></d-promt>
     </div>
 </template>
 
 <script type="text/javascript">
     import personMenu from "../../modules/person-menu.vue";
     import personMenu2 from "../../modules/person-menu2.vue";
+    import dConfirm from "../../modules/d-confirm.vue";
+    import dPromt from "../../modules/d-promt.vue";
     import {mapState,mapActions,mapMutations} from "vuex";
 
     export default {
@@ -87,7 +92,9 @@
         },
         components: {
             personMenu,
-            personMenu2
+            personMenu2,
+            dConfirm,
+            dPromt
         },
         beforeRouteEnter(to, from, next){
             next(vm=>{

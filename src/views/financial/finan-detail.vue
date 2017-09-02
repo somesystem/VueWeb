@@ -39,7 +39,6 @@
                         <router-link :to="{name:'f_pro'}" tag="li" exact><a href="javascript:;">发布的产品</a></router-link>
                         <router-link :to="{name:'f_art'}" tag="li"><a href="javascript:;">发布的文章</a></router-link>
                         <router-link :to="{name:'f_que'}" tag="li"><a href="javascript:;">回答的问题</a></router-link>
-                        <router-link :to="{name:'f_eva'}" tag="li"><a href="javascript:;">客户的评价</a></router-link>
                     </ul>
                     <router-view></router-view>
                 </div>

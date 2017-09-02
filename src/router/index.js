@@ -24,7 +24,6 @@ const financial = () => import('../views/financial/index.vue')
 const financialView = () => import('../views/financial/financial.vue')
 const finanDetailView = () => import('../views/financial/finan-detail.vue')
 const finanDetailArt = () => import('../views/financial/finan-detail-art.vue')
-const finanDetailEva = () => import('../views/financial/finan-detail-eva.vue')
 const finanDetailPro = () => import('../views/financial/finan-detail-pro.vue')
 const finanDetailQue = () => import('../views/financial/finan-detail-que.vue')
 
@@ -151,12 +150,7 @@ export function createRouter () {
                                         path: 'article',
                                         name: 'f_art',
                                         component: finanDetailArt
-                                    },
-                                    {
-                                        path: 'evaluate',
-                                        name: 'f_eva',
-                                        component: finanDetailEva
-                                    },
+                                    }
                                 ]
                             }
                         ]
