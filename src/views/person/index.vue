@@ -6,6 +6,8 @@
             <div :style="{'backgroundImage':mainBg}" class="common-person-top">
                 <a @click="showChooseBg=true" href="javascript:;">更改封面图</a>
                 <img src="http://s1.dwstatic.com/group1/M00/9D/75/af7681ad9856be9f73821f77212602bf.jpg" />
+                <!--accept="image/*"-->
+                <input class="imgFile" type="file" />
                 <p>岳大大</p>
                 <p>上海宽象资本投资</p>
                 <nav>
@@ -37,6 +39,10 @@
 
         <d-confirm></d-confirm>
         <d-promt></d-promt>
+
+
+        <d-dakuan></d-dakuan>
+        <d-yufu></d-yufu>
     </div>
 </template>
 
@@ -45,6 +51,8 @@
     import personMenu2 from "../../modules/person-menu2.vue";
     import dConfirm from "../../modules/d-confirm.vue";
     import dPromt from "../../modules/d-promt.vue";
+    import dYufu from "../../modules/d-yufu.vue";
+    import dDakuan from "../../modules/d-dakuan.vue";
     import {mapState,mapActions,mapMutations} from "vuex";
 
     export default {
@@ -94,7 +102,9 @@
             personMenu,
             personMenu2,
             dConfirm,
-            dPromt
+            dPromt,
+            dDakuan,
+            dYufu
         },
         beforeRouteEnter(to, from, next){
             next(vm=>{
@@ -111,6 +121,16 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
     @import "../../styl/base";
     
+    .imgFile
+        z-index 10
+        position relative
+        display block
+        margin -114px auto 0
+        width 100px 
+        height 100px 
+        opacity 0
+        cursor pointer 
+
     .person-main
         margin 12px 0
         display flex

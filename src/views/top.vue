@@ -127,7 +127,7 @@
     .top-fill
         float right
         padding 30px 0
-        background-color rgba(0,0,0,0.7)
+        background-color #484a4c
 
         .top-select
             width 200px
@@ -139,7 +139,7 @@
                 height 50px
                 color #fff
                 font-size 18px
-                background-color transparent
+                background-color #484a4c
                 border none
 
     a.top-select-btn

@@ -31,6 +31,12 @@ export function createStore () {
             },
             "promt": {
                 isShow: false
+            },
+            "yufu": {
+                isShow: false
+            },
+            "dakuan": {
+                isShow: false
             }
         },
         actions,

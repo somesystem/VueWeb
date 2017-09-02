@@ -38,5 +38,11 @@ export default {
     },
     setPromt: (state,payload) => {
         state.promt.isShow = !!payload.isShow;
+    },
+    setYufu: (state,payload) => {
+        state.yufu.isShow = !!payload.isShow;
+    },
+    setDakuan: (state,payload) => {
+        state.dakuan.isShow = !!payload.isShow;
     }
 }

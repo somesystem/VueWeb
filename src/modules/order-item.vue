@@ -30,7 +30,7 @@
 				<p>
 					<b>订单状态:</b>
 					<i>待确认并预付返佣　</i>
-					<a @click="toPay()" class="color-red" href="javascript:;">去预付返佣>></a>
+					<a @click="toYufu()" class="color-red" href="javascript:;">去预付返佣>></a>
 				</p>
 				<p>
 					<b class="mr20"><a @click="cancel()" href="javascript:;">取消订单</a></b>
@@ -65,7 +65,7 @@
 				<p>
 					<b>订单状态:</b>
 					<i>收到打款报单，待确认　</i>
-					<a @click="toPay()" class="color-red" href="javascript:;">去确认到账>></a>
+					<a @click="toDakuan()" class="color-red" href="javascript:;">去确认到账>></a>
 				</p>
 				<p>
 					<b class="mr20"><a @click="toPay()" href="javascript:;">订单详情</a></b>
@@ -190,9 +190,15 @@
 		},
 		methods: {
 			...mapActions(["toast"]),
-			...mapMutations(["setConfirm","setPromt"]),
+			...mapMutations(["setConfirm","setPromt","setYufu","setDakuan"]),
 			toPay(){
 				this.$router.push({name:"p_order_detail"});
+			},
+			toYufu(){
+				this.setYufu({"isShow":true});
+			},
+			toDakuan(){
+				this.setDakuan({"isShow":true});
 			},
 			tousu(){
 				this.setPromt({"isShow":true});
