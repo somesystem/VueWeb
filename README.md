@@ -2,6 +2,22 @@
 
 HackerNews clone built with Vue 2.0 + vue-router + vuex, with server-side rendering.
 
+## 关于vue-router版本说明
+* 抛错信息
+
+```javascript
+Cannot assign to read only property 'path' of object '#<Object>'
+```
+* 定位位置 `entry-client.js`：
+
+```javascript
+const matched = router.getMatchedComponents(to)
+```
+
+* 解决和参考
+    * [参考文档](https://github.com/vuejs/vue-router/issues/1381)
+    * router-vue 升级到最新版本 `2.6.0`
+
 <p align="center">
   <a href="https://vue-hn.now.sh" target="_blank">
     <img src="https://cloud.githubusercontent.com/assets/499550/17546273/5aabc5fc-5eaf-11e6-8d6a-ad00937e8bd6.png" width="700px">

@@ -80,28 +80,28 @@
                             }
                         ]
                     },
-                    {
-                        title: '我的社区',
-                        active: false,
-                        height: '123px',
-                        item: [
-                            {
-                                active: false,
-                                name: '我的回答',
-                                to: "p_answer"
-                            },
-                            {
-                                active: false,
-                                name: '我的文章',
-                                to: "p_article"
-                            },
-                            {
-                                active: false,
-                                name: '我的收藏',
-                                to: "p_myselect"
-                            }
-                        ]
-                    },
+//                    {
+//                        title: '我的社区',
+//                        active: false,
+//                        height: '123px',
+//                        item: [
+//                            {
+//                                active: false,
+//                                name: '我的回答',
+//                                to: "p_answer"
+//                            },
+//                            {
+//                                active: false,
+//                                name: '我的文章',
+//                                to: "p_article"
+//                            },
+//                            {
+//                                active: false,
+//                                name: '我的收藏',
+//                                to: "p_myselect"
+//                            }
+//                        ]
+//                    },
                     {
                         title: '我的资料',
                         active: false,
@@ -143,12 +143,12 @@
                                 active: false,
                                 name: '客户消息',
                                 to: "p_msg_cus"
-                            },
-                            {
-                                active: false,
-                                name: '社区消息',
-                                to: "p_msg_con"
                             }
+//                            {
+//                                active: false,
+//                                name: '社区消息',
+//                                to: "p_msg_con"
+//                            }
                         ]
                     }
                 ]
