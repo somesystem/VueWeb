@@ -175,6 +175,12 @@
                 text-align center
                 color color3
                 font-size size3
+                &:first-child
+                    text-align left
+                    text-indent 16px
+                &:last-child
+                    text-align right
+                    padding-right 16px
             &:hover 
                 background-color #cdcdcd
                 color color2
