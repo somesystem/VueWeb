@@ -107,6 +107,9 @@
                     color #fff
                     font-size 12px 
                 > span
+                    overflow hidden
+                    text-overflow ellipsis
+                    white-space nowrap
                     width 56px 
                     color color3
                     font-size size3 
