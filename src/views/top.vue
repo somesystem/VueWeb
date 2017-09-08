@@ -69,19 +69,24 @@
                 <h2 class="common-h2">媒体报道</h2>
                 <div class="top-articel-main">
                     <section>
-                        <a href="http://www.yoka.com/dna/d/259/533.html">
-                            <img src="http://p5.yokacdn.com/pic/star/topic/2014/U230P1T1D914160F9DT20140321145719.jpg" />
-                            <p>是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算 打点撒旦按时</p>
+                        <a href="http://www.caijing.com.cn/20170726/4306514.shtml">
+                            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1504709651324&amp;di=75c5184f63fd2a92ebe01b432e404b61&amp;imgtype=0&amp;src=http%3A%2F%2Fbmp.skxox.com%2F201707%2F24%2Fq168239.113844.jpg" />
+                            <p>白热化的金融电商市场，买信托网如何破局而入</p>
                         </a>
                     </section>
                     <section>
-                        <a href="http://www.yoka.com/dna/d/259/533.html">
-                            <img src="http://p5.yokacdn.com/pic/star/topic/2014/U230P1T1D914160F23DT20140321145719.jpg" />
-                            <p>xxx</p>
+                        <a href="http://www.sohu.com/a/169423154_116173">
+                            <img src="http://img.p2peye.com/2017/09/01/cbdeb283c4d9ae8c7173c1f4d9e1db34.jpg" />
+                            <p>北银消费金融被重罚900万 两高管被禁从事银行业</p>
                         </a>
                     </section>
                     <ul>
-                        <li :key="i" v-for="i in 5"><a href="http://www.yoka.com/dna/d/259/533.html">是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算</a></li>
+                        <!--<li :key="i" v-for="i in 5"><a href="http://www.yoka.com/dna/d/259/533.html">是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算是多少打算倒萨倒萨打算打算按时倒萨打算打算按时打算</a></li>-->
+                        <li><a href="http://www.sinotf.com/GB/News/1001/2017-09-01/yOMDAwMDI2NjQyOQ.html">央行为什么一定要建设网联？根本原因是......</a></li>
+                        <li><a href="http://iof.hexun.com/2017-09-06/190747480.html">全球首例！迪拜一房地产项目将接受比特币付款</a></li>
+                        <li><a href="http://finance.caixin.com/2017-05-04/101085959.html">信用债新常态 4月取消发行1400亿</a></li>
+                        <li><a href="http://finance.sina.com.cn/money/bank/bank_hydt/2017-09-06/doc-ifykpzey4691257.shtml">互金两大巨头迎来新战役 微信上线零钱通单挑余额宝</a></li>
+                        <li><a href="http://news.ifeng.com/a/20170903/51856781_0.shtml">中国支付产业发展现状及趋势</a></li>
                     </ul>
                 </div>
                 
