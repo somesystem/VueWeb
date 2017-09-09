@@ -6,7 +6,7 @@
                 <li @click="user_controller=2" :class="user_controller==2?'active':''"><a href="javascript:;">理财师用户</a></li>
             </ul>
             <nav>
-                <a @click="zhikeConCtrl=true" href="javascript:;">新增客户</a>
+                <a @click="addUser()" href="javascript:;">{{user_controller==1?'新增客户':'新增渠道'}}</a>
             	<a href="javascript:;">导出列表</a>
             	<input placeholder="姓名" type="text" />
             </nav>
@@ -57,7 +57,7 @@
         
         <div v-show="zhikeConCtrl" class="custom-add-mask"></div>
         <div v-show="zhikeConCtrl" class="custom-add-con">
-            <h4>新增客户</h4>
+            <h4>新增客户<a href="javascript:;" class="close" @click="zhikeConCtrl=false"></a></h4>
             <div class="checkbox-ui">
                 <div @click="isZhike=true" :class="isZhike?'active':''">直客</div>
                 <div @click="isZhike=false" :class="!isZhike?'active':''">渠道</div>
@@ -106,6 +106,17 @@
             });
         },
         methods: {
+            addUser(){
+                if (this.user_controller==1) {
+                    // 新增客户 弹窗选择
+                    this.isZhike = true; // 此行可加可不加
+                    this.zhikeConCtrl=true;
+                }else{
+                    // 新增渠道 直接进去
+                    this.isZhike = false;
+                    this.edit(null,true);
+                }
+            },
             edit(item,isAdd){
                 // 此处item 为循环中单元，给予编辑赋值用
 
@@ -206,11 +217,19 @@
         border-radius 5px
 
         h4
+            position relative
             font-size size2
             color color2 
             text-align center 
             line-height 40px 
             border-bottom color-border 
+            a 
+                position absolute
+                top 0
+                right 0
+                width 40px 
+                height 40px 
+                background url('/public/close.png') no-repeat center center
         .checkbox-ui
             padding 20px 50px
         > a 

@@ -1,6 +1,8 @@
 <template>
     <div v-show="show">
         <div class="mask"></div>
+        <!--type==2理财师:客户?-->
+        <!--此处为编辑理财师信息-->
         <div v-if="type==2 && !isAdd" class="content">
             <h3><span>编辑理财师信息</span><a @click="close()" href="javascript:;"></a></h3>
             <ul class="clearfix">
@@ -23,6 +25,10 @@
             </ul>
             <a @click="confirm()" href="javascript:;">确定</a>
         </div>
+
+        <!--此处为编辑客户信息 or 添加 直客|渠道 客户-->
+        <!--class="warn"为红边框-->
+        <!-- isZhike? '直客':'渠道' -->
         <div v-if="type==1 || isAdd" class="content">
             
             <h3>
