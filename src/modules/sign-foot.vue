@@ -5,7 +5,7 @@
             <router-link tag="a" to="/">联系我们</router-link>
             <router-link tag="a" to="/">人才招聘</router-link>
             <router-link tag="a" to="/">金融超市</router-link>
-            <router-link tag="a" to="/">理财社区</router-link>
+            <!--<router-link tag="a" to="/">理财社区</router-link>-->
             <router-link tag="a" to="/">找理财师</router-link>
             <router-link tag="a" to="/">媒体报道</router-link>
         </nav>

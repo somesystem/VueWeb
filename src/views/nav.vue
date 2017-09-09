@@ -8,9 +8,9 @@
                         <input v-model="s_key" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />
                         <a @click="fnSeach()" href="javascript:;"></a>
                         <ul v-show="isFocus" class="common-search-lx">
-                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
-                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
-                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师：岳大大</span></li>
+                            <li><span>林州重机</span><span>私募sadwd</span><span>理财师：岳大大sas</span></li>
+                            <li><span>天交所-林州重机</span><span>私募</span><span>理财师</span></li>
+                            <li><span>天交所-林州重机的未读无群多群无多群无多群</span><span>私募</span><span>理财师：岳大大的未读群的未读群</span></li>
                         </ul>
                     </div>
                     <nav>
@@ -40,7 +40,7 @@
                 <router-link tag="a" to="/nav" exact>首页</router-link>
                 <router-link tag="a" to="/nav/market">金融超市<i></i></router-link>
                 <router-link tag="a" to="/nav/financial">找理财师</router-link>
-                <router-link tag="a" to="/nav/forum">理财社区</router-link>
+                <!--<router-link tag="a" to="/nav/forum">理财社区</router-link>-->
                 
                 <aside @mouseout="fnMarket()" @mouseover="fnMarket2()"></aside>
                 <ul @mouseout="fnMarket()" @mouseover="fnMarket2()" :class="[showMarket?'active':'']">
@@ -175,7 +175,16 @@
                 text-align center
                 color color3
                 font-size size3
-            &:hover 
+                white-space:nowrap
+                overflow:hidden
+                text-overflow:ellipsis
+                &:first-child
+                    text-align left
+                    text-indent 16px
+                &:last-child
+                    text-align left
+                    padding-right 16px
+            &:hover
                 background-color #cdcdcd
                 color color2
 

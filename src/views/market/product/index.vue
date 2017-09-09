@@ -91,7 +91,7 @@
                     <nav class="product-aside">
                         <div>
                             <a href="javascript:;">分享产品</a>
-                            <a href="javascript:;">收藏产品</a>
+                            <a @click="collect()" :class="isCollect?'active':''" href="javascript:;">收藏产品</a>
                             <a href="javascript:;">邮件发送</a>
                         </div>
                         <div>
@@ -151,7 +151,7 @@
 <script>
     var a = 666;
     var z = 3;
-    import {mapMutations} from "vuex";
+    import {mapMutations,mapActions} from "vuex";
     import bookingProduct from '../../../modules/booking-product.vue';
 
     import xintuo from "./xintuo.vue";
@@ -165,7 +165,8 @@
             return {
                 addProduct: [{name:"产品1"},{name:"产品2"}],
                 bookShow: false,
-                test: 1
+                test: 1,
+                isCollect: false
             }
         },
         mounted(){
@@ -173,6 +174,7 @@
         },
         methods: {
             ...mapMutations(["setZixunId"]),
+            ...mapActions(["toast"]),
             dele(name){
                 for (var i = 0; i < this.addProduct.length; i++) {
                     if(this.addProduct[i].name == name){
@@ -197,6 +199,12 @@
             },
             toProductVs(){
                 this.$router.push({path:'/nav/market/productVS'});
+            },
+            collect(){
+                this.isCollect = !this.isCollect;
+                if (this.isCollect) {
+                    this.toast("收藏成功");
+                }
             }
         },
         components: {
