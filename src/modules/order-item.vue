@@ -20,7 +20,7 @@
 				</p>
 			</div>
 			<div class="order-item-c">
-				<h3>天交所 - 林州重机</h3>
+				<h3>天交所 - 林州重州重州重州重州重州重机</h3>
 				<p>认购金额:　100万</p>
 				<p>期限:　12个月</p>
 				<p>收益: 20%</p>
@@ -55,7 +55,7 @@
 				</p>
 			</div>
 			<div class="order-item-c">
-				<h3>天交所 - 林州重机</h3>
+				<h3>天交所 - 林州重州重州重州重州重州重机</h3>
 				<p>认购金额:　100万</p>
 				<p>期限:　12个月</p>
 				<p>收益: 20%</p>
@@ -90,7 +90,7 @@
 				</p>
 			</div>
 			<div class="order-item-c">
-				<h3>天交所 - 林州重机</h3>
+				<h3>天交所 - 林州重州重州重州重州重州重机</h3>
 				<p>认购金额:　100万</p>
 				<p>期限:　12个月</p>
 				<p>收益: 20%</p>
@@ -123,7 +123,7 @@
 				</p>
 			</div>
 			<div class="order-item-c">
-				<h3>天交所 - 林州重机</h3>
+				<h3>天交所 - 林州重州重州重州重州重州重机</h3>
 				<p>认购金额:　100万</p>
 				<p>期限:　12个月</p>
 				<p>收益: 20%</p>
@@ -249,8 +249,12 @@
 	    > p
 	        flex 1
 	    > h3
-	        width 220px
+	        width 180px
 	        font-weight normal
+	        padding 0 20px
+	        overflow: hidden;
+	        text-overflow: ellipsis;
+	        white-space: nowrap;
 
 	.order-item-b
 	    display flex
