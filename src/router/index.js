@@ -27,6 +27,9 @@ const finanDetailArt = () => import('../views/financial/finan-detail-art.vue')
 const finanDetailPro = () => import('../views/financial/finan-detail-pro.vue')
 const finanDetailQue = () => import('../views/financial/finan-detail-que.vue')
 
+// 关于我们
+const about = () => import('../views/about.vue')
+
 // 个人中心
 const person = () => import('../views/person/index.vue')
 const orderBuy = () => import('../views/person/order_buy.vue')
@@ -328,6 +331,11 @@ export function createRouter () {
                                 component: question
                             }
                         ]
+                    },
+                    {
+                        path: 'about',
+                        name: 'about',
+                        component: about
                     }
                 ]
             },
