@@ -277,7 +277,7 @@
 
             &.router-link-active
                 background-color #e6effc
-                color #0069b8
+                color color-base
         
         > aside
             cursor pointer 

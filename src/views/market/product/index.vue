@@ -109,36 +109,40 @@
             </div>
         </div>
         <div class="product-other">
-            <div class="main-width">
+            <div class="main-width ">
                 <div class="product-other-t">
                     <h2 class="common-h2">相似的产品</h2>
-                    <a href="javascript:;">换一批</a>
+                    <a href="javascript:;">换一批>></a>
                 </div>
                 <ul class="product-other-c">
-                    <li :key="item" v-for="item in 3">
-                        <h4 @click="toProduct()">腾讯资产 - 天山1号<i>预热</i></h4>
-                        <div class="product-other-box">
+                    <li :key="item" v-for="item in 2">
+                        <div @click="toProduct()">
+                            <h4><i>已发布</i>腾讯资产 - 天山1号</h4>
+                            <aside class="product-other-box">
+                                <div>
+                                    <p>30%</p>
+                                    <p>最高预期收益</p>
+                                </div>
+                                <div>
+                                    <p>10%</p>
+                                    <p>返佣率</p>
+                                </div>
+                                <div>
+                                    <p>云南</p>
+                                    <p>投资区域</p>
+                                </div>
+                            </aside>
+                        </div>
+
+                            
+                        <div class="product-other-bottom">
+                            <img @click="toProduct()" src="/public/noimg.png" />
                             <div @click="toProduct()">
-                                <aside class="product-other-box-t">
-                                    <div>
-                                        <p>30%</p>
-                                        <p>最高预期收益</p>
-                                    </div>
-                                    <div>
-                                        <p>10%</p>
-                                        <p>返佣率</p>
-                                    </div>
-                                </aside>
-                                <p>投资区域：云南</p>
-                                <p>产品状态：在售</p>
+                                <p>蔡大大</p>
+                                <p>上海宽象资本投资</p>
                             </div>
-                            <div></div>
-                            <div>
-                                <img @click="toProduct()" src="/public/noimg.png" />
-                                <p @click="toProduct()">蔡大大</p>
-                                <p @click="toProduct()">上海宽象资本投资</p>
-                                <a @click="setZixunId(333)" class="common-zixun" href="javascript:;">咨询ta</a>
-                            </div>
+                            
+                            <a class="btn" @click="setZixunId(333)" href="javascript:;">咨询ta</a>
                         </div>
                     </li>
                 </ul>

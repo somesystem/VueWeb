@@ -49,7 +49,7 @@
     .search-main 
         > h3 
             line-height 40px 
-            color color-blue2
+            color color-base
             font-size size3
     .search-nav
         display flex 
@@ -70,7 +70,7 @@
             background-color #fff
             
             &.router-link-active 
-                background-color color-blue2
+                background-color color-base
                 color #fff
             &:last-child
                 border-right none

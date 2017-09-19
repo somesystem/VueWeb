@@ -113,7 +113,7 @@
             span
                 display block
                 height 14px
-                background-color color-blue
+                background-color color-base
 
         p:nth-child(2)
             margin-left 5px 
@@ -139,7 +139,7 @@
             line-height 24px
             border 1px solid color-base
             color color-base
-            border-radius 5px
+            border-radius 12px
             text-align center
             margin-right 12px
             &:last-child
@@ -229,7 +229,7 @@
             background-repeat no-repeat
             box-sizing border-box
             &:active,&:hover,&.active
-                color color-blue
+                color color-base
             
     > div:nth-child(1) > a:nth-child(1)
         background-image url('/public/pro_icon1.png')
@@ -362,102 +362,98 @@
     background-color #fff
     margin-bottom 40px
 
+.product-other-t,.product-other-c
+    width 860px
+
 .product-other-t
     position relative
     > a
         position absolute
         line-height 40px
         top 0
-        right 12px
+        right 0
         font-size size3
-        color color3
+        color color-base
+
 
 .product-other-c
     display flex
+    justify-content space-between
     > li 
-        flex 1
-        margin-right 14px
+        overflow hidden
+        width 408px
+        heigth 220px
         border color-border
         cursor pointer
-        &:last-child
-            margin-right 0
-        > h4
+        box-shadow 0 2px 4px rgba(0,0,0,0.5)
+        box-sizing border-box
+        padding 0 13px
+
+        h4
+            position relative
             height 40px 
             line-height 40px
             border-bottom color-border
-            text-align center
-            color color1
-            font-size size1
-            i
-                display inline-block
-                width 36px
-                height 18px
-                line-height 18px
-                font-size size5
-                vertical-align middle
-                text-align center
-                background url('/public/sign.png') no-repeat center center
+            padding 0 35px
+            color color-about
+            font-size 16px 
+
+            > i 
+                position absolute 
+                top -3px
+                left -25px
+                width 68px
+                height 20px
+                line-height 20px
+                font-size 12px
                 color #fff
-                margin-left 10px 
+                text-indent 12px
+                background-color color-red
+                transform rotate(-45deg) scale(0.9,0.9)
+                transform-origin center bottom
 
 .product-other-box
     display flex
     justify-content center
     align-items center
     > div
-        &:nth-child(1)
-            flex 1
-            padding 30px 0 18px
-        &:nth-child(2)
-            width 0
-            height 120px
-            border-left color-border
-        &:nth-child(3)
-            width 148px
-            padding 18px 0
-            > img 
-                display block
-                width 50px
-                height 50px
-                margin 0 auto 12px
-            > p
-                margin-bottom 12px
-                text-align center
-                &:nth-of-type(1)
-                    color color2
-                    font-size size2
-                    line-height size2
-                &:nth-of-type(2)
-                    font-size size3
-                    color color3
-            
-.product-other-box-t
-    display flex
-    > div 
         flex 1
+        padding 10px 0
         text-align center
-        margin-bottom 38px
-        > p 
+        p
+            color color-about
             &:nth-child(1)
-                height 20px
-                line-height 20px
-                color color-red
+                height 40px
                 font-size 20px
-                margin-bottom 14px
+                line-height 40px
             &:nth-child(2)
-                height 14px
-                line-height 14px
-                font-size size5
-                color color5
-    ~ p
-        text-align center
-        height size2
-        line-height size2
-        font-size size2
-        color color2
-        margin-bottom 18px
-        &:last-of-type
-            margin-bottom 0
+                height 18px
+                font-size 13px
+                line-height 18px
+        &:first-child p:first-child
+            font-size 28px
+            color color-red
+.product-other-bottom
+    display flex
+    align-items center
+    padding 15px 15px 24px
+    > img 
+        display block
+        width 60px 
+        heigth 60px
+        border-radius 50%
+    > div
+        width 188px
+        flex 1   
+        padding 0 7px
+
+        p
+            height 20px
+            line-height 20px
+            font-size 14px
+            color color-about
+            @extend .eps
+
 
 .zq_nav
     display flex
