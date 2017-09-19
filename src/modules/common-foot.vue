@@ -2,7 +2,7 @@
     <footer class="common-foot">
         <div class="main-width">
             <ul class="clearfix common-foot-l">
-                <li><a href="javascript:;">关于我们</a></li>
+                <li><a tag="a" href="/nav/about">关于我们</a></li>
                 <li><a href="javascript:;">新手入门</a></li>
                 <li><a href="javascript:;">联系我们</a></li>
                 <li><a href="javascript:;">合作伙伴</a></li>

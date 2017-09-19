@@ -9,10 +9,10 @@
         </ul>
         <div class="yufu-b">
             <div class="yufu-l">
-                <div><p>收款人姓名：</p><p>李四</p></div>
+                <div><p>收款人姓名：</p><p>杭州现象级网络科技有限公司</p></div>
                 <div><p>预付佣金：</p><p>xxxx</p></div>
-                <div><p>收款银行：</p><p>xxx银行</p></div>
-                <div><p>收款账号：</p><p>1231231231231231321</p></div>
+                <div><p>收款银行：</p><p>中国建设银行杭州德新支行</p></div>
+                <div><p>收款账号：</p><p>33050161638300000151</p></div>
                 <div><p>汇款备注：</p><p>理财师预付佣金</p></div>
             </div>
             <div class="yufu-r">

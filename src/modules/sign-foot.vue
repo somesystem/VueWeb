@@ -1,7 +1,7 @@
 <template>
     <footer class="sign-foot">
         <nav>
-            <router-link tag="a" to="/">关于我们</router-link>
+            <router-link tag="a" href="/nav/about">关于我们</router-link>
             <router-link tag="a" to="/">联系我们</router-link>
             <router-link tag="a" to="/">人才招聘</router-link>
             <router-link tag="a" to="/">金融超市</router-link>
@@ -9,7 +9,7 @@
             <router-link tag="a" to="/">找理财师</router-link>
             <router-link tag="a" to="/">媒体报道</router-link>
         </nav>
-        <p>Copyright©2017-2020 xxx.com 版权所有</p>
+        <p>Copyright © 2017 杭州现象级网络科技有限公司 浙ICP备案 1036868号</p>
     </footer>
 </template>
 

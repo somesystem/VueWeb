@@ -33,8 +33,8 @@
         <div class="about-more main-width">
             <h2 class="about-icon">媒体报道</h2>
             <ul>
-               <li><a href="http://hebei.sina.com.cn/wenhua/news/2017-06-30/142323050.html">AI理财师对话熊猫传媒，“互联网+理财师“也玩内容营销！</a></li> 
-               <li><a href="http://home.henan.163.com/17/07/06/CMSHBOMOXY701559.html">错过了移动互联网，你还要错过这波人工智能+？</a></li> 
+               <li><a target="_blank" href="http://hebei.sina.com.cn/wenhua/news/2017-06-30/142323050.html">AI理财师对话熊猫传媒，“互联网+理财师“也玩内容营销！</a></li>
+               <li><a target="_blank" href="http://home.henan.163.com/17/07/06/CMSHBOMOXY701559.html">错过了移动互联网，你还要错过这波人工智能+？</a></li>
             </ul>
         </div>
 
@@ -54,15 +54,15 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
     @import "../styl/base";
     .about
-        font-size 24px 
-        line-height 36px
+        font-size 16px
+        line-height 32px
         color color-black
         h2 
-            font-size 48px
+            font-size 36px
             line-height 48px
             
     .about-banner
-        height 690px
+        height 600px
         background url('/public/about-banner.jpg') no-repeat center center
 
     .about-top
@@ -83,8 +83,9 @@
             content ""
             position absolute
             left -68px
-            height 60px
-            width 46px
+            height 40px
+            width 40px
+            top 5px
             background url('/public/rect.png') no-repeat center center
     .about-icon2:after
         background-image url('/public/rect2.png')
@@ -93,14 +94,14 @@
         padding-left 100px 
         
         h3
-            font-size 36px
-            line-height 36px 
+            font-size 24px
+            line-height 24px
             padding 60px 0 20px 
             color color-blue3
 
         p
             padding 0 20px
-            color color-black
+            color color-about
             border-left 2px solid #e5e4e3
             text-align justify
 
@@ -148,7 +149,7 @@
                 border-bottom 1px dotted color-black
                 line-height 56px 
                 a 
-                    color color-black
+                    color color-about
                     &:hover 
                         color color-blue3
                 &:after
@@ -160,5 +161,5 @@
                     width 12px 
                     height 12px 
                     border-radius 50%
-                    background-color color-black
+                    background-color color-about
 </style>
