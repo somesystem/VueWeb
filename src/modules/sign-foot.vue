@@ -1,7 +1,7 @@
 <template>
     <footer class="sign-foot">
         <nav>
-            <router-link tag="a" href="/nav/about">关于我们</router-link>
+            <router-link tag="a" to="/nav/about">关于我们</router-link>
             <router-link tag="a" to="/">联系我们</router-link>
             <router-link tag="a" to="/">人才招聘</router-link>
             <router-link tag="a" to="/">金融超市</router-link>
