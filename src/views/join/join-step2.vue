@@ -88,18 +88,22 @@
         </div>
         
         <p class="join-step2-aside">
-            <i @click="isRead=!isRead" :class="isRead?'active':''"></i><span @click="isRead=!isRead">我已阅读<a href="javascript:;">《私募基金监管管理暂行方法》</a>确认为合格投资者</span>
+            <i @click="isRead=!isRead" :class="isRead?'active':''"></i><span @click="isRead=!isRead">我已阅读<a @click="showTk=true" href="javascript:;">《私募基金监管管理暂行方法》</a>确认为合格投资者</span>
         </p>
+        <tiaokuan :show-tk.sync="showTk"></tiaokuan>
         <a @click="fnNext()" class="join-btn active" href="javascript:;">下一步</a>
+
     </div>
 </template>
 
 <script type="text/javascript">
     import joinTop from "../../modules/join-top.vue";
+    import tiaokuan from "./tiaokuan.vue";
 
     export default {
         data(){
             return {
+                showTk:false,
                 yz: {
                     name: '',
                     pass: '',
@@ -296,7 +300,8 @@
             }
         },
         components: {
-            joinTop
+            joinTop,
+            tiaokuan
         }
     }
 </script>
