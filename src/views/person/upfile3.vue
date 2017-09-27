@@ -17,6 +17,10 @@
             <span>备注：</span>
             <input type="text" />
         </div>
+        <div class="pmain-item" v-if="typeId==6">
+            <span>大额支付号：</span>
+            <input type="text" placeholder="请填写大额支付号" />
+        </div>
         <div class="pmain-btn">
             <a @click="prev()" class="pre" href="javascript:;">上一步</a>
             <a @click="next()" class="active" href="javascript:;">下一步</a>
@@ -35,13 +39,19 @@
         mounted(){
             this.setUpfileStep(3);
         },
+        computed: {
+            /* 1~4 固收 5 股权 6 证券 */
+            typeId(){
+                return this.$route.params.type;
+            }
+        },
         methods: {
             ...mapMutations(["setUpfileStep"]),
             prev(){
                 this.$router.go(-1);
             },
             next(){
-                this.$router.push({name:'upfileStep4'});
+                this.$router.push({name:'upfileStep4',params:{type:this.typeId}});
             }
         }
     }

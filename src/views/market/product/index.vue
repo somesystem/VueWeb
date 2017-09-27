@@ -10,22 +10,21 @@
                             <p>
                                 <span>腾云资产-1号</span>
 
-                                <span v-if="test==0">在售</span>
-                                <span v-if="test==1" class="signR">运行中</span>
-                                <span v-if="test==2" class="signG">已结束</span>
-                                <span v-if="test==3" class="signY">募集中</span>
-                                <span v-if="test==4" class="signY">募集中</span>
+                                <span>在售</span>
+                                <!-- <span class="signR">运行中</span>
+                                <span class="signG">已结束</span>
+                                <span class="signY">募集中</span> -->
                             </p>
                             <p>本期起售日 2017/05/15</p>
                         </div>
                         <div class="product-name-c">
-                            <section v-if="test!=4">
+                            <section v-if="typeId!=6">
                                 <p><span style="width:70%"></span></p>
                                 <p>70%</p> 
                             </section>
-                            <p v-if="test!=4">进度说明：【2017年5月18日10时更新】本期为第一期，本期规模不限，预热中，封账时间约定，有下期。</p>
+                            <p v-if="typeId!=6">进度说明：【2017年5月18日10时更新】本期为第一期，本期规模不限，预热中，封账时间约定，有下期。</p>
                             
-                            <article class="zq_product" v-if="test==4">
+                            <article class="zq_product" v-if="typeId==6">
                                 <div>
                                     <p>2.0256</p>
                                     <p>单位净值（2017-08-04）</p>
@@ -58,13 +57,11 @@
                         </div>
                     </div>
 
+                    <gushou v-if="typeId<5"></gushou>
+                    <guquan v-if="typeId==5"></guquan>
+                    <zhengquan v-if="typeId==6"></zhengquan>
                     
 
-                    <xintuo v-if="test==0"></xintuo>
-                    <ziguan v-if="test==1"></ziguan>
-                    <guquan v-if="test==2"></guquan>
-                    <zhaiquan v-if="test==3"></zhaiquan>
-                    <zhengquan v-if="test==4"></zhengquan>
                 </div>
                 
                 <div class="product-main-r">
@@ -154,23 +151,22 @@
     import {mapMutations,mapActions} from "vuex";
     import bookingProduct from '../../../modules/booking-product.vue';
 
-    import xintuo from "./xintuo.vue";
-    import ziguan from "./ziguan.vue";
-    import zhaiquan from "./zhaiquan.vue";
     import zhengquan from "./zhengquan.vue";
     import guquan from "./guquan.vue";
+    import gushou from "./gushou.vue";
 
     export default {
         data(){
             return {
                 addProduct: [{name:"产品1"},{name:"产品2"}],
                 bookShow: false,
-                test: 1,
+                typeId: 6,
                 isCollect: false
             }
         },
         mounted(){
-            this.test = Math.random() * 5 | 0;
+            // typeId 通过 产品id 判断，1~4 固收 5 股权基金 6 证券基金
+            this.typeId = (Math.random() * 3 | 0) + 4;
         },
         methods: {
             ...mapMutations(["setZixunId"]),
@@ -209,11 +205,9 @@
         },
         components: {
             bookingProduct,
-            xintuo,
-            ziguan,
-            zhaiquan,
             zhengquan,
-            guquan
+            guquan,
+            gushou
         }
     }
 </script>

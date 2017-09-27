@@ -12,22 +12,6 @@
             <input type="text" placeholder="请输入进度说明" />
         </div>
 
-        <!-- <div class="pmain-item2">
-            <span>产品话题：</span>
-            <section>
-                <ul class="clearfix topic_menu">
-                    <li v-for="item in topic"><span>{{item.name}}</span><a @click="removeTopic(item)" href="javascript:;">×</a></li>
-                    <li @click="topic_ctrl=true" class="add">+</li>
-                </ul>
-                <div v-show="topic_ctrl" class="topic_input">
-                    <input @input="getTopic()" v-model="newTopic" type="text" />
-                    <ol>
-                        <li @click="setTopic(item)" v-for="item in newTopicArr">#{{item.name}}</li>
-                    </ol>
-                </div>
-            </section>
-        </div> -->
-
         <div class="pmain-item3">
             <span>{{typeId>=5?'基金':'产品'}}类别：</span>
             <select>
@@ -60,7 +44,10 @@
         
         <div v-if="typeId==5" class="pmain-item3">
             <span>管理费：</span>
-            <input type="number" placeholder="请输入管理费" />
+            <section class="input-section">
+                <input min="0" type="number" placeholder="请输入管理费" />
+                <span>%</span>
+            </section>
             <span>开始募集时间</span>
             <input type="date" placeholder="请选择开始募集时间" />
         </div>
@@ -80,7 +67,10 @@
         </div>
         <div v-if="typeId==5" class="pmain-item3">
             <span>基准收益：</span>
-            <input type="number" placeholder="请输入基准收益" />
+            <section class="input-section">
+                <input min="0" type="number" placeholder="请输入基准收益" />
+                <span>%</span>
+            </section>
             <span>产品期限：</span>
             <section class="input-section">
                 <input min="1" type="number" placeholder="请输入产品期限" />
@@ -106,10 +96,6 @@
 
         <div v-if="typeId<5" class="pmain-item3">
             <span>抵/质押率：</span>
-            <section class="input-section">
-                <input min="0" type="number" placeholder="与合同保持一致" />
-                <span>%</span>
-            </section>
             <span>投资领域：</span>
             <input placeholder="请输入投资领域" />
         </div>
@@ -179,21 +165,30 @@
         </div>
         <div v-if="typeId==6" class="pmain-item3">
             <span>开放日：</span>
-            <input type="date" placeholder="请选择开放日" />
+            <input type="text" placeholder="请输入开放日" />
             <span>封闭期：</span>
-            <input type="date" placeholder="请选择封闭期" />
+            <input type="text" placeholder="请输入封闭期" />
         </div>
         <div v-if="typeId==6" class="pmain-item3">
             <span>认购费用：</span>
-            <input type="number" placeholder="请输入认购费用" />
+            <section class="input-section">
+                <input min="0" type="number" placeholder="请输入认购费用" />
+                <span>%</span>
+            </section>
             <span>管理费用：</span>
-            <input type="number" placeholder="请输入管理费用" />
+            <section class="input-section">
+                <input min="0" type="number" placeholder="请输入管理费用" />
+                <span>%</span>
+            </section>
         </div>
         <div v-if="typeId==6" class="pmain-item3">
             <span>赎回费用：</span>
-            <input type="number" placeholder="请输入赎回费用" />
+            <section class="input-section">
+                <input min="0" type="number" placeholder="请输入赎回费用" />
+                <span>%</span>
+            </section>
             <span>产品标签：</span>
-            <input type="number" placeholder="请输入产品标签" />
+            <input type="text" placeholder="请输入产品标签" />
         </div>
         <div v-if="typeId<6" class="pmain-item">
             <span>产品标签：</span>
@@ -359,7 +354,7 @@
                 this.$router.go(-1);
             },
             next(){
-                this.$router.push({name:'upfileStep3'});
+                this.$router.push({name:'upfileStep3',params:{type:this.typeId}});
             }
         }
     }

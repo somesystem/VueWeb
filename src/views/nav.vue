@@ -45,11 +45,12 @@
                 
                 <aside @mouseout="fnMarket()" @mouseover="fnMarket2()"></aside>
                 <ul @mouseout="fnMarket()" @mouseover="fnMarket2()" :class="[showMarket?'active':'']">
-                    <li @click="chooseM(1)">股权基金</li>
-                    <li @click="chooseM(2)">信托计划</li>
-                    <li @click="chooseM(3)">债券基金</li>
-                    <li @click="chooseM(4)">证券基金</li>
-                    <li @click="chooseM(5)">资管计划</li>
+                    <li @click="chooseM(1)">集合信托</li>
+                    <li @click="chooseM(2)">资管计划</li>
+                    <li @click="chooseM(3)">债权基金</li>
+                    <li @click="chooseM(4)">政府债</li>
+                    <li @click="chooseM(5)">股权基金</li>
+                    <li @click="chooseM(6)">证券基金</li>
                 </ul>
               </nav>
         </header>
@@ -138,7 +139,7 @@
             },
             chooseM(type){
                 this.showMarket = false;
-                this.$router.push({path:'/nav/market'});
+                this.$router.push({name:'market',params:{type:type}});
             }
         },
         components: {

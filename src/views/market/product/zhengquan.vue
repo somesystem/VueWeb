@@ -1,12 +1,60 @@
 <template>
     <div class="product-detail">
-        <nav class="zq_nav">
-            <a :class="navIndex==0?'active':''" @click="navIndex=0" href="javascript:;">产品业绩</a>
-            <a :class="navIndex==1?'active':''" @click="navIndex=1" href="javascript:;">产品概况</a>
-            <a :class="navIndex==2?'active':''" @click="navIndex=2" href="javascript:;">基金经理</a>
-        </nav>
-        
-        <div v-show="navIndex==0" class="zq_yeji">
+        <h2 class="common-h2">产品详情</h2>
+        <h3>产品收益</h3>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+                <tr><th>投资金额</th><th>返佣比例</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>100~300万</td><td>登录可见</td></tr>
+            </tbody>
+        </table>
+
+        <h3>产品概况</h3>
+        <ul>
+            <li><span>产品名称：</span><span>腾云资产天山9号私募管理基金</span></li>
+            <li><span>基金状态：</span><span>开放募集中</span></li>
+
+            <li><span>基金类型：</span><span>债券型</span></li>
+            <li><span>基金公司：</span><span>宽象资本</span></li>
+
+            <li><span>基金经理：</span><span>尹克</span></li>
+            <li><span>托管银行：</span><span>中信银行</span></li>
+
+            <li><span>证券经纪：</span><span>中信证券</span></li>
+            <li><span>发行通道：</span><span>自主发行</span></li>
+
+            <li><span>是否结构化：</span><span>否</span></li>
+            <li><span>首次成立：</span><span>2017年8月8号</span></li>
+
+            <li><span>封闭期：</span><span>12个月</span></li>
+            <li><span>累计净值：</span><span>1.04</span></li>
+
+            <li><span>准封闭期：</span><span></span></li>
+            <li><span>认购费用：</span><span>1%</span></li>
+
+            <li><span>开放日：</span><span>每个公历月份的15日</span></li>
+            <li><span>管理费用：</span><span>1.5%+1%</span></li>
+
+            <li><span>赎回费用：</span><span>0%</span></li>
+        </ul>
+        <ol>
+            <li><span>基金公司简介：</span><span>1.xxxxx<br/>2.xxxxxx<br/>3.xxxxxx<br/>4.xxxxxx</span></li>
+            <li><span投资理念：</span><span>1.xxxxx<br/>2.xxxxxx<br/>3.xxxxxx<br/>4.xxxxxx</span></li>
+            <li><span>风险控制：</span><span>1.xxxxx<br/>2.xxxxxx<br/>3.xxxxxx<br/>4.xxxxxx</span></li>
+        </ol>
+        <h3>募集账号信息</h3>
+        <ul class="mg18">
+            <li><span>募集账户名：</span><span></span></li>
+            <li><span>开户行：</span><span></span></li>
+
+            <li><span>账号：</span><span></span></li>
+            <li><span>备注：</span><span></span></li>
+        </ul>
+
+        <h3>净值走势</h3>
+        <div class="zq_yeji">
             <div class="zq_map">
                 <div id="zq_map" class="zq_map_l">
                     
@@ -35,29 +83,6 @@
             </div>
 
         </div>
-
-        <ul class="zq_gaikuang" v-show="navIndex==1">
-            <li><span>基金名称：</span><span>腾云资产天山9号私募管理基金</span></li>
-            <li><span>产品简称：</span><span>预热中</span></li>
-            <li><span>发行机构：</span><span>腾云资产</span></li>
-            <li><span>本期起售日：</span><span>2017/05/09</span></li>
-            <li><span>产品期限：</span><span>24个月</span></li>
-            <li><span>付息方式：</span><span>半年付息</span></li>
-            <li><span>产品类别：</span><span>债权基金</span></li>
-            <li><span>基金类型：</span><span>工商企业</span></li>
-            <li><span>规模：</span><span>3亿</span></li>
-            <li><span>认购起点：</span><span>100万元</span></li>
-            <li><span>抵/质押率：</span><span>无抵押</span></li>
-            <li><span>投资区域：</span><span>广东 深圳</span></li>
-        </ul>
-        <div v-show="navIndex==2" class="zq_jinli">
-            <h5>基金经理简介：</h5>
-            <p>鞠婧祎，1994年6月18日出生于中国四川遂宁，SNH48成员之一，隶属经纪公司为久尚演艺以及星四芭文化， 是日本第一国民女子偶像团体AKB48的中国官方姐妹团SNH48的二期生。 2013年11月2日以剧场公演的形式正式出道。2014年7月26日，荣获SNH48第一届总选举第四位 。9月，参与拍摄MV《呜吒（UZA）》</p>
-            <h5>发行机构简介：</h5>
-            <p>中文名 鞠婧祎 外文名 Ju JingYi 别名 小鞠、kiku酱、鞠神 国籍 中国 民族 汉族 星座 双子座 血型 O 身高 159 体重 46kg 出生地 四川遂宁 出生日期 1994年6月18日 职业 偶像 毕业院校 四川音乐学院附属中学（在读） 经纪公司 上海久尚演艺经纪有限公司 主要成就 2014.07 SNH48第一届总选举第四名 曾用名 鞠婧伊 所属团体 SNH48 姐妹团体 AKB48、SKE48、NMB48、HKT48等 代表作品 《都是夜风惹的祸》 《虫之诗》 特长 舞蹈、小提琴</p>
-            <h5>评论：</h5>
-        </div>
-        
     </div>
 </template>
 
@@ -65,7 +90,6 @@
     export default {
         data(){
             return {
-                navIndex: 0
             }
         },
         mounted(){
@@ -134,4 +158,3 @@
         }
     }
 </script>
-

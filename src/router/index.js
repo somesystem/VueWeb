@@ -103,11 +103,12 @@ export function createRouter () {
                         // child path: stock trust bond negotiable donations
                     },
                     {
-                        path: 'market',
+                        path: 'market/:type?',
                         component: market,
                         children: [
                             {
                                 path: '',
+                                name: 'market',
                                 component: marketView
                             },
                             {
@@ -121,7 +122,7 @@ export function createRouter () {
                                 component: productVS
                             },
                             {
-                                path: ':id',
+                                path: 'product/:id',
                                 name: 'product',
                                 component: productDetailView
                             }

@@ -2,7 +2,7 @@
 .pmain
     width 840px
     margin 0 auto
-    > h3
+    h3
         padding-top 18px
         color color-red
         font-size size3
@@ -318,6 +318,25 @@
         font-size size3
         color color3
         box-sizing border-box
+
+
+.pmain-item6
+    @extend .pmain-item4
+    margin 0 auto
+    > dt,> dd
+        > div
+            min-width 0px
+    input
+        display block
+        width 100%
+        height 40px
+        padding 10px 14px
+        border color-border
+        font-size size3
+        color color3
+        box-sizing border-box
+    input[type="date"]
+        padding 10px
 
 
 .pmain-cell
