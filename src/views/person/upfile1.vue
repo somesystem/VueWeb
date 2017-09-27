@@ -15,12 +15,12 @@
                 list: [
                     {
                         id: 1,
-                        name: "信托计划",
+                        name: "集合信托",
                         active: false
                     },
                     {
                         id: 2,
-                        name: "股权基金",
+                        name: "资管计划",
                         active: false
                     },
                     {
@@ -30,14 +30,20 @@
                     },
                     {
                         id: 4,
-                        name: "证券基金",
+                        name: "政府债",
                         active: false
                     },
                     {
                         id: 5,
-                        name: "资管计划",
+                        name: "股权基金",
+                        active: false
+                    },
+                    {
+                        id: 6,
+                        name: "证券基金",
                         active: false
                     }
+                    
                 ],
                 typeId: ""
 			}
@@ -54,7 +60,7 @@
             },
             next(){
                 if (this.typeId) {
-                    this.$router.push({name:'upfileStep2',params:{typeId:this.typeId}});
+                    this.$router.push({name:'upfileStep2',params:{type:this.typeId}});
                 }
             }
         }

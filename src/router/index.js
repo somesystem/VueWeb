@@ -278,17 +278,17 @@ export function createRouter () {
                                         component: upfile1
                                     },
                                     {
-                                        path: 'upfile2',
+                                        path: 'upfile2/:type?',
                                         name: 'upfileStep2',
                                         component: upfile2
                                     },
                                     {
-                                        path: 'upfile3',
+                                        path: 'upfile3/:type?',
                                         name: 'upfileStep3',
                                         component: upfile3
                                     },
                                     {
-                                        path: 'upfile4',
+                                        path: 'upfile4/:type?',
                                         name: 'upfileStep4',
                                         component: upfile4
                                     }
