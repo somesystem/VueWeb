@@ -123,7 +123,7 @@
             line-height 28px 
             font-size size3 
             color color3 
-            text-indent 10px 
+            padding-left 10px
 
     .financial-item-r-t
         display flex
@@ -163,8 +163,8 @@
                 margin-right 20px 
                 overflow hidden 
                 text-indent 10px 
-                white-space:nowrap; 
-                text-overflow:ellipsis;
+                white-space nowrap
+                text-overflow ellipsis
             > i
                 display block 
                 width 36px

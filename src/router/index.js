@@ -75,6 +75,7 @@ const searchTopicView = () => import('../views/search/s_topic.vue')
 const login = () => import('../views/login/index.vue')
 const loginAccoutView = () => import('../views/login/login-account.vue')
 const loginMobileView = () => import('../views/login/login-mobile.vue')
+const forgetView = () => import('../views/login/forget.vue')
 
 // 注册
 const join = () => import('../views/join/index.vue')
@@ -354,6 +355,10 @@ export function createRouter () {
                         component: loginMobileView
                     }
                 ]
+            },
+            {
+                path: '/forget',
+                component: forgetView
             },
             { 
                 path: '/join', 

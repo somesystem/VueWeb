@@ -2,7 +2,7 @@
     <div>
         <div class="bg-white">
             <nav class="common-search main-width">
-                <a href="/"><img class="common-logo" src="/public/logo.png" /></a>
+                <router-link tag="a" to="/"><img class="common-logo" src="/public/logo.png" /></router-link>
                 <div class="common-search-box">
                     <div>
                         <input v-model="s_key" @blur="fnBlur()" @focus="fnFocus()" @keydown.enter="fnSeach()" type="text" placeholder="搜产品/理财师/话题" />

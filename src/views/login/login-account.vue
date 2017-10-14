@@ -9,7 +9,7 @@
         </div>
         <aside class="login-aside">
             <router-link tag="a" to="/join">免费注册</router-link>
-            <router-link tag="a" to="/">忘记密码？</router-link>
+            <router-link tag="a" to="/forget">忘记密码？</router-link>
         </aside>
         <a class="login-btn" @click="goHome()" href="javascript:;">登录</a>
     </div>

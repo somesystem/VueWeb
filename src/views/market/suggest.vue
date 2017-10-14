@@ -16,7 +16,7 @@
                 <h2 class="common-h2">您可能需要的理财师</h2>
                 <a href="javascript:;">换一批</a>
                 <div class="suggest-foot-box">
-                    <financial-item v-for="i in 3" :key="i"></financial-item>
+                    <financial-item v-for="i in 4" :key="i"></financial-item>
                 </div>
             </div>
                 
@@ -62,7 +62,11 @@
     .suggest-foot-box 
         display flex 
         .financial-item
-            flex 1 
+            width 278px 
+            &:nth-child(3)
+                margin-right 16px 
+            &:last-child
+                margin-right 0
         padding-bottom 24px 
             
 

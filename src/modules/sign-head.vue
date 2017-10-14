@@ -1,7 +1,7 @@
 <template>
     <header class="sign-head">
         <div class="main-width">
-            <div><a href="/"><img src="/public/logo.png"></a></div>
+            <div><router-link tag="a" to="/"><img src="/public/logo.png"></router-link></div>
             <router-link v-if="type==1" tag="a" to="/login">马上登录</router-link>
             <router-link v-if="type==2" tag="a" to="/join">免费注册</router-link>
         </div>
