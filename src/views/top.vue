@@ -102,7 +102,7 @@
                 navList: [
                     {name: "集合信托", active: true, id: 1},
                     {name: "资管计划", active: false, id: 2},
-                    {name: "债券基金", active: false, id: 3},
+                    {name: "债权基金", active: false, id: 3},
                     {name: "政府债", active: false, id: 4},
                     {name: "股权基金", active: false, id: 5},
                     {name: "政府基金", active: false, id: 6}

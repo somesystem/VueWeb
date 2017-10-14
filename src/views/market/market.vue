@@ -77,7 +77,7 @@
                     {/*"id":1,*/"name": "不限","select": true,"parent":"pro_type"},
                     {"name": "信托","select": false,"parent":"pro_type"},
                     {"name": "资管","select": false,"parent":"pro_type"},
-                    {"name": "债券基金","select": false,"parent":"pro_type"},
+                    {"name": "债权基金","select": false,"parent":"pro_type"},
                     {"name": "证券基金","select": false,"parent":"pro_type"},
                     {"name": "股权基金","select": false,"parent":"pro_type"}
                 ],

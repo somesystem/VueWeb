@@ -25,7 +25,7 @@
                     },
                     {
                         id: 3,
-                        name: "债券基金",
+                        name: "债权基金",
                         active: false
                     },
                     {

@@ -11,7 +11,7 @@
                 <li class="active"><a href="javascript:;">不限</a></li>
                 <li><a href="javascript:;">信托</a></li>
                 <li><a href="javascript:;">资管</a></li>
-                <li><a href="javascript:;">债券基金</a></li>
+                <li><a href="javascript:;">债权基金</a></li>
                 <li><a href="javascript:;">证券基金</a></li>
                 <li><a href="javascript:;">股权基金</a></li>
             </ol>
