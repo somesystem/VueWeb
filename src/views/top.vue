@@ -100,11 +100,12 @@
         data(){
             return {
                 navList: [
-                    {name: "股权基金", active: true, id: 1},
-                    {name: "信托计划", active: false, id: 2},
+                    {name: "集合信托", active: true, id: 1},
+                    {name: "资管计划", active: false, id: 2},
                     {name: "债券基金", active: false, id: 3},
-                    {name: "证券基金", active: false, id: 4},
-                    {name: "资管计划", active: false, id: 5}
+                    {name: "政府债", active: false, id: 4},
+                    {name: "股权基金", active: false, id: 5},
+                    {name: "政府基金", active: false, id: 6}
                 ]
             }
         },
@@ -173,36 +174,58 @@
                 position relative
                 flex 1
                 height 18px
-                padding-top 78px
+                padding-top 125px
                 text-align center
-                font-size 18px
-                line-height 18px
-                color color-base
+                font-size 16px
+                line-height 16px
                 background-position center top
                 background-repeat no-repeat
                 cursor pointer
                 transition transform 0.3s
 
                 &:nth-child(1){
-                    background-image: url(/public/guquan.png)
+                    background-image: url(/public/xintuo.png)
                 }
                 &:nth-child(2){
-                    background-image: url(/public/xintuo.png)
+                    background-image: url(/public/ziguan.png)
                 }
                 &:nth-child(3){
                     background-image: url(/public/zhaiquan.png)
                 }
                 &:nth-child(4){
-                    background-image: url(/public/zhengquan.png)
+                    background-image: url(/public/zhengfuzhai.png)
                 }
                 &:nth-child(5){
-                    background-image: url(/public/ziguan.png)
+                    background-image: url(/public/guquan.png)
+                }
+                &:nth-child(6){
+                    background-image: url(/public/zhengquan.png)
                 }
                 
                 &:hover
-                    transform scale(1.05)
+                    transform translate3d(0,-10px,0)
                 &.active
                     transform none
+                    &:nth-child(1){
+                        background-image: url(/public/xintuo_ac.png)
+                    }
+                    &:nth-child(2){
+                        background-image: url(/public/ziguan_ac.png)
+                    }
+                    &:nth-child(3){
+                        background-image: url(/public/zhaiquan_ac.png)
+                    }
+                    &:nth-child(4){
+                        background-image: url(/public/zhengfuzhai_ac.png)
+                    }
+                    &:nth-child(5){
+                        background-image: url(/public/guquan_ac.png)
+                    }
+                    &:nth-child(6){
+                        background-image: url(/public/zhengquan_ac.png)
+                    }
+
+
                     &:after
                         content ""
                         position absolute
