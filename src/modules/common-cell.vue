@@ -80,12 +80,17 @@
                     font-size size1 
                     color color1 
                     margin-right 12px
+                    white-space:nowrap
+                    overflow:hidden
+                    text-overflow:ellipsis
+                    width 72px
+                    display inline-block
 
                 span:nth-child(2)
                     font-size size5 
-                    color color5 
+                    color color5
+                    display inline-block
             > a 
-                z-index 10
                 position relative
                 display block
                 margin-top 12px

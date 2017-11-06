@@ -110,11 +110,17 @@
                 height size2
                 line-height size2
                 font-size size2 
-                color color2 
+                color color2
+                white-space:nowrap
+                overflow:hidden
+                text-overflow:ellipsis
+                width 56px
+                display inline-block
             i   
                 margin-left 12px 
                 font-size size5
-                color color5 
+                color color5
+                display inline-block
 
     .financial-item-r
         flex 1

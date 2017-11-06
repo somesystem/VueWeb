@@ -86,6 +86,7 @@
                 font-size size5
                 color color5
                 text-align center
+                margin-bottom 20px
         > a
             margin-bottom 12px
             
