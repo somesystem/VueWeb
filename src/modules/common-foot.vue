@@ -2,16 +2,11 @@
     <footer class="common-foot">
         <div class="main-width">
             <ul class="clearfix common-foot-l">
-                <li><a tag="a" href="/nav/about">关于我们</a></li>
-                <li><a href="javascript:;">加入我们</a></li>
-                <li><a href="javascript:;">联系我们</a></li>
-                <li><a href="javascript:;">我要反馈</a></li>
-                <li><a href="javascript:;">法律声明</a></li>
-                <!--<li><a href="javascript:;">站点地图</a></li>-->
-                <!--<li><a href="javascript:;">我要反馈</a></li>-->
-                <!--<li><a href="javascript:;">用户评级</a></li>-->
-                <!--<li><a href="javascript:;"></a></li>-->
-                <!--<li><a href="javascript:;">在线客服</a></li>-->
+                <li><router-link :to="{'name':'about'}" tag="a">关于我们</router-link></li>
+                <li><router-link :to="{'name':'connect'}" tag="a">联系我们</router-link></li>
+                <li><router-link :to="{'name':'join'}" tag="a">加入我们</router-link></li>
+                <li><router-link :to="{'name':'declare'}" tag="a">法律声明</router-link></li>
+                <li><router-link :to="{'name':'issue'}" tag="a">反馈问题</router-link></li>
             </ul>
 
             <div class="common-foot-c">

@@ -28,7 +28,12 @@ const finanDetailPro = () => import('../views/financial/finan-detail-pro.vue')
 const finanDetailQue = () => import('../views/financial/finan-detail-que.vue')
 
 // 关于我们
-const about = () => import('../views/about.vue')
+const about = () => import('../views/about/index.vue')
+const aboutView = () => import('../views/about/about.vue')
+const aboutConnect = () => import('../views/about/connect.vue')
+const aboutJoin = () => import('../views/about/join.vue')
+const aboutIssue = () => import('../views/about/issue.vue')
+const aboutDeclare = () => import('../views/about/declare.vue')
 
 // 个人中心
 const person = () => import('../views/person/index.vue')
@@ -135,6 +140,7 @@ export function createRouter () {
                         children: [
                             {
                                 path: '',
+                                name: 'financial',
                                 component: financialView
                             },
                             {
@@ -336,8 +342,34 @@ export function createRouter () {
                     },
                     {
                         path: 'about',
-                        name: 'about',
-                        component: about
+                        component: about,
+                        children: [
+                            {
+                                path: '',
+                                name: 'about',
+                                component: aboutView
+                            },
+                            {
+                                path: 'connect',
+                                name: 'connect',
+                                component: aboutConnect
+                            },
+                            {
+                                path: 'join',
+                                name: 'join',
+                                component: aboutJoin
+                            },
+                            {
+                                path: 'issue',
+                                name: 'issue',
+                                component: aboutIssue
+                            },
+                            {
+                                path: 'declare',
+                                name: 'declare',
+                                component: aboutDeclare
+                            }
+                        ]
                     }
                 ]
             },

@@ -1,13 +1,14 @@
 <template>
     <footer class="sign-foot">
         <nav>
-            <router-link tag="a" to="/nav/about">关于我们</router-link>
-            <router-link tag="a" to="/">联系我们</router-link>
-            <router-link tag="a" to="/">人才招聘</router-link>
-            <router-link tag="a" to="/">金融超市</router-link>
-            <!--<router-link tag="a" to="/">理财社区</router-link>-->
-            <router-link tag="a" to="/">找理财师</router-link>
-            <router-link tag="a" to="/">媒体报道</router-link>
+            <router-link :to="{'name':'about'}" tag="a">关于我们</router-link>
+            <router-link :to="{'name':'connect'}" tag="a">联系我们</router-link>
+            <router-link :to="{'name':'join'}" tag="a">加入我们</router-link>
+            <router-link :to="{'name':'declare'}" tag="a">法律声明</router-link>
+            <router-link :to="{'name':'issue'}" tag="a">反馈问题</router-link>
+            <router-link tag="a" :to="{'name':'market',params:{type:'1'}}">金融超市</router-link>
+            <!--<router-link tag="a" :to="{'name':'forum'}">理财社区</router-link>-->
+            <router-link tag="a" :to="{'name':'financial'}">找理财师</router-link>
         </nav>
         <p>Copyright © 2017 杭州现象级网络科技有限公司 浙ICP备案 1036868号</p>
     </footer>
