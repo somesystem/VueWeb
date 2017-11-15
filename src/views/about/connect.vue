@@ -1,7 +1,7 @@
 <template>
     <div class="about-connect">
         <h3>联系我们</h3>
-        <div class="about-connect-map"><img src="/public/about-map.jpg" /></div>
+        <div><img class="about-connect-map" src="/public/about-map.jpg" /></div>
         <nav>
             <a>联系电话:18506827065</a>
             <a href="mailto:caijd@kxtzjt.com">联系邮箱:caijd@kxtzjt.com</a>
