@@ -3,27 +3,27 @@
         <div class="main-width">
             <ul class="clearfix common-foot-l">
                 <li><a tag="a" href="/nav/about">关于我们</a></li>
-                <li><a href="javascript:;">新手入门</a></li>
+                <li><a href="javascript:;">加入我们</a></li>
                 <li><a href="javascript:;">联系我们</a></li>
-                <li><a href="javascript:;">合作伙伴</a></li>
-                <li><a href="javascript:;">法律声明</a></li>
-                <li><a href="javascript:;">站点地图</a></li>
                 <li><a href="javascript:;">我要反馈</a></li>
-                <li><a href="javascript:;">用户评级</a></li>
-                <li><a href="javascript:;"></a></li>
-                <li><a href="javascript:;">在线客服</a></li>
+                <li><a href="javascript:;">法律声明</a></li>
+                <!--<li><a href="javascript:;">站点地图</a></li>-->
+                <!--<li><a href="javascript:;">我要反馈</a></li>-->
+                <!--<li><a href="javascript:;">用户评级</a></li>-->
+                <!--<li><a href="javascript:;"></a></li>-->
+                <!--<li><a href="javascript:;">在线客服</a></li>-->
             </ul>
 
             <div class="common-foot-c">
-                <div>
-                    <img src="/public/test.png" />
-                    <p>AI小影</p>
-                    <p>微信公众号</p>
-                </div>
+                <!--<div>-->
+                    <!--<img src="/public/test.png" />-->
+                    <!--<p>AI小影</p>-->
+                    <!--<p>微信公众号</p>-->
+                <!--</div>-->
                 <div>
                     <img src="/public/test.png" />
                     <p>金斗云</p>
-                    <p>小程序</p>
+                    <!--<p>小程序</p>-->
                 </div>
             </div>
             <div class="common-foot-r">
@@ -61,7 +61,7 @@
             height 40px 
             line-height 40px 
             text-align center 
-    .common-foot-l 
+    .common-foot-l
         width 340px 
         li 
             float left
@@ -79,7 +79,7 @@
 
     .common-foot-c
         flex 1
-        padding 28px 108px 
+        padding 0 206px
         border-left 1px solid #303848
         border-right 1px solid #303848
         display flex 
@@ -120,7 +120,7 @@
             &:nth-of-type(2)
                 color #fff
             &:nth-of-type(2)
-                font-size 20px 
-                line-height 34px 
+                font-size 20px
+                line-height 34px
                 margin-bottom 18px 
 </style>
